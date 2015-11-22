@@ -1,0 +1,42 @@
+{
+"blogs":[
+			{
+				"id":1,
+				"type":"user",
+				"imageUrls":["fm_user/images/blog/1.jpg"],
+				"blogHeading":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+				"blogData":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+				"category":"Mens",
+				"createdDt":"June 26, 2014",
+				"updatedDt":"",
+				"reviews":"10",
+				"likes":"10"	
+			},
+			{
+				"id":2,
+				"type":"shop",
+				"imageUrls":["fm_user/images/blog/1.jpg","fm_user/images/blog/2.jpg","fm_user/images/blog/3.jpg"],
+				"blogHeading":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+				"blogData":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+				"category":"Mens",
+				"createdDt":"June 26, 2014",
+				"updatedDt":"",
+				"reviews":"10",
+				"likes":"10"
+				
+			},
+			{
+				"id":3,
+				"type":"shop",
+				"imageUrls":["fm_user/images/blog/1.jpg","fm_user/images/blog/2.jpg"],
+				"blogHeading":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
+				"blogData":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+				"category":"Mens",
+				"createdDt":"June 26, 2014",
+				"updatedDt":"",
+				"reviews":"10",
+				"likes":"10"
+				
+			}
+		]
+}

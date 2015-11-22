@@ -1,0 +1,222 @@
+<div>	
+	<h2>Categories <small>Choose your shop product categories</small></h2>
+	<span class="glyphicon glyphicon-dashboard bg-fade"></span>
+    <div class="jumbotron">
+        <span class="category-head" >Mens</span>
+            <div id="custom-search-input">
+                 <div class="input-group col-md-3 col-sm-offset-9">
+                        <input type="text" class="  search-query form-control" placeholder="Search" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+            </div>
+        <div class="row">
+            <div class="col-xs-12">  
+                <div>
+                    <ul id="category" class="list-group checked-list-box col-xs-12">
+                        <li class="list-group-item col-xs-3">Cras justo odio</li>
+                        <li class="list-group-item col-xs-3" data-checked="true">Dapibus ac facilisis in</li>
+                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
+                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
+                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+                        <li class="list-group-item col-xs-3">Cras justo odio</li>
+                        <li class="list-group-item col-xs-3">Dapibus ac facilisis in</li>
+                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
+                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
+                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron">
+        <span class="category-head" >Womens</span>
+            <div id="custom-search-input">
+                 <div class="input-group col-md-3 col-sm-offset-9">
+                        <input type="text" class="  search-query form-control" placeholder="Search" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+            </div>
+        <div class="row">
+            <div class="col-xs-12">  
+                <div>
+                    <ul id="category" class="list-group checked-list-box col-xs-12">
+                        <li class="list-group-item col-xs-3">Cras justo odio</li>
+                        <li class="list-group-item col-xs-3" data-checked="true">Dapibus ac facilisis in</li>
+                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
+                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
+                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+                        <li class="list-group-item col-xs-3">Cras justo odio</li>
+                        <li class="list-group-item col-xs-3">Dapibus ac facilisis in</li>
+                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
+                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
+                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron">
+        <span class="category-head" >Kids</span>
+            <div id="custom-search-input">
+                 <div class="input-group col-md-3 col-sm-offset-9">
+                        <input type="text" class="  search-query form-control" placeholder="Search" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+            </div>
+        <div class="row">
+            <div class="col-xs-12">  
+                <div>
+                    <ul id="category" class="list-group checked-list-box col-xs-12">
+                        <li class="list-group-item col-xs-3">Cras justo odio</li>
+                        <li class="list-group-item col-xs-3" data-checked="true">Dapibus ac facilisis in</li>
+                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
+                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
+                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+                        <li class="list-group-item col-xs-3">Cras justo odio</li>
+                        <li class="list-group-item col-xs-3">Dapibus ac facilisis in</li>
+                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
+                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
+                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+
+<style type="text/css">
+
+
+
+
+.category-head{
+    font-size: 25px;
+    font-weight: bold;
+}
+    
+    /* CSS REQUIRED */
+#custom-search-input{
+    margin-bottom: 30px;
+    margin-right: 15px;
+    margin-top: -30px;
+}
+
+ul#category li {
+    display:inline !important;
+}
+.state-icon {
+    left: -5px;
+    
+}
+.list-group-item-primary {
+   
+    color: rgb(255, 255, 255);
+    background-color: rgb(66, 139, 202);
+}
+
+/* DEMO ONLY - REMOVES UNWANTED MARGIN */
+.list-group {
+
+    margin-bottom: 0px;
+}
+</style>
+
+<script type="text/javascript">
+    
+    $(function () {
+    $('.list-group.checked-list-box .list-group-item').each(function () {
+        
+        // Settings
+        var $widget = $(this),
+            $checkbox = $('<input type="checkbox" class="hidden" />'),
+            color = ($widget.data('color') ? $widget.data('color') : "primary"),
+            style = ($widget.data('style') == "button" ? "btn-" : "list-group-item-"),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+            
+        $widget.css('cursor', 'pointer')
+        $widget.append($checkbox);
+
+        // Event Handlers
+        $widget.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+          
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $widget.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $widget.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$widget.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $widget.addClass(style + color + ' active');
+            } else {
+                $widget.removeClass(style + color + ' active');
+            }
+        }
+
+        // Initialization
+        function init() {
+            
+            if ($widget.data('checked') == true) {
+                $checkbox.prop('checked', !$checkbox.is(':checked'));
+            }
+            
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($widget.find('.state-icon').length == 0) {
+                $widget.prepend('<span class="state-icon ' + settings[$widget.data('state')].icon + '"></span>');
+            }
+        }
+        init();
+    });
+    
+    $('#get-checked-data').on('click', function(event) {
+        event.preventDefault(); 
+        var checkedItems = {}, counter = 0;
+        $("#check-list-box li.active").each(function(idx, li) {
+            checkedItems[counter] = $(li).text();
+            counter++;
+        });
+        $('#display-json').html(JSON.stringify(checkedItems, null, '\t'));
+    });
+});
+</script>

@@ -1,0 +1,25 @@
+{
+"twittes":[
+{
+		"id":1,
+		"name":"garmen-1",
+		"identity":"CEO-fashion technology",
+		"twittes":"The slice view for #TataValueHomes is awesome. Beautifully crafted engineering  product. Great pitch for #SoftwareEngineers",
+		"imageUrl":"http://placehold.it/350x150"
+},
+{
+		"id":2,
+		"name":"garmen-2",
+		"identity":"CEO-fashion technology",
+		"twittes":"The slice view for #TataValueHomes is awesome. Beautifully crafted engineering product. Great pitch for #SoftwareEngineers",
+		"imageUrl":"http://placehold.it/350x150"
+},
+{
+		"id":3,
+		"name":"garmen-3",
+		"identity":"CEO-fashion technology",
+		"twittes":"The slice view for #TataValueHomes is awesome. Beautifully crafted engineering product. Great pitch for #SoftwareEngineers",
+		"imageUrl":"http://placehold.it/350x150"
+}
+]
+}

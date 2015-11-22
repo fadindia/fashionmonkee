@@ -1,0 +1,45 @@
+{
+	"brands":[{
+	"id":1,
+	"name":"lee cooper",
+	"description":"",
+	"shops":"",
+	"showRooms":"",
+	"imageUrl":"images/b.jpg"
+	
+},{
+	"id":2,
+	"name":"lee",
+	"description":"",
+	"shops":"",
+	"showRooms":"",
+	"imageUrl":"images/b.jpg"
+	
+},{
+	"id":2,
+	"name":"lee",
+	"description":"",
+	"shops":"",
+	"showRooms":"",
+	"imageUrl":"images/b.jpg"
+	
+},{
+	"id":2,
+	"name":"lee",
+	"description":"",
+	"shops":"",
+	"showRooms":"",
+	"imageUrl":"images/b.jpg"
+	
+},{
+	"id":2,
+	"name":"lee",
+	"description":"",
+	"shops":"",
+	"showRooms":"",
+	"imageUrl":"images/b.jpg"
+	
+}
+]
+
+}
