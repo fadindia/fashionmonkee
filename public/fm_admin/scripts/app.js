@@ -52,15 +52,25 @@ angular
             parent: 'dashboard',
             templateUrl: 'fm_admin/views/dashboard/categories.html'
           })
-           .state('catalogue', {
-            url: '/catalogue',
+           .state('catalogue-list', {
+            url: '/catalogue-list',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/catalogue.html'
+            templateUrl: 'fm_admin/views/dashboard/catalogue-list.html'
           })
-           .state('offers', {
-            url: '/offers',
+          .state('catalogue-edit', {
+            url: '/catalogue-edit/{catalogueId}',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/offers.html'
+            templateUrl: 'fm_admin/views/dashboard/catalogue-edit.html'
+          })
+           .state('offers-list', {
+            url: '/offers-list',
+            parent: 'dashboard',
+            templateUrl: 'fm_admin/views/dashboard/offers-list.html'
+          })
+           .state('offers-edit', {
+            url: '/offers-edit/{offerId}',
+            parent: 'dashboard',
+            templateUrl: 'fm_admin/views/dashboard/offers-edit.html'
           })
            .state('blog', {
             url: '/blog',
