@@ -71,11 +71,6 @@ angular
             url: '/offers-edit/{offerId}',
             parent: 'dashboard',
             templateUrl: 'fm_admin/views/dashboard/offers-edit.html'
-          })
-           .state('blog', {
-            url: '/blog',
-            parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/blogs.html'
           });
 
   });
