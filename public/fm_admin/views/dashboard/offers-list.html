@@ -1,7 +1,15 @@
 <div> 
     <h2>Offers <small>Add your offers</small></h2>
     <button class="btn btn-primary btn-lg btn-rounded col-sm-offset-9" ui-sref="offers-edit" >Add offers</button>
-
+    <section>
+        <select class="cs-select cs-skin-elastic">
+          <option value="" disabled selected>Select a Store</option>
+          <option value="france" data-class="flag-france">France</option>
+          <option value="brazil" data-class="flag-brazil">Brazil</option>
+          <option value="argentina" data-class="flag-argentina">Argentina</option>
+          <option value="south-africa" data-class="flag-safrica">South Africa</option>
+        </select>
+      </section>
 
 <div class="jumbotron">
 
@@ -81,27 +89,22 @@
 
 
     <script type="text/javascript">
-      $(document).ready(function(){
-$("#mytable #checkall").click(function () {
-        if ($("#mytable #checkall").is(':checked')) {
-            $("#mytable input[type=checkbox]").each(function () {
-                $(this).prop("checked", true);
-            });
 
-        } else {
-            $("#mytable input[type=checkbox]").each(function () {
-                $(this).prop("checked", false);
-            });
-        }
-    });
-    
-    $("[data-toggle=tooltip]").tooltip();
-});
 
+      (function() {
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+          new SelectFx(el);
+        } );
+      })();
+ 
 
     </script>
 
-    <style>.inline-edit{
-  font-size: 0 !important;
-  margin-bottom: 0 !important;
-}</style>
+    <style>
+    .inline-edit{
+      font-size: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+</style>
+
