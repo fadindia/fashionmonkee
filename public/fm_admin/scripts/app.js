@@ -16,7 +16,7 @@ angular
   ])
   .config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.when('/dashboard', '/dashboard/info');
+    $urlRouterProvider.when('/dashboard', '/dashboard/info-list');
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
@@ -37,10 +37,15 @@ angular
           templateUrl: 'fm_admin/views/dashboard.html',
           controller: 'DashboardCtrl'
         })
-          .state('info', {
-            url: '/info',
+          .state('info-list', {
+            url: '/info-list',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/info.html'
+            templateUrl: 'fm_admin/views/dashboard/info-list.html'
+          })
+           .state('info-edit', {
+            url: '/info-edit/{storeId}',
+            parent: 'dashboard',
+            templateUrl: 'fm_admin/views/dashboard/info-edit.html'
           })
           .state('categories', {
             url: '/categories',

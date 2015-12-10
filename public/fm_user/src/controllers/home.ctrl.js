@@ -38,7 +38,7 @@ var cities=['Chennai','Bangalore'];
 $('#search-area').typeahead({
   hint: true,
   highlight: true,
-  minLength: 1
+  minLength: 0
 },
 {
   name: 'areas',
@@ -48,7 +48,7 @@ $('#search-area').typeahead({
 $('#search-city').typeahead({
   hint: true,
   highlight: true,
-  minLength: 1
+  minLength: 0
 },
 {
   name: 'cities',
