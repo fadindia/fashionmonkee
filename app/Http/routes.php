@@ -23,6 +23,12 @@ Route::get('/admin', function () {
 Route::group(array('prefix' => '/'), function() {
     
     Route::get('shoplist', 'ShopController@getAllShop');
+    Route::post('addShop','ShopController@addShop'); // for FM admin - Save
+    Route::post('newShop','ShopController@newShop'); // for people who willing to contact - Draft
+    Route::post('addLocation','ShopController@addLocation');
+    Route::post('addAddress','ShopController@addAddress');
+    
+
 });
 
 /*

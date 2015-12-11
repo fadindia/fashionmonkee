@@ -454,6 +454,11 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
+      <div class="row">
+          <div class="col-sm-6">
+            <p><a href="" class="newShop"><b>Add your stores</b></a></p>
+          </div>         
+        </div>
         <div class="row">
           <div class="col-sm-6">
             <p>&copy; 2015 fadIndia.</p>
@@ -552,7 +557,14 @@
    </div>
   </div>
 </div>
+
+
 <style type="text/css">
+
+.profile-form .form-control {
+border-color: #C0C0C0 !important;
+
+  }
 .carousel .carousel-indicators {
    display: none;
 }
@@ -834,6 +846,8 @@ input, select, textarea{
 $('.login').click(function(){
     $('#myModal').modal('show'); // show the modal 
 });
-
+$('.newShop').click(function(){
+    $('#newShop').modal('show'); // show the modal 
+});
 
   </script>

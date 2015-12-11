@@ -16,7 +16,7 @@ angular
   ])
   .config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.when('/dashboard', '/dashboard/info');
+    $urlRouterProvider.when('/dashboard', '/dashboard/info-list');
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
@@ -37,30 +37,40 @@ angular
           templateUrl: 'fm_admin/views/dashboard.html',
           controller: 'DashboardCtrl'
         })
-          .state('info', {
-            url: '/info',
+          .state('info-list', {
+            url: '/info-list',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/info.html'
+            templateUrl: 'fm_admin/views/dashboard/info-list.html'
+          })
+           .state('info-edit', {
+            url: '/info-edit/{storeId}',
+            parent: 'dashboard',
+            templateUrl: 'fm_admin/views/dashboard/info-edit.html'
           })
           .state('categories', {
             url: '/categories',
             parent: 'dashboard',
             templateUrl: 'fm_admin/views/dashboard/categories.html'
           })
-           .state('catalogue', {
-            url: '/catalogue',
+           .state('catalogue-list', {
+            url: '/catalogue-list',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/catalogue.html'
+            templateUrl: 'fm_admin/views/dashboard/catalogue-list.html'
           })
-           .state('offers', {
-            url: '/offers',
+          .state('catalogue-edit', {
+            url: '/catalogue-edit/{catalogueId}',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/offers.html'
+            templateUrl: 'fm_admin/views/dashboard/catalogue-edit.html'
           })
-           .state('blog', {
-            url: '/blog',
+           .state('offers-list', {
+            url: '/offers-list',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/blogs.html'
+            templateUrl: 'fm_admin/views/dashboard/offers-list.html'
+          })
+           .state('offers-edit', {
+            url: '/offers-edit/{offerId}',
+            parent: 'dashboard',
+            templateUrl: 'fm_admin/views/dashboard/offers-edit.html'
           });
 
   });

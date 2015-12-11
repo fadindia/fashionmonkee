@@ -6,6 +6,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="fm_admin/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="fm_admin/styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="fm_admin/styles/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="fm_admin/styles/cs-skin-elastic.css" />
 
     
     <!-- endbuild -->
@@ -46,7 +49,9 @@
     <script src="fm_admin/scripts/angular/animate.js"></script>
     <script src="fm_admin/scripts/angular/ui-router.js"></script>
     <script src="fm_admin/scripts/angular/file-upload.js"></script>
-    <script src="fm_admin/scripts/bootstrap.js"></script>  
+    <script src="fm_admin/scripts/bootstrap.js"></script> 
+    <script src="fm_admin/scripts/classie.js"></script>
+    <script src="fm_admin/scripts/selectFx.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

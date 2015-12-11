@@ -1,4 +1,4 @@
-var fashionApp = angular.module('fashionApp', ["ui.router","siyfion.sfTypeahead","ui.bootstrap"])
+var fashionApp = angular.module('fashionApp', ["ui.router","siyfion.sfTypeahead","ui.bootstrap","ui.select2"])
     fashionApp.config(function($stateProvider){
     $stateProvider
         .state('home', {
@@ -24,7 +24,7 @@ var fashionApp = angular.module('fashionApp', ["ui.router","siyfion.sfTypeahead"
          .state('shop-detail', {
             url: "/shop-detail/{shopId}",
             templateUrl: 'fm_user/src/views/shop-detail.tpl.html',
-	    controller: "shopDetailCtrl"
+	        controller: "shopDetailCtrl"
         })
          .state('user', {
             url: "/user",
@@ -35,6 +35,11 @@ var fashionApp = angular.module('fashionApp', ["ui.router","siyfion.sfTypeahead"
             url: "/offers",
             templateUrl: 'fm_user/src/views/offer-list.tpl.html',
             controller:'offerCtrl'
+        })
+         .state('newShop', {
+            url: "/newShop",
+            templateUrl: 'fm_user/src/views/newShop.tpl.html',
+            controller:'newShopCtrl'
         })
 
     });
