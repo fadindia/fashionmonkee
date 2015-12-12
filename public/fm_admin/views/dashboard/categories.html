@@ -1,35 +1,45 @@
 <div>	
 	<h2>Categories <small>Choose your shop product categories</small></h2>
+     <div class="row">
+      <div class="col-md-9">
+         <select class="cs-select cs-skin-elastic">
+              <option value="" disabled selected>Select a Store</option>
+              <option value="france" data-class="flag-france">France</option>
+              <option value="brazil" data-class="flag-brazil">Brazil</option>
+              <option value="argentina" data-class="flag-argentina">Argentina</option>
+              <option value="south-africa" data-class="flag-safrica">South Africa</option>
+        </select>
+      </div>
+    </div>
     <div class="jumbotron">
         <span class="category-head" >Mens</span>
             <div id="custom-search-input">
                  <div class="input-group col-md-3 col-sm-offset-9">
-                        <input type="text" class="  search-query form-control" placeholder="Search" />
+                        <input type="text" class="  search-query form-control" placeholder="Search Category" />
                         <span class="input-group-btn">
-                            <button class="btn btn-danger" type="button">
+                            <button class="btn btn-primary" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </span>
                     </div>
-            </div>
-        <div class="row">
-            <div class="col-xs-12">  
-                <div>
-                    <ul id="category" class="list-group checked-list-box col-xs-12">
-                        <li class="list-group-item col-xs-3">Cras justo odio</li>
-                        <li class="list-group-item col-xs-3" data-checked="true">Dapibus ac facilisis in</li>
-                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
-                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
-                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
-                        <li class="list-group-item col-xs-3">Cras justo odio</li>
-                        <li class="list-group-item col-xs-3">Dapibus ac facilisis in</li>
-                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
-                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
-                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+            </div> 
+            <form class="me-select">
+                    <ul id="me-select-list">
+                        <li><input id="cb1" name="cb1" type="checkbox"><label for="cb1"><span>Mary Jane</span><span>What have you been up to?</span><span></span></label></li>
+                        <li><input id="cb2" name="cb2" type="checkbox"><label for="cb2"><span>Carrie Johnston</span><span>Design Mockups for Fancy Burger</span><span></span></label></li>
+                        <li><input id="cb3" name="cb3" type="checkbox"><label for="cb3"><span>Barry White</span><span>Please consider my SEO services... please?</span><span></span></label></li>
+                        <li><input id="cb4" name="cb4" type="checkbox"><label for="cb4"><span>Dave Rookie</span><span>Check out this cat video</span><span></span></label></li>
+                        <li><input id="cb5" name="cb5" type="checkbox"><label for="cb5"><span>Jim Jimbo</span><span>You order with Jimbo Direct</span><span></span></label></li>
+                        <li><input id="cb6" name="cb6" type="checkbox"><label for="cb6"><span>Art Van Dim</span><span>I need a pie chart</span><span></span></label></li>
+                        <li><input id="cb7" name="cb7" type="checkbox"><label for="cb7"><span>W. Willson</span><span>Saturday night dinner</span><span></span></label></li>
+                        <li><input id="cb8" name="cb8" type="checkbox"><label for="cb8"><span>Gary</span><span>Games from FunkyCrazyGames.com</span><span></span></label></li>
+                        <li><input id="cb9" name="cb9" type="checkbox"><label for="cb9"><span>Dan Richards</span><span>One last warning</span><span></span></label></li>
+                        <li><input id="cb10" name="cb10" type="checkbox"><label for="cb10"><span>Henry Bright</span><span>I need you opinion</span><span></span></label></li>
+                        <li><input id="cb11" name="cb11" type="checkbox"><label for="cb11"><span>Olivia Grant</span><span>When are you coming home?</span><span></span></label></li>
+                        <li><input id="cb12" name="cb12" type="checkbox"><label for="cb12"><span>Becky Turner</span><span>I have your tickets</span><span></span></label></li>
+                        <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13"><span>Bookmeister</span><span>Your booking at Loft 523</span><span></span></label></li>
                     </ul>
-                </div>
-            </div>
-        </div>
+                </form>               
     </div>
 
 
@@ -39,30 +49,29 @@
                  <div class="input-group col-md-3 col-sm-offset-9">
                         <input type="text" class="  search-query form-control" placeholder="Search" />
                         <span class="input-group-btn">
-                            <button class="btn btn-danger" type="button">
+                            <button class="btn btn-primary" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </span>
                     </div>
             </div>
-        <div class="row">
-            <div class="col-xs-12">  
-                <div>
-                    <ul id="category" class="list-group checked-list-box col-xs-12">
-                        <li class="list-group-item col-xs-3">Cras justo odio</li>
-                        <li class="list-group-item col-xs-3" data-checked="true">Dapibus ac facilisis in</li>
-                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
-                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
-                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
-                        <li class="list-group-item col-xs-3">Cras justo odio</li>
-                        <li class="list-group-item col-xs-3">Dapibus ac facilisis in</li>
-                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
-                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
-                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+            <form class="me-select">
+                    <ul id="me-select-list">
+                        <li><input id="cb1" name="cb1" type="checkbox"><label for="cb1"><span>Mary Jane</span><span>What have you been up to?</span><span></span></label></li>
+                        <li><input id="cb2" name="cb2" type="checkbox"><label for="cb2"><span>Carrie Johnston</span><span>Design Mockups for Fancy Burger</span><span></span></label></li>
+                        <li><input id="cb3" name="cb3" type="checkbox"><label for="cb3"><span>Barry White</span><span>Please consider my SEO services... please?</span><span></span></label></li>
+                        <li><input id="cb4" name="cb4" type="checkbox"><label for="cb4"><span>Dave Rookie</span><span>Check out this cat video</span><span></span></label></li>
+                        <li><input id="cb5" name="cb5" type="checkbox"><label for="cb5"><span>Jim Jimbo</span><span>You order with Jimbo Direct</span><span></span></label></li>
+                        <li><input id="cb6" name="cb6" type="checkbox"><label for="cb6"><span>Art Van Dim</span><span>I need a pie chart</span><span></span></label></li>
+                        <li><input id="cb7" name="cb7" type="checkbox"><label for="cb7"><span>W. Willson</span><span>Saturday night dinner</span><span></span></label></li>
+                        <li><input id="cb8" name="cb8" type="checkbox"><label for="cb8"><span>Gary</span><span>Games from FunkyCrazyGames.com</span><span></span></label></li>
+                        <li><input id="cb9" name="cb9" type="checkbox"><label for="cb9"><span>Dan Richards</span><span>One last warning</span><span></span></label></li>
+                        <li><input id="cb10" name="cb10" type="checkbox"><label for="cb10"><span>Henry Bright</span><span>I need you opinion</span><span></span></label></li>
+                        <li><input id="cb11" name="cb11" type="checkbox"><label for="cb11"><span>Olivia Grant</span><span>When are you coming home?</span><span></span></label></li>
+                        <li><input id="cb12" name="cb12" type="checkbox"><label for="cb12"><span>Becky Turner</span><span>I have your tickets</span><span></span></label></li>
+                        <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13"><span>Bookmeister</span><span>Your booking at Loft 523</span><span></span></label></li>
                     </ul>
-                </div>
-            </div>
-        </div>
+                </form> 
     </div>
 
 
@@ -72,36 +81,159 @@
                  <div class="input-group col-md-3 col-sm-offset-9">
                         <input type="text" class="  search-query form-control" placeholder="Search" />
                         <span class="input-group-btn">
-                            <button class="btn btn-danger" type="button">
+                            <button class="btn btn-primary" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </span>
                     </div>
             </div>
-        <div class="row">
-            <div class="col-xs-12">  
-                <div>
-                    <ul id="category" class="list-group checked-list-box col-xs-12">
-                        <li class="list-group-item col-xs-3">Cras justo odio</li>
-                        <li class="list-group-item col-xs-3" data-checked="true">Dapibus ac facilisis in</li>
-                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
-                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
-                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
-                        <li class="list-group-item col-xs-3">Cras justo odio</li>
-                        <li class="list-group-item col-xs-3">Dapibus ac facilisis in</li>
-                        <li class="list-group-item col-xs-3">Morbi leo risus</li>
-                        <li class="list-group-item col-xs-3">Porta ac consectetur</li>
-                        <li class="list-group-item col-xs-3">Vestibulum at eros</li>
+        <form class="me-select">
+                    <ul id="me-select-list">
+                        <li><input id="cb1" name="cb1" type="checkbox"><label for="cb1"><span>Mary Jane</span><span>What have you been up to?</span><span></span></label></li>
+                        <li><input id="cb2" name="cb2" type="checkbox"><label for="cb2"><span>Carrie Johnston</span><span>Design Mockups for Fancy Burger</span><span></span></label></li>
+                        <li><input id="cb3" name="cb3" type="checkbox"><label for="cb3"><span>Barry White</span><span>Please consider my SEO services... please?</span><span></span></label></li>
+                        <li><input id="cb4" name="cb4" type="checkbox"><label for="cb4"><span>Dave Rookie</span><span>Check out this cat video</span><span></span></label></li>
+                        <li><input id="cb5" name="cb5" type="checkbox"><label for="cb5"><span>Jim Jimbo</span><span>You order with Jimbo Direct</span><span></span></label></li>
+                        <li><input id="cb6" name="cb6" type="checkbox"><label for="cb6"><span>Art Van Dim</span><span>I need a pie chart</span><span></span></label></li>
+                        <li><input id="cb7" name="cb7" type="checkbox"><label for="cb7"><span>W. Willson</span><span>Saturday night dinner</span><span></span></label></li>
+                        <li><input id="cb8" name="cb8" type="checkbox"><label for="cb8"><span>Gary</span><span>Games from FunkyCrazyGames.com</span><span></span></label></li>
+                        <li><input id="cb9" name="cb9" type="checkbox"><label for="cb9"><span>Dan Richards</span><span>One last warning</span><span></span></label></li>
+                        <li><input id="cb10" name="cb10" type="checkbox"><label for="cb10"><span>Henry Bright</span><span>I need you opinion</span><span></span></label></li>
+                        <li><input id="cb11" name="cb11" type="checkbox"><label for="cb11"><span>Olivia Grant</span><span>When are you coming home?</span><span></span></label></li>
+                        <li><input id="cb12" name="cb12" type="checkbox"><label for="cb12"><span>Becky Turner</span><span>I have your tickets</span><span></span></label></li>
+                        <li><input id="cb13" name="cb13" type="checkbox"><label for="cb13"><span>Bookmeister</span><span>Your booking at Loft 523</span><span></span></label></li>
                     </ul>
-                </div>
-            </div>
-        </div>
+                </form> 
     </div>
 </div>
 
+    <script type="text/javascript">
+      (function() {
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+          new SelectFx(el);
+        } );
+      })();
+    </script>
+
+    <script>
+        (function() {
+                var selList = document.getElementById( 'me-select-list' ),
+                    items = selList.querySelectorAll( 'li' );
+                
+                // fill the initial checked elements (mozilla)
+                [].slice.call( items ).forEach( function( el ) {
+                    el.parentNode.className = el.checked ? 'selected' : '';
+                } );
+
+                function checkUncheck( el ) {
+                    el.parentNode.className = el.checked ? '' : 'selected';
+                    el.checked = !el.checked;
+                }
+
+                new magicSelection( selList.querySelectorAll( 'li > input[type="checkbox"]' ), {
+                    onSelection : function( el ) { checkUncheck( el ); },
+                    onClick : function( el ) {
+                        el.parentNode.className = el.checked ? 'selected' : '';
+                    }
+                } );
+
+            } )();
+    </script>
   
 
 <style type="text/css">
+
+.me-select {
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.me-select ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.me-select li {
+    margin: 0 auto;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.me-select li.selected {
+    box-shadow: inset 0 0 0 40px rgba(255,246,0,0.1);
+}
+
+.me-select label {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    font-size: 1.2em;
+    padding: 15px 10px 15px 80px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.me-select label span {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.me-select label span:first-child {
+    width: 30%;
+    color: rgba(97,107,107,0.7);
+}
+
+.me-select label span:nth-child(2),
+.me-select label a {
+    width: 60%;
+    color: #31d2d4;
+}
+
+.me-select label span:last-child {
+    width: 10%;
+    text-align: right;
+    font-size: 60%;
+}
+
+.me-select input[type="checkbox"],
+.me-select label::before,
+.me-select input[type="checkbox"]:checked + label::after {
+    width: 26px;
+    height: 26px;
+    top: 50%;
+    left: 20px;
+    margin-top: -13px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.me-select input[type="checkbox"] {
+    opacity: 0;
+    -webkit-appearance: none;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 100;
+}
+
+.me-select label::before {
+    content: '';
+    border: 2px solid rgba(0,0,0,0.3);
+}
+
+.me-select input[type="checkbox"]:checked + label::after {
+    content: '\2713';
+    text-align: center;
+    line-height: 28px;
+    color: #31d2d4;
+}
+
 
 
 

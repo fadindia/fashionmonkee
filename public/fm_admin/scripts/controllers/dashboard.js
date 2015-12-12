@@ -8,9 +8,20 @@
  * Controller of yapp
  */
 angular.module('yapp')
-  .controller('DashboardCtrl', function($scope, $state,FileUploader) {
+  .controller('DashboardCtrl', function($scope,FileUploader) {
 
-    $scope.$state = $state;
+    $scope.selected = undefined;
+    $scope.cities=['Chennai','Bangalore'];
+    $scope.states = ['TamilNadu','Karnataka'];
+    $scope.areas=['Velachery','Adyar','Ponnari','Guindy'];
+    $scope.countries=['India'];
+    $scope.tags = [
+        {id: 0, name: "Zero"},
+        {id: 1, name: "One"},
+        {id: 2, name: "Two"}, 
+        {id: 3, name: "Three"}, 
+        {id: 4, name: "Four"}, 
+    ];
     var uploader = $scope.uploader = new FileUploader({
             url: 'upload.php'
         });

@@ -2,13 +2,16 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Ani AngularJS Dashboard Theme</title>
+    <title>FashionMonkee-Admin</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="fm_admin/styles/main.css">
     <link rel="stylesheet" type="text/css" href="fm_admin/styles/normalize.css" />
     <link rel="stylesheet" type="text/css" href="fm_admin/styles/cs-select.css" />
     <link rel="stylesheet" type="text/css" href="fm_admin/styles/cs-skin-elastic.css" />
+    <link rel="stylesheet" type="text/css" href="fm_admin/styles/cs-skin-slide.css" />
+    <link rel="stylesheet" type="text/css" href="fm_admin/scripts/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css" href="fm_admin/styles/bootstrap-dp.css"/>
 
     
     <!-- endbuild -->
@@ -52,6 +55,10 @@
     <script src="fm_admin/scripts/bootstrap.js"></script> 
     <script src="fm_admin/scripts/classie.js"></script>
     <script src="fm_admin/scripts/selectFx.js"></script>
+    <script src="fm_admin/scripts/ui-bootstrap.tpl.js"></script>
+    <script src="fm_admin/scripts/select2/select2.js"></script>
+    <script src="fm_admin/scripts/ui-select2.js"></script>
+    <script src="fm_admin/scripts/magicselection.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -59,7 +66,9 @@
     <script src="fm_admin/scripts/app.js"></script>
     <script src="fm_admin/scripts/controllers/login.js"></script>
     <script src="fm_admin/scripts/controllers/dashboard.js"></script>
+    <script src="fm_admin/scripts/controllers/offer.js"></script>
     <script src="fm_admin/scripts/directives/file-upload-directive.js"></script>
+    <script src="fm_admin/scripts/bootstrap-dp.js"></script>
     <!-- endbuild -->
   </body>
 

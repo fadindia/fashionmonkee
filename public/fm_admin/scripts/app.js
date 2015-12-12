@@ -12,7 +12,10 @@ angular
   .module('yapp', [
     'ui.router',
     'ngAnimate',
-    'angularFileUpload'
+    'angularFileUpload',
+    'ui.bootstrap',
+    'ui.select2',
+    'ng-bootstrap-datepicker'
   ])
   .config(function($stateProvider, $urlRouterProvider) {
 
@@ -45,7 +48,8 @@ angular
            .state('info-edit', {
             url: '/info-edit/{storeId}',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/info-edit.html'
+            templateUrl: 'fm_admin/views/dashboard/info-edit.html',
+            controller: 'DashboardCtrl'
           })
           .state('categories', {
             url: '/categories',
@@ -70,7 +74,8 @@ angular
            .state('offers-edit', {
             url: '/offers-edit/{offerId}',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/views/dashboard/offers-edit.html'
+            templateUrl: 'fm_admin/views/dashboard/offers-edit.html',
+            controller: 'offerCtrl'
           });
 
   });

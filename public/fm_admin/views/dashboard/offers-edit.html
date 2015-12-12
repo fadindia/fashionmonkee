@@ -11,18 +11,37 @@
       <div class="col-xs-6">
           <div class="form-group ">
               <label>Offer From</label>
-              <input type="text" class="form-control" name="name" />
+              <p class="input-group">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="offerFrom" is-open="status.opened1" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
       </div>
       <div class="col-xs-6">
           <div class="form-group ">
               <label>Offer To</label>
-              <input type="text" class="form-control" name="name" />
+              <p class="input-group">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="offerTo" is-open="status.opened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
       </div>
-      <div class="col-xs-12">
+      <div class="col-xs-6">
           <div class="form-group ">
-              <label>Off - (Percentage/Amount)</label>
+              <label>Discount Type</label>
+               <select style="width:100%" ui-select2  ng-model="selectedTags" >
+                <option value="" disabled selected hidden >Discount Type</option>
+                  <option ng-repeat="tag in tags" value="{{tag.id}}">{{tag.name}}</option>
+                 </select>
+          </div>
+      </div>
+      <div class="col-xs-6">
+          <div class="form-group ">
+              <label>Discount value</label>
               <input type="text" class="form-control" name="name" />
           </div>
       </div>

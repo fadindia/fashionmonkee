@@ -1,6 +1,20 @@
 <div> 
     <h2>Catalog <small>Add your catalogue</small></h2>
-    <button class="btn btn-primary btn-lg btn-rounded col-sm-offset-9"  ui-sref="catalogue-edit" >Add catalogue</button>
+     <div class="row">
+      <div class="col-md-9">
+         <select class="cs-select cs-skin-elastic">
+              <option value="" disabled selected>Select a Store</option>
+              <option value="france" data-class="flag-france">France</option>
+              <option value="brazil" data-class="flag-brazil">Brazil</option>
+              <option value="argentina" data-class="flag-argentina">Argentina</option>
+              <option value="south-africa" data-class="flag-safrica">South Africa</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-primary btn-lg btn-rounded" ui-sref="catalogue-edit" >Add catalogue
+        </button>
+    </div>
+  </div>
     <div class="jumbotron">
 
   <div class="container">
@@ -101,6 +115,17 @@
       <!-- /.modal-dialog --> 
     </div>
 
+    <script type="text/javascript">
+
+
+      (function() {
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+          new SelectFx(el);
+        } );
+      })();
+ 
+
+    </script>
 <style>
 .inline-edit{
   font-size: 0 !important;
