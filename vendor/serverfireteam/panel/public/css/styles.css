@@ -7581,14 +7581,15 @@ body {
 }
 .powered-by {
   position: absolute;
-  bottom: 5px;
-  width: 210px;
+  bottom: 15px;
+  width: 220px;
   text-align: center;
+  right: 20px;
   transition: all ease 250ms;
 }
 .powered-by a {
   text-align: center;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.8);
   width: 300px;
 }
 .powered-by .col {
@@ -7596,10 +7597,10 @@ body {
 }
 .powered-by:hover {
   transform: scale(1.1, 1.1);
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
 }
 .powered-by:hover a {
-  color: #ffffff;
+  color: #000000;
 }
 .panel {
   border-width: 1px;
@@ -7614,7 +7615,7 @@ body {
   text-decoration: none;
 }
 .panel .title {
-  font-size: 35px;
+  font-size: 17px;
 }
 .panel .huge {
   font-size: 45px;
@@ -7700,8 +7701,9 @@ body {
   float: right;
 }
 .top-icon-bar a.main-link .caret {
-  top: 8px;
+  top: 1px;
   position: relative;
+  margin-left: 25px;
 }
 .top-icon-bar a.main-link:hover {
   color: #fff;
@@ -7715,7 +7717,7 @@ body {
 }
 .top-icon-bar .icon {
   color: #555;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   transition: all ease 250ms;
 }
@@ -7751,7 +7753,7 @@ body {
 }
 #side-menu a {
   display: inline-block;
-  max-width: 120px;
+  max-width: 160px;
 }
 #side-menu a:first {
   display: block;
@@ -7794,28 +7796,16 @@ body {
 /*-------------- zofe rapyd => crud --------------------*/
 .table a {
   text-decoration: none;
-  transition: all ease 250ms;
-}
-.table a:hover {
-  transform: scale(1.2, 1.2);
-  -webkit-transform: scale(1.2, 1.2);
 }
 .table .icomoon {
   font-size: 22px;
   text-decoration: none;
-  transition: all  ease 250ms;
-}
-.table tr {
-  transition: all ease  250ms;
 }
 .table tr:nth-child(even) {
   background: #f5f5f5;
 }
 .table tr:hover {
   border-color: #777;
-}
-.btn {
-  transition: all ease 250ms;
 }
 /* Smartphones (portrait) ----------- */
 /* @screen-xs  is Deprecated  as of v3.0.1 Bootstrap ----------- */
@@ -7828,6 +7818,20 @@ body {
     top: 25px;
     left: 8px;
   }
+}
+/** Logout Button **/
+a.btn.btn-default.main-link {
+  height: 32px;
+}
+a.btn.btn-default.main-link span.icon {
+  padding-left: 20px;
+}
+/** Settings Button **/
+a.btn.btn-default.dropdown-toggle.main-link {
+  padding-top: 7px;
+}
+.help-title {
+  margin-top: 0px;
 }
 /*
 To change this license header, choose License Headers in Project Properties.

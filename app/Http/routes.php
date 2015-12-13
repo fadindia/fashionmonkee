@@ -19,7 +19,7 @@ Route::get('/admin', function () {
 });
 
 //Route::get('shoplist', 'ShopController@getAllShop');
-
+// 	Route::post('addShop','ShopController@addShop');
 Route::group(array('prefix' => '/'), function() {
     
     Route::get('shoplist', 'ShopController@getAllShop');
