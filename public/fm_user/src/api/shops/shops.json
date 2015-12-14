@@ -10,7 +10,7 @@
 	"photos":30,
 	"votes":30,
 	"rating":4.5,
-	"mainCategory":["mens","womens","Kids"],
+	"mainCategory":["Mens","Womens","Kids"],
 	"subCategory":["Lehengas", "Sarees", "Salwar Suits &amp; Anarkalis"],
 	"brands":["Lee","Wrangler"],		
 	"photoUrls":["http://zkp-www.s3.amazonaws.com/uploads/stores/store_1110/photo (1).jpg"]
@@ -25,7 +25,7 @@
 	"photos":30,
 	"votes":30,
 	"rating":4.5,
-	"mainCategory":["mens","womens","Kids"],
+	"mainCategory":["Mens","Womens","Kids"],
 	"subCategory":["Lehengas", "Sarees", "Salwar Suits &amp; Anarkalis"],
 	"brands":["Lee","Wrangler"],		
 	"photoUrls":["http://zkp-www.s3.amazonaws.com/uploads/stores/store_1110/photo (1).jpg"]
@@ -40,7 +40,7 @@
 	"photos":30,
 	"votes":30,
 	"rating":4.5,
-	"mainCategory":["mens","womens","Kids"],
+	"mainCategory":["Mens","Womens","Kids"],
 	"subCategory":["Lehengas", "Sarees", "Salwar Suits &amp; Anarkalis"],
 	"brands":["Lee","Wrangler"],		
 	"photoUrls":["http://zkp-www.s3.amazonaws.com/uploads/stores/store_1110/photo (1).jpg"]
@@ -55,7 +55,7 @@
 	"photos":30,
 	"votes":30,
 	"rating":4.5,
-	"mainCategory":["mens","womens","Kids"],
+	"mainCategory":["Mens","Womens","Kids"],
 	"subCategory":["Lehengas", "Sarees", "Salwar Suits &amp; Anarkalis"],
 	"brands":["Lee","Wrangler"],		
 	"photoUrls":["http://zkp-www.s3.amazonaws.com/uploads/stores/store_1110/photo (1).jpg"]
@@ -70,7 +70,7 @@
 	"photos":30,
 	"votes":30,
 	"rating":4.5,
-	"mainCategory":["mens","womens","Kids"],
+	"mainCategory":["Mens","Womens","Kids"],
 	"subCategory":["Lehengas", "Sarees", "Salwar Suits &amp; Anarkalis"],
 	"brands":["Lee","Wrangler"],		
 	"photoUrls":["http://zkp-www.s3.amazonaws.com/uploads/stores/store_1110/photo (1).jpg"]
@@ -85,7 +85,7 @@
 	"photos":30,
 	"votes":30,
 	"rating":4.5,
-	"mainCategory":["mens","womens","Kids"],
+	"mainCategory":["Mens","Womens","Kids"],
 	"subCategory":["Lehengas", "Sarees", "Salwar Suits &amp; Anarkalis"],
 	"brands":["Lee","Wrangler"],		
 	"photoUrls":["http://zkp-www.s3.amazonaws.com/uploads/stores/store_1110/photo (1).jpg"]
