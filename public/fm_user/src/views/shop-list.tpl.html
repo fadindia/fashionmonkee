@@ -109,15 +109,15 @@
                                 </ul>
                             <div class="userfollow16">
                               <div class="followcomment"> 
-                                  <strong>Designs:</strong><a ng-repeat="mc in shop.mainCategory">{{mc}},{{$last && '..'}}</a>
+                                  <strong>Type:</strong><a ng-repeat="mc in shop.mainCategory">{{mc}}{{!$last && ','||'..'}}</a>
                                   <br>                    
                               </div>
                               <div class="followcomment"> 
-                                  <strong>Categories:</strong><a ng-repeat="sc in shop.subCategory">{{sc}},{{$last && '..'}}</a>
+                                  <strong>Categories:</strong><a ng-repeat="sc in shop.subCategory">{{sc}}{{!$last && ','||'..'}}</a>
                                   <br>                    
                               </div>
                               <div class="followcomment"> 
-                                  <strong>Brands:</strong><a ng-repeat="b in shop.brands">{{b}},{{$last && '..'}}</a>
+                                  <strong>Brands:</strong><a ng-repeat="b in shop.brands">{{b}}{{!$last && ','||'..'}}</a>
                                   <br>                    
                               </div>
                             <ul>                    
