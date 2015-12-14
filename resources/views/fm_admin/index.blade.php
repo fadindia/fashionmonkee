@@ -59,16 +59,25 @@
     <script src="fm_admin/scripts/select2/select2.js"></script>
     <script src="fm_admin/scripts/ui-select2.js"></script>
     <script src="fm_admin/scripts/magicselection.js"></script>
+    <script src="fm_admin/scripts/bootstrap-dp.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="fm_admin/scripts/app.js"></script>
-    <script src="fm_admin/scripts/controllers/login.js"></script>
-    <script src="fm_admin/scripts/controllers/dashboard.js"></script>
-    <script src="fm_admin/scripts/controllers/offer.js"></script>
-    <script src="fm_admin/scripts/directives/file-upload-directive.js"></script>
-    <script src="fm_admin/scripts/bootstrap-dp.js"></script>
+    <script src="fm_admin/src/app.js"></script>
+
+    <script src="fm_admin/src/controllers/list.js"></script>
+     <script src="fm_admin/src/controllers/detail.js"></script>
+    <script src="fm_admin/src/controllers/login.js"></script>
+    <script src="fm_admin/src/controllers/dashboard.js"></script>
+    <script src="fm_admin/src/controllers/offer.js"></script>
+
+    <script src="fm_admin/src/directives/file-upload-directive.js"></script>
+
+
+    <script src="fm_admin/src/services/api.js"></script>
+    <script src="fm_admin/src/services/getData.js"></script>
+
     <!-- endbuild -->
   </body>
 

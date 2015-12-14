@@ -1,18 +1,19 @@
 <div> 
-    <h2>Add/Edit <small>offers</small></h2>
+  <a class="pull-right btn btn-primary btn-outline btn-rounded"  href="#/dashboard/offers-list">Go Back</a>
+    <h2>{{oper === 'new' && Add || Edit}}<small>offers</small></h2>
   <form>
    <div class="jumbotron row">
         <div class="col-xs-12">
           <div class="form-group ">
               <label>Offer Name</label>
-              <input type="text" class="form-control" name="name" />
+              <input type="text" class="form-control" name="name" ng-model="model.name"/>
           </div>
       </div>
       <div class="col-xs-6">
           <div class="form-group ">
               <label>Offer From</label>
               <p class="input-group">
-              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="offerFrom" is-open="status.opened1" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="model.offerFrom" is-open="status.opened1" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
@@ -23,7 +24,7 @@
           <div class="form-group ">
               <label>Offer To</label>
               <p class="input-group">
-              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="offerTo" is-open="status.opened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="model.offerTo" is-open="status.opened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
@@ -33,28 +34,29 @@
       <div class="col-xs-6">
           <div class="form-group ">
               <label>Discount Type</label>
-               <select style="width:100%" ui-select2  ng-model="selectedTags" >
+               <select style="width:100%" ui-select2  ng-model="model.type" >
                 <option value="" disabled selected hidden >Discount Type</option>
-                  <option ng-repeat="tag in tags" value="{{tag.id}}">{{tag.name}}</option>
+                  <option  value="percentage">Percentage</option>
+                   <option  value="amount">Amount</option>
                  </select>
           </div>
       </div>
       <div class="col-xs-6">
           <div class="form-group ">
               <label>Discount value</label>
-              <input type="text" class="form-control" name="name" />
+              <input type="text" class="form-control" name="name" ng-model="model.value"/>
           </div>
       </div>
        <div class="col-xs-12">
           <div class="form-group">
               <label>Description</label>
-              <textarea name="description" class="form-control" rows="3"></textarea>
+              <textarea name="description" class="form-control" rows="3" ng-model="model.description"></textarea>
           </div>
       </div>
        <div class="col-xs-12">
           <div class="form-group">
               <label>Terms & Conditions</label>
-              <textarea name="description" class="form-control" rows="3"></textarea>
+              <textarea name="description" class="form-control" rows="3" ng-model="model.terms"></textarea>
           </div>
       </div>
 
@@ -91,7 +93,7 @@
                     </table>
               </div>
       </div>
-      <button type="submit" class="btn btn-primary col-md-offset-5">Update</button> 
+       <button type="submit" class="btn btn-primary col-md-offset-5" ng-click="save()">{{oper === 'new' && 'save' || 'update'}}</button>  
   </div>
 </form> 
 

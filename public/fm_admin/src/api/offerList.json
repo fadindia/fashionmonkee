@@ -1,0 +1,18 @@
+{
+	"offers":[
+	{
+		"id":1,
+		"name":"Aadi offer",
+		"expiryOn":"31 Dec 15",
+		"value":"50%",
+		"status":"Active"
+	},
+	{
+		"id":2,
+		"name":"Holiday offer",
+		"expiryOn":"31 Dec 15",
+		"value":"500",
+		"status":"Active"
+	}
+	]
+}
