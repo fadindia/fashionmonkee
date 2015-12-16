@@ -1,0 +1,467 @@
+<header>
+ <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+           <li class="scroll"><a href="#home">Login</a></li>
+              
+          </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+  <div id="content header-tag">
+     <div class="container">
+                <div class="row ">
+                    <div class="col-sm-3 tag-head">
+                    Home > India > Chennai > Adyar
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 tag-content">
+                    <b>Offers from Adyar and near by locations</b>
+                    </div>
+                </div>
+      </div>
+  </div>
+  <section id="shop-list">
+        <div id="content">
+            <div class="container">
+              <div class="row">
+                 
+
+                <div class="col-sm-12">                    
+                <div class="portfolio-item" ng-repeat="offer in offers">
+                          <a class="imgcon" href="#">
+                              <img class="img-responsive" ng-src="{{offer.imageUrl}}" alt="">
+                          </a>
+                          <div class="coupdeta">
+                          <h1>{{offer.name}} @{{offer.locationName}}</h1>
+                          <p></p>
+                          <a class="" ng-click="showCouponDetail(coupon)" tabindex="0">Details</a>
+                          </div>
+                      </div>
+                  <div data-page="1" data-limit="10" data-profile_action="follows" data-entity_id="16100018" class="bt bb zs-load-more">
+                            <div class="bg-line">&nbsp;</div>
+                            <div class="load-more">Load More <span class="zs-load-more-count">226</span></div>
+                        </div>
+                        <div class="clear"></div><hr>
+                </div>
+
+            </div>
+
+          </div>
+        </div>
+    </section>
+
+
+<style type="text/css">
+
+
+.offer-row{
+  padding-left: 10px;
+}
+.coupdeta {
+    border-top: 1px solid #deeaee;
+    color: #000;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 10px;
+    width: 200px;
+}
+
+.coupdeta h1 {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+}
+
+.portfolio-item {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #deeaee;
+    border-radius: 4px;
+    float: left !important;
+    margin: 0 7px 20px 0;
+    width: 217px;
+}
+.imgcon img {
+  border-radius: 3px 3px 0 0;
+}
+
+.badge {
+  color: #ffffff;
+  background-color: #028fcc;
+}
+
+
+
+
+
+#categoryMenu h3 {
+  padding: 20px;
+  background: #028fcc;
+  margin: 0;
+  border-bottom: solid 1px #eeeeee;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.panel.sidebar-menu h3 {
+  padding: 5px 0;
+  margin: 0;
+}
+.panel.sidebar-menu {
+  background: #fff;
+  margin: 0 0 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.panel.sidebar-menu .panel-heading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background: none;
+  padding: 0;
+  letter-spacing: 0.08em;
+  border-bottom: none;
+}
+.panel.sidebar-menu .panel-heading h1,
+.panel.sidebar-menu .panel-heading h2,
+.panel.sidebar-menu .panel-heading h3,
+.panel.sidebar-menu .panel-heading h4,
+.panel.sidebar-menu .panel-heading h5 {
+  display: inline-block;
+  border-bottom: solid 5px #028fcc;
+  line-height: 1.1;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+.panel.sidebar-menu .panel-heading .btn.btn-danger {
+  color: #fff;
+  margin-top: 5px;
+}
+.panel.sidebar-menu .panel-body {
+  padding: 0;
+}
+.panel.sidebar-menu .panel-body span.colour {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: solid 1px #555555;
+  vertical-align: top;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+.panel.sidebar-menu .panel-body span.colour.white {
+  background: #fff;
+}
+.panel.sidebar-menu .panel-body span.colour.red {
+  background: red;
+}
+.panel.sidebar-menu .panel-body span.colour.green {
+  background: green;
+}
+.panel.sidebar-menu .panel-body span.colour.blue {
+  background: blue;
+}
+.panel.sidebar-menu .panel-body span.colour.yellow {
+  background: yellow;
+}
+.panel.sidebar-menu .panel-body label {
+  color: #999999;
+  font-size: 12px;
+}
+.panel.sidebar-menu .panel-body label:hover {
+  color: #555555;
+}
+.panel.sidebar-menu ul.nav.category-menu {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.panel.sidebar-menu ul.nav.category-menu li a {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+.panel.sidebar-menu ul.nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+.panel.sidebar-menu ul.nav ul li {
+  display: block;
+}
+.panel.sidebar-menu ul.nav ul li a {
+  position: relative;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: normal;
+  text-transform: none !important;
+  display: block;
+  padding: 10px 15px;
+  padding-left: 30px;
+  font-size: 12px;
+  color: #999999;
+}
+.panel.sidebar-menu ul.nav ul li a:hover,
+.panel.sidebar-menu ul.nav ul li a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.panel.sidebar-menu ul.tag-cloud {
+  list-style: none;
+  padding-left: 0;
+}
+.panel.sidebar-menu ul.tag-cloud li {
+  display: inline-block;
+}
+.panel.sidebar-menu ul.tag-cloud li a {
+  display: inline-block;
+  padding: 5px;
+  border: solid 1px #eeeeee;
+  border-radius: 0;
+  color: #38a7bb;
+  margin: 5px 5px 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 12px;
+}
+.panel.sidebar-menu ul.tag-cloud li a:hover {
+  color: #38a7bb;
+  text-decoration: none;
+  border-color: #38a7bb;
+}
+.panel.sidebar-menu ul.popular,
+.panel.sidebar-menu ul.recent {
+  list-style: none;
+  padding-left: 0;
+  padding: 20px 0;
+}
+.panel.sidebar-menu ul.popular li,
+.panel.sidebar-menu ul.recent li {
+  margin-bottom: 10px;
+  padding: 5px 0;
+  border-bottom: dotted 1px #eeeeee;
+}
+.panel.sidebar-menu ul.popular li:before,
+.panel.sidebar-menu ul.recent li:before,
+.panel.sidebar-menu ul.popular li:after,
+.panel.sidebar-menu ul.recent li:after {
+  content: " ";
+  display: table;
+}
+.panel.sidebar-menu ul.popular li:after,
+.panel.sidebar-menu ul.recent li:after {
+  clear: both;
+}
+.panel.sidebar-menu ul.popular li:before,
+.panel.sidebar-menu ul.recent li:before,
+.panel.sidebar-menu ul.popular li:after,
+.panel.sidebar-menu ul.recent li:after {
+  content: " ";
+  display: table;
+}
+.panel.sidebar-menu ul.popular li:after,
+.panel.sidebar-menu ul.recent li:after {
+  clear: both;
+}
+.panel.sidebar-menu ul.popular li img,
+.panel.sidebar-menu ul.recent li img {
+  width: 50px;
+  margin-right: 10px;
+}
+.panel.sidebar-menu ul.popular li h5,
+.panel.sidebar-menu ul.recent li h5 {
+  margin: 0 0 10px;
+}
+.panel.sidebar-menu ul.popular li h5 a,
+.panel.sidebar-menu ul.recent li h5 a {
+  font-weight: normal;
+}
+.panel.sidebar-menu ul.popular li p.date,
+.panel.sidebar-menu ul.recent li p.date {
+  float: right;
+  font-size: 12px;
+  color: #999999;
+}
+.panel.sidebar-menu ul.popular li:last-child,
+.panel.sidebar-menu ul.recent li:last-child {
+  border-bottom: none;
+}
+.panel.sidebar-menu .text-widget {
+  font-size: 12px;
+}
+.panel.sidebar-menu.with-icons ul.nav li a:after {
+  font-family: 'FontAwesome';
+  content: "\f105";
+  position: relative;
+  top: 0;
+  float: right;
+}
+.zs-load-more {
+    font-size: 16px;
+}
+.zs-load-more {
+    background-color: #fff;
+    color: #4d4d4d;
+    cursor: pointer;
+    font-size: 10pt;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+.bt {
+    border-top: 1px solid #f0f0f0;
+}
+.bb {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.zs-load-more .bg-line {
+    background: url("https://b.zmtcdn.com/images/floading.gif") no-repeat scroll 50% 50% transparent;
+    display: none;
+}
+
+.zs-load-more .load-more {
+    background-color: #fff;
+    height: 58px;
+    line-height: 58px;
+     margin-top: 0px !important;
+}
+
+.zs-load-more-count {
+    color: #8d8d8d;
+}
+
+
+section#labels{
+  margin-top: -90px !important;
+}
+.alizarin {
+    background: #e74c3c;
+}
+
+.amethyst {
+    background: #9b59b6;
+}
+
+.emerald {
+    background: #2ecc71;
+}
+
+.midnight-blue {
+    background: #2c3e50;
+}
+
+.peter-river {
+    background: #3498db;
+}
+
+.dl {
+    background: #f0f0f0;
+    padding: 30px 0;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+    
+.dl .brand {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.dl .discount {
+    color: #f1c40f;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
+    min-height: 50px;
+    padding: 3px 7px 0;
+    position: relative;
+    text-align: center;
+}
+
+.dl .discount:after {
+    content: " ";
+    
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    position: absolute;
+    bottom: -20px;
+    left: 20%;
+}
+
+.dl .discount.alizarin:after {
+    border-top: 20px solid #e74c3c;
+}
+
+.dl .discount.peter-river:after {
+    border-top: 20px solid #3498db;
+}
+
+.dl .discount.emerald:after {
+    border-top: 20px solid #2ecc71;
+}
+
+.dl .discount.amethyst:after {
+    border-top: 20px solid #9b59b6;
+}
+
+.dl .discount .type {
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-top: -26px;
+    text-transform: uppercase;
+}
+
+.dl .descr {
+    color: #999;
+    margin-top: 10px;
+    padding: 20px 15px; 
+}
+ 
+.dl .ends {
+    padding: 0 15px;
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.dl .coupon {
+    min-height: 50px;
+    text-align: center;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px 15px;
+}
+
+.dl .coupon a.open-code {
+    color: #16a085;
+}
+
+.dl .coupon .code {
+    letter-spacing: 1px;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: #f1c40f;
+    background: #f0f0f0;
+}
+
+
+</style>

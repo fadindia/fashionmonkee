@@ -1,0 +1,97 @@
+<div> 
+    <h2>Add/Edit <small>offers</small></h2>
+  <form>
+   <div class="jumbotron row">
+        <div class="col-xs-12">
+          <div class="form-group ">
+              <label>Offer Name</label>
+              <input type="text" class="form-control" name="name" />
+          </div>
+      </div>
+      <div class="col-xs-6">
+          <div class="form-group ">
+              <label>Offer From</label>
+              <p class="input-group">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="offerFrom" is-open="status.opened1" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+      </div>
+      <div class="col-xs-6">
+          <div class="form-group ">
+              <label>Offer To</label>
+              <p class="input-group">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="offerTo" is-open="status.opened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+      </div>
+      <div class="col-xs-6">
+          <div class="form-group ">
+              <label>Discount Type</label>
+               <select style="width:100%" ui-select2  ng-model="selectedTags" >
+                <option value="" disabled selected hidden >Discount Type</option>
+                  <option ng-repeat="tag in tags" value="{{tag.id}}">{{tag.name}}</option>
+                 </select>
+          </div>
+      </div>
+      <div class="col-xs-6">
+          <div class="form-group ">
+              <label>Discount value</label>
+              <input type="text" class="form-control" name="name" />
+          </div>
+      </div>
+       <div class="col-xs-12">
+          <div class="form-group">
+              <label>Description</label>
+              <textarea name="description" class="form-control" rows="3"></textarea>
+          </div>
+      </div>
+       <div class="col-xs-12">
+          <div class="form-group">
+              <label>Terms & Conditions</label>
+              <textarea name="description" class="form-control" rows="3"></textarea>
+          </div>
+      </div>
+
+      <div class="col-xs-12" nv-file-drop="" uploader="uploader">
+              <div class="form-group">
+              <label>Choose offer image</label>            
+              <input type="file" nv-file-select="" uploader="uploader" multiple /><br/>
+              <table class="table">
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td>
+                                    <strong>{{ item.file.name }}</strong>                                   
+                                    <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file,width: 200, height: 100 }"></div>
+                                </td>
+                                <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                <td class="text-center">
+                                    <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                    <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                </td>
+                                <td nowrap>
+                                    <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> Remove
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+              </div>
+      </div>
+      <button type="submit" class="btn btn-primary col-md-offset-5">Update</button> 
+  </div>
+</form> 
+

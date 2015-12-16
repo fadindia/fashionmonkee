@@ -1,0 +1,107 @@
+{
+	"shopDetail" : {
+		"id": 3,
+		"name": "Rex Collections",
+		"address": "DLF Promenade Mall, Anchor - F, Ground & First Floor, Velachery",
+		"rating": 4.1,
+		"thisUsersRating": 2,
+		"votes" : 98,
+		"type": "Mens style",
+		"categories" : [{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"images/thumbs/1.jpg"
+		},{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"images/thumbs/1.jpg"
+		}],
+		"offers": [{
+			"id":1,
+			"locationId":1,
+			"locationName":"Peter england",
+			"name":"Aadi offer",
+			"description":"",
+			"termsConditions":"",
+			"validFrom":"",
+			"validTo":"",
+			"offType":"amount",
+			"offValue":"500",
+			"imageUrl":"images/a.jpg"
+			
+		},
+		{
+			"id":2,
+			"locationId":2,
+			"locationName":"Arrow",
+			"name":"Super offer",
+			"description":"",
+			"termsConditions":"",
+			"validFrom":"",
+			"validTo":"",
+			"offType":"amount",
+			"offValue":"500",
+			"imageUrl":"images/a.jpg"
+			
+		}],
+		"reviews": [{
+			"id": 4,
+			"username": "Sankar",
+			"userImage": "images/thumbs/1.jpg",
+			"description": "This is my review",
+			"reviewImages": [],
+			"timestamp": "2015-03-03 22:23:23"
+		},{
+			"id": 2,
+			"username": "Naveen",
+			"userImage": "images/thumbs/1.jpg",
+			"description": "This is my review",
+			"reviewImages": ["images/thumbs/1.jpg","images/thumbs/1.jpg","images/thumbs/1.jpg","images/thumbs/1.jpg"],
+			"timestamp": "2015-03-03 22:23:23"
+		}],
+		"branches": [{
+			"id": 4,
+			"name": "Stores - T.Nagar",
+			"address": "T.Nagar, Chennai",
+			"imageUrl": "images/thumbs/1.jpg"
+		},{
+			"id": 2,
+			"name": "Stores - Tambaram",
+			"address": "Tambaram, Chennai",
+			"imageUrl": "images/thumbs/1.jpg"
+		},{
+			"id": 3,
+			"name": "Stores - Tambaram",
+			"address": "Tambaram, Chennai",
+			"imageUrl": "images/thumbs/1.jpg"
+		},{
+			"id": 20,
+			"name": "Stores - Tambaram",
+			"address": "Tambaram, Chennai",
+			"imageUrl": "images/thumbs/1.jpg"
+		},{
+			"id": 2654,
+			"name": "Stores - Tambaram",
+			"address": "Tambaram, Chennai",
+			"imageUrl": "images/thumbs/1.jpg"
+		},{
+			"id": 212,
+			"name": "Stores - Tambaram",
+			"address": "Tambaram, Chennai",
+			"imageUrl": "images/thumbs/1.jpg"
+		}],
+		"products": [{
+			"id":1,
+			"name":"Shirt",
+			"description": "A product from this shop.",
+			"imageUrl":"images/thumbs/1.jpg"
+		},{
+			"id":2,
+			"name":"Pant",
+			"description": "A product from this shop.",
+			"imageUrl":"images/thumbs/1.jpg"
+		}]
+	}
+}

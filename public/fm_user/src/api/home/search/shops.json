@@ -1,0 +1,14 @@
+{
+	"shops":[
+	{
+		"id":1,
+		"name":"Chennai silks",
+		"outlets":"10"
+	},
+	{
+		"id":2,
+		"name":"Pothys",
+		"outlets":"10"
+	},
+	]
+}

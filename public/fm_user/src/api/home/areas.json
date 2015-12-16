@@ -1,0 +1,40 @@
+
+{
+"areas":[
+	{	
+		"id":1,
+		"name":"velachery",
+		"shops":"100"
+	},{
+		"id":2,
+		"name":"adyar",
+		"shops":"200"
+	},{
+		"id":3,
+		"name":"Guindy",
+		"shops":"200"
+
+	},{
+		"id":4,
+		"name":"Anna Nagar",
+		"shops":"200"
+
+	},{
+		"id":5,
+		"name":"Tharamani",
+		"shops":"200"
+
+	},{
+		"id":6,
+		"name":"Thiruvanmayur",
+		"shops":"200"
+
+	},{
+		"id":7,
+		"name":"ECR",
+		"shops":"200"
+
+	}
+
+	]
+}

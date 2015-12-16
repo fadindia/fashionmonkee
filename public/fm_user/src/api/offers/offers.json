@@ -1,0 +1,73 @@
+
+{
+"offers":[{
+	"id":1,
+	"locationId":1,
+	"locationName":"Arrow",
+	"name":"Aadi offer",
+	"description":"",
+	"termsConditions":"",
+	"validFrom":"",
+	"validTo":"",
+	"offType":"amount",
+	"offValue":"500",
+	"imageUrl":"fm_user/images/a.jpg"
+	
+},
+{
+	"id":2,
+	"locationId":2,
+	"locationName":"Arrow",
+	"name":"Super offer",
+	"description":"",
+	"termsConditions":"",
+	"validFrom":"",
+	"validTo":"",
+	"offType":"amount",
+	"offValue":"500",
+	"imageUrl":"fm_user/images/a.jpg"
+	
+},
+{
+	"id":2,
+	"locationId":2,
+	"locationName":"Arrow",
+	"name":"Super offer",
+	"description":"",
+	"termsConditions":"",
+	"validFrom":"",
+	"validTo":"",
+	"offType":"amount",
+	"offValue":"500",
+	"imageUrl":"fm_user/images/a.jpg"
+	
+},
+{
+	"id":2,
+	"locationId":2,
+	"locationName":"Arrow",
+	"name":"Super offer",
+	"description":"",
+	"termsConditions":"",
+	"validFrom":"",
+	"validTo":"",
+	"offType":"amount",
+	"offValue":"500",
+	"imageUrl":"fm_user/images/a.jpg"
+	
+},
+{
+	"id":2,
+	"locationId":2,
+	"locationName":"Arrow",
+	"name":"Super offer",
+	"description":"",
+	"termsConditions":"",
+	"validFrom":"",
+	"validTo":"",
+	"offType":"amount",
+	"offValue":"500",
+	"imageUrl":"fm_user/images/a.jpg"
+	
+}]
+}

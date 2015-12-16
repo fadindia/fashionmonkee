@@ -1,0 +1,1228 @@
+<header>
+    <div class="main-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="scroll"><a href="#home">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!--/#main-nav-->
+</header><!--/#home-->
+<section id="detail">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default store-panel">
+                        <div class="store-box">
+                            <span class="storetitle">{{shopDetails.name}}</span>
+                            <span class="storeplace">{{shopDetails.address}}</span>
+                            <div class="rating">
+                                <span class="rating-box">{{shopDetails.rating}}</span>
+                                <span class="vote">{{shopDetails.votes}} votes</span>
+                            </div>
+                        </div>
+                        <div class="share-box">
+                            <div class="userfollow16">
+                                <div class="followcomment">
+                                    <strong>Shop Type : </strong> {{shopDetails.type}}
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                        <a href="#" class="btn-sharemore"><i class="fa fa-comment"></i> Write Review</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                        <a href="#" class="btn-sharemore"><i class="fa fa-home"></i> Follow</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                        <a href="#" class="btn-sharemore"><i class="fa fa-bookmark-o"></i> </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                        <select id="example" ng-model="shopDetails.thisUsersRating">
+                                            <option value="">-</option>
+                                            <option value="1">1.0</option>
+                                            <option value="2">2.0</option>
+                                            <option value="3">3.0</option>
+                                            <option value="4">4.0</option>
+                                            <option value="5">5.0</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- <div class="userfollow16">
+                              <div class="followcomment">
+                                  <strong>Women:</strong>Lehengas, Sarees, Salwar Suits &amp; Anarkalis, Dresses &amp; Gowns
+                                  <br>
+                            </div>
+                           </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="detail-tab">
+    <div class="tabs tabs-style-bar">
+        <nav>
+            <ul>
+                <li><a href="#section-bar-1" class="icon icon-home"><span>Category</span></a></li>
+                <li><a href="#section-bar-2" class="icon icon-box"><span>Products</span></a></li>
+                <li><a href="#section-bar-3" class="icon icon-display"><span>Offers</span></a></li>
+                <li><a href="#section-bar-4" class="icon icon-upload"><span>Reviews</span></a></li>
+                <li><a href="#section-bar-5" class="icon icon-tools"><span>Location</span></a></li>
+                <li><a href="#section-bar-6" class="icon icon-tools"><span>Branches</span></a></li>
+            </ul>
+        </nav>
+        <div class="content-wrap">
+            <section id="section-bar-1">
+                <div class="row">
+                    <div class="category-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                        <a href="#" class="btn-categorymore">Mens</a>
+                        <a href="#" class="btn-categorymore">Womens</a>
+                        <a href="#" class="btn-categorymore">Kids</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="main">
+                        <ul id="og-grid-category" class="og-grid">
+                            <li id="ogGridCategory{{$index}}" ng-repeat="category in shopDetails.categories" ng-init="doOgGridInitialization($index, shopDetails.categories.length, 'og-grid-category')">
+                                <a data-largesrc="{{category.imageUrl}}" data-title="{{category.name}}" data-description="{{category.type}}">
+                                    <img src="{{category.imageUrl}}"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /container -->
+            </section>
+            <section id="section-bar-2">
+                <div class="container">
+                    <div class="main">
+                        <ul id="og-grid-product" class="og-grid">
+                            <li id="ogGridProduct{{$index}}" ng-repeat="product in shopDetails.products" ng-init="doOgGridInitialization($index, shopDetails.products.length, 'og-grid-product')">
+                                <a data-largesrc="{{product.imageUrl}}" data-title="{{product.name}}" data-description="{{product.description}}">
+                                    <img src="{{product.imageUrl}}"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /container -->
+            </section>
+            <section id="section-bar-3">
+                <div class="container">
+                    <div class="main">
+                        <ul id="og-grid-offer" class="og-grid">
+                            <li id="ogGridOffer{{$index}}" ng-repeat="offer in shopDetails.offers" ng-init="doOgGridInitialization($index, shopDetails.offers.length, 'og-grid-offer');setOfferDescription(offer, $index);">
+                                <a data-largesrc="{{offer.imageUrl}}" data-title="{{offer.name}}" data-description="{{offer.description}}">
+                                    <img src="{{offer.imageUrl}}"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /container -->
+            </section>
+            <section id="section-bar-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="widget-area no-padding blank">
+                                <div class="status-upload">
+                                    <form>
+                                        <textarea placeholder="What are you doing right now?" ></textarea>
+                                        <ul>
+                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
+                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
+                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
+                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+                                        </ul>
+                                        <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+                                    </form>
+                                </div><!-- Status Upload  -->
+                            </div><!-- Widget Area -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="page-header">Comments</h2>
+                            <div class="comment-list">
+                                <!-- First Comment -->
+                                <div class="row" ng-repeat="review in shopDetails.reviews">
+                                    <div class="col-md-2 col-sm-2 hidden-xs">
+                                        <figure class="thumbnail">
+                                            <img class="img-responsive" src="{{review.userImage}}">
+                                            <figcaption class="text-center">{{review.username}}</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-10 col-sm-10">
+                                        <div class="panel panel-default arrow left">
+                                            <div class="panel-body">
+                                                <header class="text-left">
+                                                    <div class="comment-user"><i class="fa fa-user"></i>{{review.username}}</div>
+                                                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i>{{review.timestamp}}</time>
+                                                </header>
+                                                <div class="comment-post">
+                                                    {{review.description}}
+                                                    </br>
+                                                    <span ng-repeat="image in review.reviewImages track by $index">
+                                                        <img src="{{image}}"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section-bar-5">
+            </section>
+            <section id="section-bar-6">
+                <div class="container">
+                    <div class="main">
+                        <ul id="og-grid-branch" class="og-grid">
+                            <li id="ogGridBranch{{$index}}" ng-repeat="branch in shopDetails.branches" ng-init="doOgGridInitialization($index, shopDetails.branches.length, 'og-grid-branch')">
+                                <a data-largesrc="{{branch.imageUrl}}" data-title="{{branch.name}}" data-description="{{branch.address}}">
+                                    <img src="{{branch.imageUrl}}"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /container -->
+            </section>
+        </div><!-- /content -->
+    </div><!-- /tabs -->
+</section>
+
+
+<footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+            </div>
+            <div class="social-icons">
+                <ul>
+                    <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>&copy; 2014 Smashers.</p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right">Designed by <a href="http://www.themeum.com/">Smashers</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<style type="text/css">
+
+
+.comment-list .row {
+margin-bottom: 0px;
+}
+.comment-list .panel .panel-heading {
+padding: 4px 15px;
+position: absolute;
+border:none;
+/*Panel-heading border radius*/
+border-top-right-radius:0px;
+top: 1px;
+}
+.comment-list .panel .panel-heading.right {
+border-right-width: 0px;
+/*Panel-heading border radius*/
+border-top-left-radius:0px;
+right: 16px;
+}
+.comment-list .panel .panel-heading .panel-body {
+padding-top: 6px;
+}
+.comment-list figcaption {
+/*For wrap text is thumbnail*/
+word-wrap: break-word;
+}
+/* Portrait tablets and medium desktops */
+@media (min-width: 768px) {
+.comment-list .arrow:after, .comment-list .arrow:before {
+content: "";
+position: absolute;
+width: 0;
+height: 0;
+border-style: solid;
+border-color: transparent;
+}
+.comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
+border-left: 0;
+}
+/*****Left Arrow*****/
+/*Outline effect style*/
+.comment-list .panel.arrow.left:before {
+left: 0px;
+top: 30px;
+/*Use boarder color of panel*/
+border-right-color: inherit;
+border-width: 16px;
+}
+/*Background color effect*/
+.comment-list .panel.arrow.left:after {
+left: 1px;
+top: 31px;
+/*Change for different outline color*/
+border-right-color: #FFFFFF;
+border-width: 15px;
+}
+/*****Right Arrow*****/
+/*Outline effect style*/
+.comment-list .panel.arrow.right:before {
+right: -16px;
+top: 30px;
+/*Use boarder color of panel*/
+border-left-color: inherit;
+border-width: 16px;
+}
+/*Background color effect*/
+.comment-list .panel.arrow.right:after {
+right: -14px;
+top: 31px;
+/*Change for different outline color*/
+border-left-color: #FFFFFF;
+border-width: 15px;
+}
+}
+.comment-list .comment-post {
+margin-top: 6px;
+}
+
+
+
+section#detail-tab{
+margin-top: -90px;
+}
+
+.widget-area.blank {
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+-ms-box-shadow: none;
+-o-box-shadow: none;
+box-shadow: none;
+}
+
+.widget-area {
+background-color: #fff;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-o-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+float: left;
+margin-top: 30px;
+padding: 25px 30px;
+position: relative;
+width: 100%;
+}
+.status-upload {
+background: none repeat scroll 0 0 #f5f5f5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+float: left;
+width: 100%;
+}
+.status-upload form {
+float: left;
+width: 100%;
+}
+.status-upload form textarea {
+background: none repeat scroll 0 0 #fff;
+border: medium none;
+-webkit-border-radius: 4px 4px 0 0;
+-moz-border-radius: 4px 4px 0 0;
+-ms-border-radius: 4px 4px 0 0;
+-o-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+color: #777777;
+float: left;
+font-family: Lato;
+font-size: 14px;
+height: 142px;
+letter-spacing: 0.3px;
+padding: 20px;
+width: 100%;
+resize:vertical;
+outline:none;
+border: 1px solid #F2F2F2;
+}
+
+.status-upload ul {
+float: left;
+list-style: none outside none;
+margin: 0;
+padding: 0 0 0 15px;
+width: auto;
+}
+.status-upload ul > li {
+float: left;
+}
+.status-upload ul > li > a {
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+color: #777777;
+float: left;
+font-size: 14px;
+height: 30px;
+line-height: 30px;
+margin: 10px 0 10px 10px;
+text-align: center;
+-webkit-transition: all 0.4s ease 0s;
+-moz-transition: all 0.4s ease 0s;
+-ms-transition: all 0.4s ease 0s;
+-o-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
+width: 30px;
+cursor: pointer;
+}
+.status-upload ul > li > a:hover {
+background: none repeat scroll 0 0 #606060;
+color: #fff;
+}
+.status-upload form button {
+border: medium none;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+color: #fff;
+float: right;
+font-family: Lato;
+font-size: 14px;
+letter-spacing: 0.3px;
+margin-right: 9px;
+margin-top: 9px;
+padding: 6px 15px;
+}
+.dropdown > a > span.green:before {
+border-left-color: #2dcb73;
+}
+.status-upload form button > i {
+margin-right: 7px;
+}
+
+
+.detail-tab{
+margin-top: 5px;
+}
+
+section#detail{
+padding-top: 10px !important;
+padding-bottom: 10px !important;
+}
+
+section#others{
+padding-top: 10px !important;
+}
+
+.divider{
+border-bottom: solid 3px #028fcc;
+}
+.userfollow16 {
+width: 100%;
+float: left;
+}
+
+.followcomment {
+width: 85%;
+float: left;
+color: #898989;
+font-size: 14px;
+margin-top: -5px;
+margin-bottom: 0;
+}
+
+.share-more {
+display:block;
+text-align: center;
+margin-top: 10px;
+}
+
+.btn-sharemore {
+border: 1px solid #666666;
+color: #666666;
+font-size: 12px;
+font-weight: 600;
+padding: 11px 11px;
+text-transform: uppercase;
+border-radius: 10px;
+
+}
+
+.btn-sharemore i{
+font-size: 20px;
+}
+
+.btn-sharemore:hover {
+background-color: #017fb5;
+color:#fff !important;
+}
+.store-detail{
+margin-left: 20px;
+margin-right: 20px;
+}
+.store-panel {
+box-shadow: none;
+}
+.store-panel {
+background: #fff;
+float: left;
+width: 100%;
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6)";
+-moz-box-shadow: 0 3px 3px #ada6a6;
+-webkit-box-shadow: 0 3px 3px #ada6a6;
+box-shadow: 0 3px 3px #ada6a6;
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3,Direction=180,Color=#ada6a6);
+border-radius: 10px;
+border: #ececec solid 1px;
+padding: 60px 18px 60px 18px;
+margin-top: 10px;
+}
+.store-box span.storetitle {
+color: #4d4d49;
+font-size: 18px;
+float: left;
+font-weight: bold;
+}
+.store-box span.storeplace {
+color: #898989;
+font-size: 14px;
+font-weight: 400;
+width: 100%;
+float: left;
+}
+.rating {
+float: right;
+color: #898989;
+font-size: 13px;
+font-weight: 400;
+margin-top: -15px;
+margin-right:110px;
+}
+.store-box .rating-box {
+background: #028fcc none repeat scroll 0 0;
+border-radius: 5px;
+color: #fff;
+display: inline-block;
+font-size: 18px;
+font-weight: 700;
+height: 28px;
+line-height: 28px;
+position: relative;
+right: 35px;
+top: -25px;
+float: right;
+font-weight: 700;
+margin-left: -10px;
+text-align: center;
+width: 45px;
+}
+span.vote {
+padding-top: 2px;
+}
+/*
+.followbx16 .follow-share-box {
+margin-top: 0;
+margin-bottom: 10px;
+position: relative;
+}*/
+.share-box {
+width: 100%;
+float: left;
+}
+
+
+.share-box ul {
+padding: 0;
+margin: 45px 0 0 0;
+width: 100%;
+}
+
+.share-box li {
+padding: 0;
+margin: 0;
+list-style: none;
+float: left;
+width: auto;
+font-size: 14px;
+margin-right: 25px;
+color: #898989;
+}
+
+</style>
+
+<script type="text/javascript">
+   $(function() {
+
+       $('#example').barrating('show', {
+           theme: 'bars-1to10'
+       });
+   });
+
+   /**
+    * cbpFWTabs.js v1.0.0
+    * http://www.codrops.com
+    *
+    * Licensed under the MIT license.
+    * http://www.opensource.org/licenses/mit-license.php
+    *
+    * Copyright 2014, Codrops
+    * http://www.codrops.com
+    */
+   ;
+   (function(window) {
+
+       'use strict';
+
+       function extend(a, b) {
+           for (var key in b) {
+               if (b.hasOwnProperty(key)) {
+                   a[key] = b[key];
+               }
+           }
+           return a;
+       }
+
+       function CBPFWTabs(el, options) {
+           this.el = el;
+           this.options = extend({}, this.options);
+           extend(this.options, options);
+           this._init();
+       }
+
+       CBPFWTabs.prototype.options = {
+           start: 0
+       };
+
+       CBPFWTabs.prototype._init = function() {
+           // tabs elems
+           this.tabs = [].slice.call(this.el.querySelectorAll('nav > ul > li'));
+           // content items
+           this.items = [].slice.call(this.el.querySelectorAll('.content-wrap > section'));
+           // current index
+           this.current = -1;
+           // show current content item
+           this._show();
+           // init events
+           this._initEvents();
+       };
+
+       CBPFWTabs.prototype._initEvents = function() {
+           var self = this;
+           this.tabs.forEach(function(tab, idx) {
+               tab.addEventListener('click', function(ev) {
+                   ev.preventDefault();
+                   self._show(idx);
+               });
+           });
+       };
+
+       CBPFWTabs.prototype._show = function(idx) {
+           if (this.current >= 0) {
+               this.tabs[this.current].className = this.items[this.current].className = '';
+           }
+           // change current
+           this.current = idx != undefined ? idx : this.options.start >= 0 && this.options.start < this.items.length ? this.options.start : 0;
+           this.tabs[this.current].className = 'tab-current';
+           this.items[this.current].className = 'content-current';
+       };
+
+       // add to global namespace
+       window.CBPFWTabs = CBPFWTabs;
+
+   })(window);
+
+
+   /*
+    * debouncedresize: special jQuery event that happens once after a window resize
+    *
+    * latest version and complete README available on Github:
+    * https://github.com/louisremi/jquery-smartresize/blob/master/jquery.debouncedresize.js
+    *
+    * Copyright 2011 @louis_remi
+    * Licensed under the MIT license.
+    */
+   var $event = $.event,
+       $special,
+       resizeTimeout;
+
+   $special = $event.special.debouncedresize = {
+       setup: function() {
+           $(this).on("resize", $special.handler);
+       },
+       teardown: function() {
+           $(this).off("resize", $special.handler);
+       },
+       handler: function(event, execAsap) {
+           // Save the context
+           var context = this,
+               args = arguments,
+               dispatch = function() {
+                   // set correct event type
+                   event.type = "debouncedresize";
+                   $event.dispatch.apply(context, args);
+               };
+
+           if (resizeTimeout) {
+               clearTimeout(resizeTimeout);
+           }
+
+           execAsap ?
+               dispatch() :
+               resizeTimeout = setTimeout(dispatch, $special.threshold);
+       },
+       threshold: 250
+   };
+
+   // ======================= imagesLoaded Plugin ===============================
+   // https://github.com/desandro/imagesloaded
+
+   // $('#my-container').imagesLoaded(myFunction)
+   // execute a callback when all images have loaded.
+   // needed because .load() doesn't work on cached images
+
+   // callback function gets image collection as argument
+   //  this is the container
+
+   // original: MIT license. Paul Irish. 2010.
+   // contributors: Oren Solomianik, David DeSandro, Yiannis Chatzikonstantinou
+
+   // blank image data-uri bypasses webkit log warning (thx doug jones)
+   var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
+   $.fn.imagesLoaded = function(callback) {
+       var $this = this,
+           deferred = $.isFunction($.Deferred) ? $.Deferred() : 0,
+           hasNotify = $.isFunction(deferred.notify),
+           $images = $this.find('img').add($this.filter('img')),
+           loaded = [],
+           proper = [],
+           broken = [];
+
+       // Register deferred callbacks
+       if ($.isPlainObject(callback)) {
+           $.each(callback, function(key, value) {
+               if (key === 'callback') {
+                   callback = value;
+               } else if (deferred) {
+                   deferred[key](value);
+               }
+           });
+       }
+
+       function doneLoading() {
+           var $proper = $(proper),
+               $broken = $(broken);
+
+           if (deferred) {
+               if (broken.length) {
+                   deferred.reject($images, $proper, $broken);
+               } else {
+                   deferred.resolve($images);
+               }
+           }
+
+           if ($.isFunction(callback)) {
+               callback.call($this, $images, $proper, $broken);
+           }
+       }
+
+       function imgLoaded(img, isBroken) {
+           // don't proceed if BLANK image, or image is already loaded
+           if (img.src === BLANK || $.inArray(img, loaded) !== -1) {
+               return;
+           }
+
+           // store element in loaded images array
+           loaded.push(img);
+
+           // keep track of broken and properly loaded images
+           if (isBroken) {
+               broken.push(img);
+           } else {
+               proper.push(img);
+           }
+
+           // cache image and its state for future calls
+           $.data(img, 'imagesLoaded', {
+               isBroken: isBroken,
+               src: img.src
+           });
+
+           // trigger deferred progress method if present
+           if (hasNotify) {
+               deferred.notifyWith($(img), [isBroken, $images, $(proper), $(broken)]);
+           }
+
+           // call doneLoading and clean listeners if all images are loaded
+           if ($images.length === loaded.length) {
+               setTimeout(doneLoading);
+               $images.unbind('.imagesLoaded');
+           }
+       }
+
+       // if no images, trigger immediately
+       if (!$images.length) {
+           doneLoading();
+       } else {
+           $images.bind('load.imagesLoaded error.imagesLoaded', function(event) {
+               // trigger imgLoaded
+               imgLoaded(event.target, event.type === 'error');
+           }).each(function(i, el) {
+               var src = el.src;
+
+               // find out if this image has been already checked for status
+               // if it was, and src has not changed, call imgLoaded on it
+               var cached = $.data(el, 'imagesLoaded');
+               if (cached && cached.src === src) {
+                   imgLoaded(el, cached.isBroken);
+                   return;
+               }
+
+               // if complete is true and browser supports natural sizes, try
+               // to check for image status manually
+               if (el.complete && el.naturalWidth !== undefined) {
+                   imgLoaded(el, el.naturalWidth === 0 || el.naturalHeight === 0);
+                   return;
+               }
+
+               // cached images don't fire load sometimes, so we reset src, but only when
+               // dealing with IE, or image is complete (loaded) and failed manual check
+               // webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
+               if (el.readyState || el.complete) {
+                   el.src = BLANK;
+                   el.src = src;
+               }
+           });
+       }
+
+       return deferred ? deferred.promise($this) : $this;
+   };
+
+   var OgGrid = (function() {
+
+       // list of items
+       var $grid = {},
+           // the items
+           $items = {};
+       // current expanded item's index
+       var current = -1,
+           // position (top) of the expanded item
+           // used to know if the preview will expand in a different row
+           previewPos = -1,
+           // extra amount of pixels to scroll the window
+           scrollExtra = 0,
+           // extra margin when expanded (between preview overlay and the next items)
+           marginExpanded = 10,
+           $window = $(window),
+           winsize,
+           $body = $('html, body'),
+           // transitionend events
+           transEndEventNames = {
+               'WebkitTransition': 'webkitTransitionEnd',
+               'MozTransition': 'transitionend',
+               'OTransition': 'oTransitionEnd',
+               'msTransition': 'MSTransitionEnd',
+               'transition': 'transitionend'
+           },
+           transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
+           // support for csstransitions
+           support = Modernizr.csstransitions,
+           // default settings
+           settings = {
+               minHeight: 500,
+               speed: 350,
+               easing: 'ease'
+           };
+
+       function init(elementId, config) {
+
+           // list of items
+           $grid[elementId] = $('#' + elementId);
+           // the items
+           $items[elementId] = $('#' + elementId + ' li');
+           console.log("in grid init1 : " + JSON.stringify($grid));
+           console.log("in grid init : " + JSON.stringify($items));
+
+           // the settings..
+           settings = $.extend(true, {}, settings, config);
+
+           // preload all images
+           $grid[elementId].imagesLoaded(function() {
+
+               // save item´s size and offset
+               saveItemInfo(elementId, true);
+               // get window´s size
+               getWinSize();
+               // initialize some events
+               initEvents(elementId);
+
+           });
+
+       }
+
+       // add more items to the grid.
+       // the new items need to appended to the grid.
+       // after that call OgGrid.addItems(elementId, theItems);
+       function addItems(elementId, $newitems) {
+           $items = $items[elementId].add($newitems);
+
+           $newitems.each(function() {
+               var $item = $(this);
+               $item.data({
+                   offsetTop: $item.offset().top,
+                   height: $item.height()
+               });
+           });
+
+           initItemsEvents($newitems);
+
+       }
+
+       // saves the item´s offset top and height (if saveheight is true)
+       function saveItemInfo(elementId, saveheight) {
+           $items[elementId].each(function() {
+               var $item = $(this);
+               $item.data('offsetTop', $item.offset().top);
+               if (saveheight) {
+                   $item.data('height', $item.height());
+               }
+           });
+       }
+
+       function initEvents(elementId) {
+
+           // when clicking an item, show the preview with the item´s info and large image.
+           // close the item if already expanded.
+           // also close if clicking on the item´s cross
+           initItemsEvents(elementId, $items);
+
+           // on window resize get the window´s size again
+           // reset some values..
+           $window.on('debouncedresize', function() {
+
+               scrollExtra = 0;
+               previewPos = -1;
+               // save item´s offset
+               saveItemInfo(elementId);
+               getWinSize();
+               var preview = $.data(this, 'preview');
+               if (typeof preview != 'undefined') {
+                   hidePreview();
+               }
+
+           });
+
+       }
+
+       function initItemsEvents(elementId, $items) {
+           $items[elementId].on('click', function() {
+               hidePreview();
+               return false;
+           }).children('a').on('click', function(e) {
+
+               var $item = $(this).parent();
+               // check if item already opened
+               current === $item.index() ? hidePreview() : showPreview($item);
+               return false;
+
+           });
+       }
+
+       function getWinSize() {
+           winsize = {
+               width: $window.width(),
+               height: $window.height()
+           };
+       }
+
+       function showPreview($item) {
+
+           var preview = $.data(this, 'preview'),
+               // item´s offset top
+               position = $item.data('offsetTop');
+
+           scrollExtra = 0;
+
+           // if a preview exists and previewPos is different (different row) from item´s top then close it
+           if (typeof preview != 'undefined') {
+
+               // not in the same row
+               if (previewPos !== position) {
+                   // if position > previewPos then we need to take te current preview´s height in consideration when scrolling the window
+                   if (position > previewPos) {
+                       scrollExtra = preview.height;
+                   }
+                   hidePreview();
+               }
+               // same row
+               else {
+                   preview.update($item);
+                   return false;
+               }
+
+           }
+
+           // update previewPos
+           previewPos = position;
+           // initialize new preview for the clicked item
+           preview = $.data(this, 'preview', new Preview($item));
+           // expand preview overlay
+           preview.open();
+
+       }
+
+       function hidePreview() {
+           current = -1;
+           var preview = $.data(this, 'preview');
+           preview.close();
+           $.removeData(this, 'preview');
+       }
+
+       // the preview obj / overlay
+       function Preview($item) {
+           this.$item = $item;
+           this.expandedIdx = this.$item.index();
+           this.create();
+           this.update();
+       }
+
+       Preview.prototype = {
+           create: function() {
+               // create Preview structure:
+               this.$title = $('<h3></h3>');
+               this.$description = $('<p></p>');
+               this.$href = $('<a href="#">Visit website</a>');
+               this.$details = $('<div class="og-details"></div>').append(this.$title, this.$description, this.$href);
+               this.$loading = $('<div class="og-loading"></div>');
+               this.$fullimage = $('<div class="og-fullimg"></div>').append(this.$loading);
+               this.$closePreview = $('<span class="og-close"></span>');
+               this.$previewInner = $('<div class="og-expander-inner"></div>').append(this.$closePreview, this.$fullimage, this.$details);
+               this.$previewEl = $('<div class="og-expander"></div>').append(this.$previewInner);
+               // append preview element to the item
+               this.$item.append(this.getEl());
+               // set the transitions for the preview and the item
+               if (support) {
+                   this.setTransition();
+               }
+           },
+           update: function($item) {
+
+               if ($item) {
+                   this.$item = $item;
+               }
+
+               // if already expanded remove class "og-expanded" from current item and add it to new item
+               if (current !== -1) {
+                   var $currentItem = $items.eq(current);
+                   $currentItem.removeClass('og-expanded');
+                   this.$item.addClass('og-expanded');
+                   // position the preview correctly
+                   this.positionPreview();
+               }
+
+               // update current value
+               current = this.$item.index();
+
+               // update preview´s content
+               var $itemEl = this.$item.children('a'),
+                   eldata = {
+                       href: $itemEl.attr('href'),
+                       largesrc: $itemEl.data('largesrc'),
+                       title: $itemEl.data('title'),
+                       description: $itemEl.data('description')
+                   };
+
+               this.$title.html(eldata.title);
+               this.$description.html(eldata.description);
+               this.$href.attr('href', eldata.href);
+
+               var self = this;
+
+               // remove the current image in the preview
+               if (typeof self.$largeImg != 'undefined') {
+                   self.$largeImg.remove();
+               }
+
+               // preload large image and add it to the preview
+               // for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
+               if (self.$fullimage.is(':visible')) {
+                   this.$loading.show();
+                   $('<img/>').load(function() {
+                       var $img = $(this);
+                       if ($img.attr('src') === self.$item.children('a').data('largesrc')) {
+                           self.$loading.hide();
+                           self.$fullimage.find('img').remove();
+                           self.$largeImg = $img.fadeIn(350);
+                           self.$fullimage.append(self.$largeImg);
+                       }
+                   }).attr('src', eldata.largesrc);
+               }
+
+           },
+           open: function() {
+
+               setTimeout($.proxy(function() {
+                   // set the height for the preview and the item
+                   this.setHeights();
+                   // scroll to position the preview in the right place
+                   this.positionPreview();
+               }, this), 25);
+
+           },
+           close: function() {
+
+               var self = this,
+                   onEndFn = function() {
+                       if (support) {
+                           $(this).off(transEndEventName);
+                       }
+                       self.$item.removeClass('og-expanded');
+                       self.$previewEl.remove();
+                   };
+
+               setTimeout($.proxy(function() {
+
+                   if (typeof this.$largeImg !== 'undefined') {
+                       this.$largeImg.fadeOut('fast');
+                   }
+                   this.$previewEl.css('height', 0);
+                   // the current expanded item (might be different from this.$item)
+                   var $expandedItem = $items.eq(this.expandedIdx);
+                   $expandedItem.css('height', $expandedItem.data('height')).on(transEndEventName, onEndFn);
+
+                   if (!support) {
+                       onEndFn.call();
+                   }
+
+               }, this), 25);
+
+               return false;
+
+           },
+           calcHeight: function() {
+
+               var heightPreview = winsize.height - this.$item.data('height') - marginExpanded,
+                   itemHeight = winsize.height;
+
+               if (heightPreview < settings.minHeight) {
+                   heightPreview = settings.minHeight;
+                   itemHeight = settings.minHeight + this.$item.data('height') + marginExpanded;
+               }
+
+               this.height = heightPreview;
+               this.itemHeight = itemHeight;
+
+           },
+           setHeights: function() {
+
+               var self = this,
+                   onEndFn = function() {
+                       if (support) {
+                           self.$item.off(transEndEventName);
+                       }
+                       self.$item.addClass('og-expanded');
+                   };
+
+               this.calcHeight();
+               this.$previewEl.css('height', this.height);
+               this.$item.css('height', this.itemHeight).on(transEndEventName, onEndFn);
+
+               if (!support) {
+                   onEndFn.call();
+               }
+
+           },
+           positionPreview: function() {
+
+               // scroll page
+               // case 1 : preview height + item height fits in window´s height
+               // case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
+               // case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
+               var position = this.$item.data('offsetTop'),
+                   previewOffsetT = this.$previewEl.offset().top - scrollExtra,
+                   scrollVal = this.height + this.$item.data('height') + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - (winsize.height - this.height) : previewOffsetT;
+
+               $body.animate({
+                   scrollTop: scrollVal
+               }, settings.speed);
+
+           },
+           setTransition: function() {
+               this.$previewEl.css('transition', 'height ' + settings.speed + 'ms ' + settings.easing);
+               this.$item.css('transition', 'height ' + settings.speed + 'ms ' + settings.easing);
+           },
+           getEl: function() {
+               return this.$previewEl;
+           }
+       }
+
+       return {
+           init: init,
+           addItems: addItems
+       };
+   })();
+
+   (function() {
+       [].slice.call(document.querySelectorAll('.tabs')).forEach(function(el) {
+           new CBPFWTabs(el);
+       });
+   })();
+</script>

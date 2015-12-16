@@ -1,0 +1,29 @@
+{
+	"areas":[
+	{
+		"id":1,
+		"name":"velachery",
+	},
+	{
+		"id":2,
+		"name":"adyar",
+	},
+	{
+		"id":3,
+		"name":"Thiruvanmayur",
+	},
+	{
+		"id":4,
+		"name":"Gunidy",
+	},
+	{
+		"id":5,
+		"name":"ECR",
+	},
+	{
+		"id":6,
+		"name":"OMR",
+	}
+
+	]
+}

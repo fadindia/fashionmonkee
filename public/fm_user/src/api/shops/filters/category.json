@@ -1,0 +1,41 @@
+{
+	"category":[
+		{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"http://placehold.it/200x200"
+		},
+		{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"http://placehold.it/200x200"
+		},
+		{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"http://placehold.it/200x200"
+		},
+		{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"http://placehold.it/200x200"
+		},
+		{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"http://placehold.it/200x200"
+		},
+		{
+			"id":1,
+			"name":"casuals",
+			"type":"mens",
+			"imageUrl":"http://placehold.it/200x200"
+		}
+	]
+
+}
