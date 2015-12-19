@@ -27,12 +27,6 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="scroll active"><a href="#home">Home</a></li>
-                    <li class="scroll"><a href="#portfolio">Collections</a></li>
-                    <li class="scroll"><a href="#features">Features</a></li>
-                    <li class="scroll"><a href="#pricing">Areas</a></li>
-                    <li class="scroll"><a href="#blog">Blog</a></li>
-                    <li class="scroll"><a href="#contact">Contact</a></li>
                     <li class="scroll login"><a href="">Login</a></li>
                 </ul>
             </div>
@@ -45,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 tag-content">
-                <b>Textile showrooms {{namesOfAllSelectedAreas.length && "in and near" || "from all areas"}} {{namesOfAllSelectedAreas.join(",")}}</b>
+                <b>Textile showrooms {{namesOfAllSelectedAreas.length && "in near" || "from all areas"}} {{namesOfAllSelectedAreas.join(",")}}</b>
             </div>
         </div>
     </div>
@@ -70,7 +64,7 @@
                                         <!-- <span ng-if="isCategoryFilterInEditMode"><input placeholder="Search"/></span> -->
                                     </a>
                                     <ul>
-                                        <li ng-repeat="category in categoryFilter" ng-class="selectedCategories.indexOf(category.id) > -1 && 'filter-selected'" ng-click="selectOrDeselectFilter('selectedCategories',category.id)"><a href="">{{category.name}}<i ng-if="selectedCategories.indexOf(category.id) > -1" class="fa fa-check-square"></i></a>
+                                        <li ng-repeat="category in categoryFilter" ng-class="selectedCategories.indexOf(category.id) > -1 && 'filter-selected'" ng-click="selectOrDeselectFilter('selectedCategories',category.id)"><a class="side-category" href="">{{category.name}}<i ng-if="selectedCategories.indexOf(category.id) > -1" class="fa fa-check-square"></i></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -181,38 +175,41 @@
         </div>
 </section>
 <!-- *** MENUS AND FILTERS END *** -->
-<footer id="footer">
+  <footer id="footer">
     <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-        <div class="container text-center">
-            <div class="footer-logo">
-                <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
-            </div>
-            <div class="social-icons">
-                <ul>
-                    <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
-                </ul>
-            </div>
+      <div class="container text-center">
+        <div class="footer-logo">
+          <a href="index.html"><img class="img-responsive" src="fm_user/images/logo.png" alt=""></a>
         </div>
+        <div class="social-icons">
+          <ul>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>&copy; 2014 Smashers.</p>
-                </div>
-                <div class="col-sm-6">
-                    <p class="pull-right">Designed by <a href="http://www.themeum.com/">Smashers</a></p>
-                </div>
-            </div>
+      <div class="container">
+      <div class="row">
+          <div class="col-sm-6">
+            <p><a href="" class="newShop"><b>Add your stores</b></a></p>
+          </div>         
         </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2015 fadIndia.</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Designed by <a href="http://www.fadindia.com/">fadIndia</a></p>
+          </div>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
 <style type="text/css">
+
     .shop-list-loader {
         position: absolute;
         height: 100%;
@@ -392,6 +389,7 @@
     
     .tag-content {
         font-size: 20px;
+        padding-top: 25px;
     }
     
     .zs-load-more {
@@ -538,6 +536,7 @@
     
     .panel.sidebar-menu ul.nav.category-menu li a {
         font-family: "Roboto", Helvetica, Arial, sans-serif;
+        font-size: 14px;
     }
     
     .panel.sidebar-menu ul.nav ul {
@@ -768,7 +767,7 @@
   line-height: 26px;
   padding: 0 10px 0 3px;
   position: relative;
-  margin: 0 3px 6px 0;
+  margin: 5px 3px 6px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
 }
@@ -785,7 +784,7 @@
 
 .sl-tag::after {
   background: #fff;
-  border-bottom: 13px solid transparent;
+  border-bottom: 15px solid transparent;
   border-left: 10px solid #eee;
   border-top: 13px solid transparent;
   content: '';
