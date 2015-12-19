@@ -14,11 +14,11 @@ use DB;
 
 class ShopController extends Controller
 {
-	public function getAllShop(Request $data)
-	{
-		$value = DB::table('shops')->get();
-		return response()->json($value);
-	}
+    public function getAllShop(Request $data)
+    {
+        $value = DB::table('shops')->get();
+        return response()->json($value);
+    }
 
     public function newShop(Request $request){
         $shopData['name'] = $request->get("name");
@@ -33,15 +33,16 @@ class ShopController extends Controller
     }
 
     public function addShop(Request $request){
-    	log::info('hiuhihih');
+        log::info('hiuhihih');
         $shopData['name'] = $request->get("name");
-        $shopId = Shops::saveShop($shopData);
+        $shopId = Shops::saveShop($shopData)->id;
+        log::info($shopId);
         $addressData = $this->formAddress($request);
-        $addressData['shop_id'] = $shop_id;
+        $addressData['shop_id'] = $shopId;
 
         $locId = Address::addLocation($addressData);
 
-        return Response::json($shop_id);
+        return Response::json($shopId);
     }
 
     public function formAddress($request){
@@ -59,13 +60,13 @@ class ShopController extends Controller
         return $addressData;
     }
 
-	public function addAddress(Request $request){
-        
-		$addressData = $this->formAddress($request);
+    public function addAddress(Request $request){
+       
+        $addressData = $this->formAddress($request);
         $addressId = Address::addAddress($addressData);
 
         return Response::json($addressId);
-	}
+    }
 
     public function addLocation(Request $request){
         $addressData = $this->formAddress($request);
