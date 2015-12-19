@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Shops extends Model
 {
@@ -13,15 +14,15 @@ class Shops extends Model
             'status',
      ];
 
-     public function saveShop($data){
+     public static function saveShop($data){
      	$data['status'] = 1;
-     	$shopId = DB::table('shops')::create($data);
+     	$shopId = Shops::create($data);
      	return $shopId;
      }
 
      public function draftShop($data){
      	$data['status'] = 0;
-     	$shopId = DB::table('shops')::create($data);
+     	$shopId = Shops::create($data);
      	return $shopId;
      }
 }

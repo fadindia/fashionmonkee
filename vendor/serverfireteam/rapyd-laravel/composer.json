@@ -22,6 +22,5 @@
         "psr-4": {
             "Zofe\\Rapyd\\": "src/"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }

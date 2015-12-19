@@ -32,7 +32,8 @@ class ShopController extends Controller
 
     }
 
-    public function addShop(Request $data){
+    public function addShop(Request $request){
+    	log::info('hiuhihih');
         $shopData['name'] = $request->get("name");
         $shopId = Shops::saveShop($shopData);
         $addressData = $this->formAddress($request);

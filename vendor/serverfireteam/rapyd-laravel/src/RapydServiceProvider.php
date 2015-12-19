@@ -41,7 +41,7 @@ class RapydServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register('Illuminate\Html\HtmlServiceProvider');
-        
+ 
         Rapyd::setContainer($this->app);
    
         $this->app->booting(function () {

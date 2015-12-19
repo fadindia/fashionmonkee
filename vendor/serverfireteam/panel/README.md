@@ -8,20 +8,28 @@
 
 This package provides an easily configurable admin panel for Laravel 5.1 & 5.0  applications with a CRUD system, UI and more.
 
-## Main features
-
-- **Crud**, With just few lines of code, you'll have Add, Edit, Delete and Search actions for your models.
-- **Clean Admin**, Based on bootstrap 3 and sb-admin-2 
-- **Dashboard**, It shows how many records you have in every model added in menu.
-- **Preconfigured**, It has default users and models you need.
-- **Powerful**, It offers a Login section, Admin settings, forgot password and all other features you need for admin panel.
-
 ## Screen shot 
-
 - This is a custom CRUD with few lines of code :
 ![dashboard of panel](https://raw.githubusercontent.com/serverfireteam/panel/master/public/img/serverfire-panel-dashboard.jpg)
 ![List of Pages](https://raw.githubusercontent.com/serverfireteam/panel/master/public/img/serverfire-panel-crud.jpg)
 ![Edit Pages](https://raw.githubusercontent.com/serverfireteam/panel/master/public/img/serverfire-panel-crud-edit.jpg)
+
+## Main features
+
+
+- **Fully translatable** , 9 languages
+- **Crud**, With just few lines of code, you'll have Add, Edit, Delete and Search actions for your models.
+- **Column types**: text, select box, checkbox , text editor , datetime, image , autocomplete  , tag ,colorpicker 
+- **File manager ** power full file manager inside the text editor 
+- **Extension system** that allows you to create own custom column types
+- **Sorting, ordering, filters, pagination**
+- **Imort and Export data** Every  crud you make it have import and export data from Excel  
+- **Clean Admin**, Based on bootstrap 3 and sb-admin-2 
+- **Dashboard**, It shows how many records you have in every model added in menu.
+- **Preconfigured**, It has default users and models you need.
+- **Powerful**, It offers a Login section, Admin settings, forgot password and all other features you need for admin panel.
+- ** RTL support **
+
 
 ## Demo 
 You can check the [live demo here](http://demo.serverfire.net/panel) .
@@ -71,7 +79,7 @@ And run the composer update command, the package and its dependencies will be in
     php artisan panel:install
 
     ```
-5. Go to your domain.com/public/panel and you can login with the following username and password :
+5. Go to your domain.com/panel and you can login with the following username and password :
     user : admin@change.me
     password : 12345
 
