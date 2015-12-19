@@ -9,12 +9,21 @@ angular.module('fashionApp').service('$api', function($http, $q) {
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
+  var parseHttpParams = function (params) {
+    if(!params){
+      params = {};
+    }
+    params.cache = false;
+    params = {params: params};
+    return params;
+  };
 
   var $api = function(endPoint) {
     var _endpointUrl = baseUrl + endPoint+'?'+datetime;
 
-  this.list = function() {
-    return $http.get(_endpointUrl ,{cache:false});
+  this.list = function(params) {
+    params = parseHttpParams(params);
+    return $http.get(_endpointUrl , params);
   };
 
   this.get = function(id) {
