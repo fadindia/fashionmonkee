@@ -338,7 +338,7 @@
       <div class="pricing-table">
         <div class="row">
           <div class="col-sm-3" ng-repeat="area in areas">             
-              <a href="#" >{{area.name}}-({{area.shops}})</a>
+              <a href ng-click="goToShopList(area.id, area.name)" >{{area.name}}-({{area.shops}})</a>
           </div>         
         </div>
       </div>

@@ -12,7 +12,7 @@ var fashionApp = angular.module('fashionApp', ["ui.router","siyfion.sfTypeahead"
             controller:'categoryCtrl'
         })
          .state('shops', {
-            url: "/shops",
+            url: "/shops/areaId=:areaId,areaName=:areaName",
             templateUrl: 'fm_user/src/views/shop-list.tpl.html',
             controller:'shopsCtrl'
         })

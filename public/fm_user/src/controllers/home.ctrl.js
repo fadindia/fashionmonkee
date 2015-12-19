@@ -1,4 +1,4 @@
-angular.module('fashionApp').controller('homeCtrl',function($scope,$api){
+angular.module('fashionApp').controller('homeCtrl',function($scope,$api,$state){
 
     var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
@@ -86,6 +86,10 @@ $('#search-city').typeahead({
         $scope.currentTab='offer';
         $scope.switchTab=function(data){
           $scope.currentTab=data;
+        };
+
+        $scope.goToShopList = function (areaId, areaName) {
+          $state.go('shops', { areaId: areaId, areaName: areaName });
         };
 });
 
