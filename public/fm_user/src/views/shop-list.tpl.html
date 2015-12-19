@@ -1,567 +1,894 @@
-     
+<div id="shopListLoader" class="shop-list-loader">
+    <div class="overlay-loader">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
 <header>
- <div class="main-nav">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">
-            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
-          </a>                    
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">                 
-           <li class="scroll"><a href="#home">Login</a></li>
-              
-          </ul>
-        </div>
-      </div>
-    </div><!--/#main-nav-->
-  </header><!--/#home-->
-  <div id="content header-tag">
-     <div class="container">
-                <div class="row ">
-                    <div class="col-sm-3 tag-head">
-                    Home > India > Chennai > Adyar
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 tag-content">
-                    <b>Textiles and Showrooms in Adyar and near by locations</b>
-                    </div>
-                </div>
-      </div>
-  </div>
-  <section id="shop-list">
-        <div id="content">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-sm-3">                 
-                        <div class="panel panel-default sidebar-menu">
-
-                            <div class="panel-heading">
-                                <h3 class="panel-title"> Filters</h3>
-                            </div>
-
-                            <div class="panel-body">
-                                <ul class="nav nav-pills nav-stacked category-menu">
-                                    <li class="active">
-                                        <a href="shop-category.html">Category<span class="badge pull-right">{{categoryFilter.length}}</span></a>
-                                        <ul>
-                                            <li ng-repeat="category in categoryFilter"><a href="">{{category.name}}</a>
-                                            </li>                                            
-                                        </ul>
-                                    </li>
-                                    <li class="active">
-                                        <a href="shop-category.html">Brands  <span class="badge pull-right">{{brandFilter.length}}</span></a>
-                                        <ul>
-                                           <li ng-repeat="brand in brandFilter"><a href="">{{brand.name}}</a>
-                                            </li>
-                                           
-                                        </ul>
-                                    </li>
-                                    <li class="active">
-                                        <a href="shop-category.html">Areas <span class="badge pull-right">{{areaFilter.length}}</span></a>
-                                        <ul>
-                                            <li ng-repeat="area in areaFilter"><a href="">{{area.name}}</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-7">
-
-                          <div class="panel panel-default">                           
-                           
-                            <div class="panel-body follow-box followbx16" ng-repeat="shop in shops">
-                            <div class="follow-store-box">
-                              <span class="storetitle"> {{shop.name}} </span>
-                             <span class="storeplace">{{shop.address}}</span>
-                             <div class="rating">
-                              <span class="follow-rating-box">{{shop.rating}}</span>
-                              <span class="vote">{{shop.votes}} votes</span>                
-                             </div>
-
-                            </div>
-                            <div class="follow-share-box">
-                              <ul>
-                                <li>
-                                   <a href="#"><img alt="" src="http://www.zakoopi.com/images/s-icon1.png">
-                                      <span>{{shop.reviews}}<small class="hidden-xs"> Reviews</small></span>
-                                    </a> 
-                                 </li>
-                                 <li>
-                                    <a href="#">
-                                    <img alt="" src="http://www.zakoopi.com/images/s-icon2.png">
-                                      <span>{{shop.photos}} <small class="hidden-xs">Photos</small></span>
-                                    </a>
-                                  </li>
-                                </ul>
-                            <div class="userfollow16">
-                              <div class="followcomment"> 
-                                  <strong>Type:</strong><a ng-repeat="mc in shop.mainCategory">{{mc}}{{!$last && ','||'..'}}</a>
-                                  <br>                    
-                              </div>
-                              <div class="followcomment"> 
-                                  <strong>Categories:</strong><a ng-repeat="sc in shop.subCategory">{{sc}}{{!$last && ','||'..'}}</a>
-                                  <br>                    
-                              </div>
-                              <div class="followcomment"> 
-                                  <strong>Brands:</strong><a ng-repeat="b in shop.brands">{{b}}{{!$last && ','||'..'}}</a>
-                                  <br>                    
-                              </div>
-                            <ul>                    
-                              <li ng-repeat="p in shop.photoUrls">
-                                  <a href="#">
-                                      <img alt="Store Ambience-Kamal Bhai Saree Sangam"  ng-src="{{p}}" width="42" height="42">
-                                  </a>
-                              </li>                                                                      
-                              </ul>                
-                           </div>
-
-                        </div>
-                      </div>
-
-                       
-                      <div class="bt bb zs-load-more">
-                        <div class="bg-line">&nbsp;</div>
-                        <div class="load-more">Load More <span class="zs-load-more-count">226</span></div>
-                       </div>
-                      <div class="clear"></div>
-
-                   </div>
-                 </div>
-
-                 <div class="col-sm-2">
-                 <div><a title="Image 1" href="//placehold.it/1024x768"><img class="thumbnail img-responsive" src="http://placehold.it/600x350"></a></div>
-                <div ><a title="Image 2" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/2255EE"></a></div>
-                <div><a title="Image 3" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/449955/FFF"></a></div>
-                <div><a title="Image 4" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/992233"></a></div>
-                <div><a title="Image 5" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/2255EE"></a></div>
-                <div><a title="Image 6" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/449955/FFF"></a></div>
-                <div><a title="Image 8" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/777"></a></div>
-                <div><a title="Image 9" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/992233"></a></div>
-                <div><a title="Image 10" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/EEE"></a></div>               
-                </div>
-              </div>
+    <div class="main-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <h1><img class="img-responsive" src="fm_user/images/logo.png" alt="logo" width="300" height="100"></h1>
+                </a>
             </div>
-
-
-
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="scroll active"><a href="#home">Home</a></li>
+                    <li class="scroll"><a href="#portfolio">Collections</a></li>
+                    <li class="scroll"><a href="#features">Features</a></li>
+                    <li class="scroll"><a href="#pricing">Areas</a></li>
+                    <li class="scroll"><a href="#blog">Blog</a></li>
+                    <li class="scroll"><a href="#contact">Contact</a></li>
+                    <li class="scroll login"><a href="">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/#main-nav-->
+</header>
+<!--/#home-->
+<div id="content header-tag">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 tag-content">
+                <b>Textile showrooms {{namesOfAllSelectedAreas.length && "in and near" || "from all areas"}} {{namesOfAllSelectedAreas.join(",")}}</b>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="shop-list">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="panel panel-default sidebar-menu">
+                        <div>
+                            <h3 class="title-filter"> Filters</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked category-menu">
+                                <li class="active">
+                                    <a class="filter-sub-heading">
+                                        <span>Category
+                                        <span class="badge filter-badge pull-right">{{selectedCategories.length}}</span>
+                                        <!-- <i class="fa fa-search pull-right filter-search-icon" ng-click="isCategoryFilterInEditMode = !isCategoryFilterInEditMode"></i> -->
+                                        </span>
+                                        <!-- <span ng-if="isCategoryFilterInEditMode"><input placeholder="Search"/></span> -->
+                                    </a>
+                                    <ul>
+                                        <li ng-repeat="category in categoryFilter" ng-class="selectedCategories.indexOf(category.id) > -1 && 'filter-selected'" ng-click="selectOrDeselectFilter('selectedCategories',category.id)"><a href="">{{category.name}}<i ng-if="selectedCategories.indexOf(category.id) > -1" class="fa fa-check-square"></i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a class="filter-sub-heading">
+                                        <span>Brands
+                                        <span class="badge filter-badge pull-right">{{selectedBrands.length}}</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li ng-repeat="brand in brandFilter" ng-class="selectedBrands.indexOf(brand.id) > -1 && 'filter-selected'" ng-click="selectOrDeselectFilter('selectedBrands', brand.id)"><a href="">{{brand.name}}<i ng-if="selectedBrands.indexOf(brand.id) > -1" class="fa fa-check-square"></i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a class="filter-sub-heading">
+                                        <span>Areas
+                                        <span class="badge filter-badge pull-right">{{selectedAreas.length}}</span>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li ng-repeat="area in areaFilter" ng-class="selectedAreas.indexOf(area.id) > -1 && 'filter-selected'" ng-click="selectOrDeselectFilter('selectedAreas', area.id, area.name)"><a href="">{{area.name}}<i ng-if="selectedAreas.indexOf(area.id) > -1" class="fa fa-check-square"></i>
+                                    </li>
+                                    </a>
+                                    </ul>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="panel-body follow-box followbx16" ng-class="$index === 0 && 'first-shop-panel'" ng-repeat="shop in shops">
+                        <div class="follow-store-box col-sm-12">
+                            <div class="store-heading col-sm-10">
+                                <div class="storetitle"> {{shop.name}} </div>
+                                <div class="storeplace">{{shop.address}}</div>
+                            </div>
+                            <div class="rating col-sm-2 text-right">
+                                <div class="follow-rating-box">{{shop.rating}}</div>
+                                <div class="vote">{{shop.votes}} votes</div>
+                            </div>
+                        </div>
+                        <div class="follow-share-box">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-wechat"></i>
+                                    <span>{{shop.reviews}}<small class="hidden-xs"> Reviews</small></span>
+                                </li>
+                                <li>
+                                    ,<i class="fa fa-heart"></i>
+                                    <span>{{shop.likes}} <small class="hidden-xs"> Likes</small></span>
+                                </li>
+                            </ul>
+                            <div class="userfollow16">
+                                <div class="followcomment">
+                                    <strong>Categories:</strong><span class='sl-tag' ng-repeat="mc in shop.mainCategories"><!-- {{$index != 0 && "," || ""}} -->{{mc}}</span>
+                                    <br>
+                                </div>
+                                <div class="followcomment">
+                                    <strong>Types:</strong><span class='sl-tag' class='sl-tag' ng-repeat="sc in shop.subCategories">{{sc}}</span>
+                                    <br>
+                                </div>
+                                <div class="followcomment">
+                                    <strong>Brands:</strong><span class='sl-tag' ng-repeat="b in shop.brands">{{b}}</span>
+                                    <br>
+                                </div>
+                                <ul>
+                                    <li ng-repeat="p in shop.photoUrls">
+                                        <a href="#">
+                                            <img alt="Store Ambience-Kamal Bhai Saree Sangam" ng-src="{{p}}" width="42" height="42">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 ad-list">
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                    <div>
+                        <img src="fm_user/images/ad.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
 </section>
-                        <!-- *** MENUS AND FILTERS END *** -->
-
-
-
- <footer id="footer">
+<!-- *** MENUS AND FILTERS END *** -->
+<footer id="footer">
     <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-      <div class="container text-center">
-        <div class="footer-logo">
-          <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+        <div class="container text-center">
+            <div class="footer-logo">
+                <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+            </div>
+            <div class="social-icons">
+                <ul>
+                    <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="social-icons">
-          <ul>
-            <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> 
-            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>&copy; 2014 Smashers.</p>
-          </div>
-          <div class="col-sm-6">
-            <p class="pull-right">Designed by <a href="http://www.themeum.com/">Smashers</a></p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>&copy; 2014 Smashers.</p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right">Designed by <a href="http://www.themeum.com/">Smashers</a></p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
-
-
+</footer>
 <style type="text/css">
+    .shop-list-loader {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+        z-index: 5;
+        opacity: 0.8;
+        padding-top: 25%;
+    }
+    
+    .overlay-loader {
+        display: block;
+        margin: auto;
+        width: 90px;
+        height: 90px;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 90px;
+        height: 90px;
+        animation-name: rotateAnim;
+        -o-animation-name: rotateAnim;
+        -ms-animation-name: rotateAnim;
+        -webkit-animation-name: rotateAnim;
+        -moz-animation-name: rotateAnim;
+        animation-duration: 0.67s;
+        -o-animation-duration: 0.67s;
+        -ms-animation-duration: 0.67s;
+        -webkit-animation-duration: 0.67s;
+        -moz-animation-duration: 0.67s;
+        animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -o-animation-timing-function: linear;
+        -ms-animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+    }
+    
+    .loader div {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        border: 1px solid rgb(0, 0, 0);
+        position: absolute;
+        top: 2px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    .loader div:nth-child(odd) {
+        border-top: none;
+        border-left: none;
+    }
+    
+    .loader div:nth-child(even) {
+        border-bottom: none;
+        border-right: none;
+    }
+    
+    .loader div:nth-child(2) {
+        border-width: 2px;
+        left: 0px;
+        top: -4px;
+        width: 11px;
+        height: 11px;
+    }
+    
+    .loader div:nth-child(3) {
+        border-width: 2px;
+        left: -1px;
+        top: 3px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .loader div:nth-child(4) {
+        border-width: 3px;
+        left: -1px;
+        top: -4px;
+        width: 22px;
+        height: 22px;
+    }
+    
+    .loader div:nth-child(5) {
+        border-width: 3px;
+        left: -1px;
+        top: 4px;
+        width: 29px;
+        height: 29px;
+    }
+    
+    .loader div:nth-child(6) {
+        border-width: 4px;
+        left: 0px;
+        top: -4px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .loader div:nth-child(7) {
+        border-width: 4px;
+        left: 0px;
+        top: 5px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    @keyframes rotateAnim {
+        from {
+            transform: rotate(360deg);
+        }
+        to {
+            transform: rotate(0deg);
+        }
+    }
+    
+    @-o-keyframes rotateAnim {
+        from {
+            -o-transform: rotate(360deg);
+        }
+        to {
+            -o-transform: rotate(0deg);
+        }
+    }
+    
+    @-ms-keyframes rotateAnim {
+        from {
+            -ms-transform: rotate(360deg);
+        }
+        to {
+            -ms-transform: rotate(0deg);
+        }
+    }
+    
+    @-webkit-keyframes rotateAnim {
+        from {
+            -webkit-transform: rotate(360deg);
+        }
+        to {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+    
+    @-moz-keyframes rotateAnim {
+        from {
+            -moz-transform: rotate(360deg);
+        }
+        to {
+            -moz-transform: rotate(0deg);
+        }
+    }
+    
+    section#shop-list {
+        margin-top: -30px !important;
+    }
+    
+    .tag-head {
+        margin-top: 10px;
+    }
+    
+    .tag-content {
+        font-size: 20px;
+    }
+    
+    .zs-load-more {
+        font-size: 16px;
+    }
+    
+    .zs-load-more {
+        background-color: #fff;
+        color: #4d4d4d;
+        cursor: pointer;
+        font-size: 10pt;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .bt {
+        border-top: 1px solid #f0f0f0;
+    }
+    
+    .bb {
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .zs-load-more .bg-line {
+        background: url("https://b.zmtcdn.com/images/floading.gif") no-repeat scroll 50% 50% transparent;
+        display: none;
+    }
+    
+    .zs-load-more .load-more {
+        background-color: #fff;
+        height: 58px;
+        line-height: 58px;
+        margin-top: 0px !important;
+    }
+    
+    .zs-load-more-count {
+        color: #8d8d8d;
+    }
+    
+    .badge {
+        color: #ffffff;
+        background-color: #028fcc;
+    }
+    
+    #categoryMenu h3 {
+        padding: 20px;
+        background: #028fcc;
+        margin: 0;
+        border-bottom: solid 1px #eeeeee;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+    
+    .panel.sidebar-menu h3 {
+        padding: 5px 0;
+        margin: 0;
+    }
+    
+    .panel.sidebar-menu {
+        background: #fff;
+        margin: 0 0 20px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .panel.sidebar-menu .panel-heading {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        background: none;
+        padding: 0;
+        letter-spacing: 0.08em;
+        border-bottom: none;
+    }
+    
+    .panel.sidebar-menu .panel-heading h1,
+    .panel.sidebar-menu .panel-heading h2,
+    .panel.sidebar-menu .panel-heading h3,
+    .panel.sidebar-menu .panel-heading h4,
+    .panel.sidebar-menu .panel-heading h5 {
+        display: inline-block;
+        border-bottom: solid 5px #028fcc;
+        line-height: 1.1;
+        margin-bottom: 0;
+        padding-bottom: 10px;
+    }
+    
+    .panel.sidebar-menu .panel-heading .btn.btn-danger {
+        color: #fff;
+        margin-top: 5px;
+    }
+    
+    .panel.sidebar-menu .panel-body {
+        padding: 0;
+    }
+    
+    .panel.sidebar-menu .panel-body span.colour {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border: solid 1px #555555;
+        vertical-align: top;
+        margin-top: 2px;
+        margin-left: 5px;
+    }
+    
+    .panel.sidebar-menu .panel-body span.colour.white {
+        background: #fff;
+    }
+    
+    .panel.sidebar-menu .panel-body span.colour.red {
+        background: red;
+    }
+    
+    .panel.sidebar-menu .panel-body span.colour.green {
+        background: green;
+    }
+    
+    .panel.sidebar-menu .panel-body span.colour.blue {
+        background: blue;
+    }
+    
+    .panel.sidebar-menu .panel-body span.colour.yellow {
+        background: yellow;
+    }
+    
+    .panel.sidebar-menu .panel-body label {
+        color: #999999;
+        font-size: 12px;
+    }
+    
+    .panel.sidebar-menu .panel-body label:hover {
+        color: #555555;
+    }
+    
+    .panel.sidebar-menu ul.nav.category-menu {
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
+    
+    .panel.sidebar-menu ul.nav.category-menu li a {
+        font-family: "Roboto", Helvetica, Arial, sans-serif;
+    }
+    
+    .panel.sidebar-menu ul.nav ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .panel.sidebar-menu ul.nav ul li {
+        display: block;
+    }
+    
+    .panel.sidebar-menu ul.nav ul li a {
+        position: relative;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: normal;
+        text-transform: none !important;
+        display: block;
+        padding: 10px 15px;
+        padding-left: 30px;
+        font-size: 12px;
+        color: #999999;
+    }
+    
+    .panel.sidebar-menu ul.nav ul li a:hover,
+    .panel.sidebar-menu ul.nav ul li a:focus {
+        text-decoration: none;
+        background-color: #eeeeee;
+    }
+    
+    .panel.sidebar-menu ul.tag-cloud {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .panel.sidebar-menu ul.tag-cloud li {
+        display: inline-block;
+    }
+    
+    .panel.sidebar-menu ul.tag-cloud li a {
+        display: inline-block;
+        padding: 5px;
+        border: solid 1px #eeeeee;
+        border-radius: 0;
+        color: #38a7bb;
+        margin: 5px 5px 5px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        font-size: 12px;
+    }
+    
+    .panel.sidebar-menu ul.tag-cloud li a:hover {
+        color: #38a7bb;
+        text-decoration: none;
+        border-color: #38a7bb;
+    }
+    
+    .panel.sidebar-menu ul.popular,
+    .panel.sidebar-menu ul.recent {
+        list-style: none;
+        padding-left: 0;
+        padding: 20px 0;
+    }
+    
+    .panel.sidebar-menu ul.popular li,
+    .panel.sidebar-menu ul.recent li {
+        margin-bottom: 10px;
+        padding: 5px 0;
+        border-bottom: dotted 1px #eeeeee;
+    }
+    
+    .panel.sidebar-menu ul.popular li:before,
+    .panel.sidebar-menu ul.recent li:before,
+    .panel.sidebar-menu ul.popular li:after,
+    .panel.sidebar-menu ul.recent li:after {
+        content: " ";
+        display: table;
+    }
+    
+    .panel.sidebar-menu ul.popular li:after,
+    .panel.sidebar-menu ul.recent li:after {
+        clear: both;
+    }
+    
+    .panel.sidebar-menu ul.popular li:before,
+    .panel.sidebar-menu ul.recent li:before,
+    .panel.sidebar-menu ul.popular li:after,
+    .panel.sidebar-menu ul.recent li:after {
+        content: " ";
+        display: table;
+    }
+    
+    .panel.sidebar-menu ul.popular li:after,
+    .panel.sidebar-menu ul.recent li:after {
+        clear: both;
+    }
+    
+    .panel.sidebar-menu ul.popular li img,
+    .panel.sidebar-menu ul.recent li img {
+        width: 50px;
+        margin-right: 10px;
+    }
+    
+    .panel.sidebar-menu ul.popular li h5,
+    .panel.sidebar-menu ul.recent li h5 {
+        margin: 0 0 10px;
+    }
+    
+    .panel.sidebar-menu ul.popular li h5 a,
+    .panel.sidebar-menu ul.recent li h5 a {
+        font-weight: normal;
+    }
+    
+    .panel.sidebar-menu ul.popular li p.date,
+    .panel.sidebar-menu ul.recent li p.date {
+        float: right;
+        font-size: 12px;
+        color: #999999;
+    }
+    
+    .panel.sidebar-menu ul.popular li:last-child,
+    .panel.sidebar-menu ul.recent li:last-child {
+        border-bottom: none;
+    }
+    
+    .panel.sidebar-menu .text-widget {
+        font-size: 12px;
+    }
+    
+    .panel.sidebar-menu.with-icons ul.nav li a:after {
+        font-family: 'FontAwesome';
+        content: "\f105";
+        position: relative;
+        top: 0;
+        float: right;
+    }
+    
+    .follow-box {
+        box-shadow: none;
+    }
+    
+    .follow-box {
+        background: #fff;
+        float: left;
+        width: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6)";
+        -moz-box-shadow: 0 3px 3px #ada6a6;
+        -webkit-box-shadow: 0 3px 3px #ada6a6;
+        box-shadow: 0 3px 3px #ada6a6;
+        filter: progid: DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6);
+        border-radius: 10px;
+        border: #ececec solid 1px;
+        padding: 15px 18px 20px 18px;
+        margin-top: 10px;
+    }
+    
+    .follow-store-box div.storetitle {
+        color: #4d4d49;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .follow-store-box div.storeplace {
+        color: #898989;
+        font-size: 14px;
+        font-weight: 400;
+        width: 80%;
+        float: left;
+    }
 
-section#shop-list{
- margin-top: -30px !important;
-}
-.tag-head{
-  margin-top: 10px;
-}
-.tag-content{
-  font-size: 20px;
-}
+    .follow-store-box {
+        padding: 0;
+        border-bottom: 1.7px solid #ececec;
+    }
+    
+    .store-heading {
+        padding: 0;
+    }
 
-.zs-load-more {
-    font-size: 16px;
-}
-.zs-load-more {
-    background-color: #fff;
-    color: #4d4d4d;
-    cursor: pointer;
-    font-size: 10pt;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-}
-.bt {
-    border-top: 1px solid #f0f0f0;
-}
-.bb {
-    border-bottom: 1px solid #f0f0f0;
-}
+    .rating {
+        color: #898989;
+        font-size: 13px;
+        font-weight: 400;
+        padding: 0;
+    }
+    
+    .follow-store-box .follow-rating-box {
+        background: #f7941d none repeat scroll 0 0;
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+        height: 28px;
+        line-height: 28px;
+        position: relative;
+        font-weight: 700;
+        text-align: center;
+        width: 45px;
+    }
+    
+    span.vote {
+        padding-top: 2px;
+    }
+    
+    .followbx16 .follow-share-box {
+        margin-top: 0;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    
+    .follow-share-box {
+        width: 100%;
+        float: left;
+        margin-top: 15px;
+    }
 
-.zs-load-more .bg-line {
-    background: url("https://b.zmtcdn.com/images/floading.gif") no-repeat scroll 50% 50% transparent;
-    display: none;
-}
+    .follow-share-box .fa-heart{
+        color: pink;
+    }
 
-.zs-load-more .load-more {
-    background-color: #fff;
-    height: 58px;
-    line-height: 58px;
-     margin-top: 0px !important;
-}
-
-.zs-load-more-count {
-    color: #8d8d8d;
-}
-
-
-
-.badge {
-  color: #ffffff;
-  background-color: #028fcc;
-}
-
-
-
-
-
-#categoryMenu h3 {
-  padding: 20px;
-  background: #028fcc;
-  margin: 0;
-  border-bottom: solid 1px #eeeeee;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.panel.sidebar-menu h3 {
-  padding: 5px 0;
-  margin: 0;
-}
-.panel.sidebar-menu {
-  background: #fff;
-  margin: 0 0 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.panel.sidebar-menu .panel-heading {
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  background: none;
-  padding: 0;
-  letter-spacing: 0.08em;
-  border-bottom: none;
-}
-.panel.sidebar-menu .panel-heading h1,
-.panel.sidebar-menu .panel-heading h2,
-.panel.sidebar-menu .panel-heading h3,
-.panel.sidebar-menu .panel-heading h4,
-.panel.sidebar-menu .panel-heading h5 {
+    .sl-tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
   display: inline-block;
-  border-bottom: solid 5px #028fcc;
-  line-height: 1.1;
-  margin-bottom: 0;
-  padding-bottom: 10px;
-}
-.panel.sidebar-menu .panel-heading .btn.btn-danger {
-  color: #fff;
-  margin-top: 5px;
-}
-.panel.sidebar-menu .panel-body {
-  padding: 0;
-}
-.panel.sidebar-menu .panel-body span.colour {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border: solid 1px #555555;
-  vertical-align: top;
-  margin-top: 2px;
-  margin-left: 5px;
-}
-.panel.sidebar-menu .panel-body span.colour.white {
-  background: #fff;
-}
-.panel.sidebar-menu .panel-body span.colour.red {
-  background: red;
-}
-.panel.sidebar-menu .panel-body span.colour.green {
-  background: green;
-}
-.panel.sidebar-menu .panel-body span.colour.blue {
-  background: blue;
-}
-.panel.sidebar-menu .panel-body span.colour.yellow {
-  background: yellow;
-}
-.panel.sidebar-menu .panel-body label {
-  color: #999999;
-  font-size: 12px;
-}
-.panel.sidebar-menu .panel-body label:hover {
-  color: #555555;
-}
-.panel.sidebar-menu ul.nav.category-menu {
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-.panel.sidebar-menu ul.nav.category-menu li a {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-}
-.panel.sidebar-menu ul.nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-.panel.sidebar-menu ul.nav ul li {
-  display: block;
-}
-.panel.sidebar-menu ul.nav ul li a {
+  height: 26px;
+  line-height: 26px;
+  padding: 0 10px 0 3px;
   position: relative;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: normal;
-  text-transform: none !important;
-  display: block;
-  padding: 10px 15px;
-  padding-left: 30px;
-  font-size: 12px;
-  color: #999999;
-}
-.panel.sidebar-menu ul.nav ul li a:hover,
-.panel.sidebar-menu ul.nav ul li a:focus {
+  margin: 0 3px 6px 0;
   text-decoration: none;
-  background-color: #eeeeee;
+  -webkit-transition: color 0.2s;
 }
-.panel.sidebar-menu ul.tag-cloud {
-  list-style: none;
-  padding-left: 0;
+
+.sl-tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  height: 6px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
 }
-.panel.sidebar-menu ul.tag-cloud li {
-  display: inline-block;
-}
-.panel.sidebar-menu ul.tag-cloud li a {
-  display: inline-block;
-  padding: 5px;
-  border: solid 1px #eeeeee;
-  border-radius: 0;
-  color: #38a7bb;
-  margin: 5px 5px 5px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  font-size: 12px;
-}
-.panel.sidebar-menu ul.tag-cloud li a:hover {
-  color: #38a7bb;
-  text-decoration: none;
-  border-color: #38a7bb;
-}
-.panel.sidebar-menu ul.popular,
-.panel.sidebar-menu ul.recent {
-  list-style: none;
-  padding-left: 0;
-  padding: 20px 0;
-}
-.panel.sidebar-menu ul.popular li,
-.panel.sidebar-menu ul.recent li {
-  margin-bottom: 10px;
-  padding: 5px 0;
-  border-bottom: dotted 1px #eeeeee;
-}
-.panel.sidebar-menu ul.popular li:before,
-.panel.sidebar-menu ul.recent li:before,
-.panel.sidebar-menu ul.popular li:after,
-.panel.sidebar-menu ul.recent li:after {
-  content: " ";
-  display: table;
-}
-.panel.sidebar-menu ul.popular li:after,
-.panel.sidebar-menu ul.recent li:after {
-  clear: both;
-}
-.panel.sidebar-menu ul.popular li:before,
-.panel.sidebar-menu ul.recent li:before,
-.panel.sidebar-menu ul.popular li:after,
-.panel.sidebar-menu ul.recent li:after {
-  content: " ";
-  display: table;
-}
-.panel.sidebar-menu ul.popular li:after,
-.panel.sidebar-menu ul.recent li:after {
-  clear: both;
-}
-.panel.sidebar-menu ul.popular li img,
-.panel.sidebar-menu ul.recent li img {
-  width: 50px;
-  margin-right: 10px;
-}
-.panel.sidebar-menu ul.popular li h5,
-.panel.sidebar-menu ul.recent li h5 {
-  margin: 0 0 10px;
-}
-.panel.sidebar-menu ul.popular li h5 a,
-.panel.sidebar-menu ul.recent li h5 a {
-  font-weight: normal;
-}
-.panel.sidebar-menu ul.popular li p.date,
-.panel.sidebar-menu ul.recent li p.date {
-  float: right;
-  font-size: 12px;
-  color: #999999;
-}
-.panel.sidebar-menu ul.popular li:last-child,
-.panel.sidebar-menu ul.recent li:last-child {
-  border-bottom: none;
-}
-.panel.sidebar-menu .text-widget {
-  font-size: 12px;
-}
-.panel.sidebar-menu.with-icons ul.nav li a:after {
-  font-family: 'FontAwesome';
-  content: "\f105";
-  position: relative;
+
+.sl-tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
   top: 0;
-  float: right;
 }
 
-.follow-box {
-    box-shadow: none;
-}
-.follow-box {
-    background: #fff;
-    float: left;
-    width: 100%;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6)";
-    -moz-box-shadow: 0 3px 3px #ada6a6;
-    -webkit-box-shadow: 0 3px 3px #ada6a6;
-    box-shadow: 0 3px 3px #ada6a6;
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3,Direction=180,Color=#ada6a6);
-    border-radius: 10px;
-    border: #ececec solid 1px;
-    padding: 15px 18px 20px 18px;
-    margin-top: 10px;
-}
-  .follow-store-box span.storetitle {
-    color: #4d4d49;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .follow-store-box span.storeplace {
-    color: #898989;
-    font-size: 14px;
-    font-weight: 400;
-    width: 80%;
-    float: left;
-  }
-  .rating {
-    float: right;
-    color: #898989;
-    font-size: 13px;
-    font-weight: 400;
-}
-.follow-store-box .follow-rating-box {
-    background: #f7941d none repeat scroll 0 0;
-    border-radius: 5px;
-    color: #fff;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 700;
-    height: 28px;
-    line-height: 28px;
-    position: relative;
-    right: 35px;
-    top: -25px;
-    float: right;
-    font-weight: 700;
-    margin-left: -10px;
-    text-align: center;
-    width: 45px;
-}
-span.vote {
-    padding-top: 2px;
+.sl-tag:hover {
+  background-color: crimson;
+  color: white;
 }
 
-.followbx16 .follow-share-box {
-    margin-top: 0;
-    margin-bottom: 10px;
-    position: relative;
+.sl-tag:hover::after {
+   border-left-color: crimson; 
 }
-.follow-share-box {
-    width: 100%;
-    float: left;
-    margin-top: 15px;
-}
+    
+    .userfollow16 {
+        width: 100%;
+        float: left;
+        margin-top: 15px;
+    }
+    
+    .followcomment {
+        width: 85%;
+        float: left;
+        color: #898989;
+        font-size: 14px;
+        margin-top: -5px;
+        margin-bottom: 0;
+    }
+    
+    .userfollow16 ul {
+        padding: 0;
+        margin: 20px 0 0 0;
+        float: left;
+        width: 100%;
+    }
+    
+    .follow-share-box ul {
+        padding: 0;
+        margin: 5px 0 0 0;
+        width: 100%;
+    }
+    
+    .follow-share-box li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        float: left;
+        width: auto;
+        font-size: 14px;
+        color: #898989;
+    }
+    
+    .title-filter {
+        border-bottom: 1px solid #DDDDDD;
+        display: block;
+        margin-bottom: 2px !important;
+        padding-top: 10px !important;
+        text-align: center;
+        font-weight: bold
+    }
+    
+    .filter-sub-heading {
+        background-color: #CBCBCB !important;
+        color: black !important;
+        font-weight: normal;
+        padding: 10px 10px !important;
+    }
+    
+    .filter-badge {
+        color: #ffffff !important;
+        outline: none;
+        margin-top: 3px;
+    }
+    
+    .filter-search-icon {
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    
+    .filter-selected {
+        background: #d6d6c2 !important;
+    }
+    
+    .filter-selected a:focus {
+        background-color: transparent !important;
+    }
+    
+    .category-menu .active ul li a {
+        outline: none !important;
+    }
+    
+    .first-shop-panel {
+        margin-top: 0 !important;
+    }
 
+    .ad-list img {
+        width: 100%;
+    }
 
-.userfollow16 {
-    width: 100%;
-    float: left;
-    margin-top: 15px;
-}
-
-.followcomment {
-    width: 85%;
-    float: left;
-    color: #898989;
-    font-size: 14px;
-    margin-top: -5px;
-    margin-bottom: 0;
-}
-
-.userfollow16 ul {
-    padding: 0;
-    margin: 20px 0 0 0;
-    float: left;
-    width: 100%;
-}
-
-.follow-share-box ul {
-    padding: 0;
-    margin: 5px 0 0 0;
-    width: 100%;
-}
-
-.follow-share-box li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    float: left;
-    width: auto;
-    font-size: 14px;
-    margin-right: 25px;
-    color: #898989;
-}
-
-
+    .ad-list div {
+        padding-top: 5px;
+    }
 </style>
