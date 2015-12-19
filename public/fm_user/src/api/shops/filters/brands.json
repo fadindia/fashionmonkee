@@ -1,45 +1,43 @@
 {
-	"brands":[{
-	"id":1,
-	"name":"lee cooper",
-	"description":"",
-	"shops":"",
-	"showRooms":"",
-	"imageUrl":"images/b.jpg"
-	
-},{
-	"id":2,
-	"name":"lee",
-	"description":"",
-	"shops":"",
-	"showRooms":"",
-	"imageUrl":"images/b.jpg"
-	
-},{
-	"id":2,
-	"name":"lee",
-	"description":"",
-	"shops":"",
-	"showRooms":"",
-	"imageUrl":"images/b.jpg"
-	
-},{
-	"id":2,
-	"name":"lee",
-	"description":"",
-	"shops":"",
-	"showRooms":"",
-	"imageUrl":"images/b.jpg"
-	
-},{
-	"id":2,
-	"name":"lee",
-	"description":"",
-	"shops":"",
-	"showRooms":"",
-	"imageUrl":"images/b.jpg"
-	
-}
-]
+    "brands": [{
+        "id": 1,
+        "name": "lee cooper",
+        "description": "",
+        "shops": "",
+        "showRooms": "",
+        "imageUrl": "images/b.jpg"
 
+    }, {
+        "id": 2,
+        "name": "lee",
+        "description": "",
+        "shops": "",
+        "showRooms": "",
+        "imageUrl": "images/b.jpg"
+
+    }, {
+        "id": 3,
+        "name": "lee2",
+        "description": "",
+        "shops": "",
+        "showRooms": "",
+        "imageUrl": "images/b.jpg"
+
+    }, {
+        "id": 4,
+        "name": "lee3",
+        "description": "",
+        "shops": "",
+        "showRooms": "",
+        "imageUrl": "images/b.jpg"
+
+    }, {
+        "id": 5,
+        "name": "lee4",
+        "description": "",
+        "shops": "",
+        "showRooms": "",
+        "imageUrl": "images/b.jpg"
+
+    }]
 }

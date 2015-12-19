@@ -1,41 +1,33 @@
 {
-	"category":[
-		{
-			"id":1,
-			"name":"casuals",
-			"type":"mens",
-			"imageUrl":"http://placehold.it/200x200"
-		},
-		{
-			"id":1,
-			"name":"casuals",
-			"type":"mens",
-			"imageUrl":"http://placehold.it/200x200"
-		},
-		{
-			"id":1,
-			"name":"casuals",
-			"type":"mens",
-			"imageUrl":"http://placehold.it/200x200"
-		},
-		{
-			"id":1,
-			"name":"casuals",
-			"type":"mens",
-			"imageUrl":"http://placehold.it/200x200"
-		},
-		{
-			"id":1,
-			"name":"casuals",
-			"type":"mens",
-			"imageUrl":"http://placehold.it/200x200"
-		},
-		{
-			"id":1,
-			"name":"casuals",
-			"type":"mens",
-			"imageUrl":"http://placehold.it/200x200"
-		}
-	]
-
+    "category": [{
+        "id": 1,
+        "name": "casuals",
+        "type": "mens",
+        "imageUrl": "http://placehold.it/200x200"
+    }, {
+        "id": 2,
+        "name": "casuals2",
+        "type": "mens",
+        "imageUrl": "http://placehold.it/200x200"
+    }, {
+        "id": 3,
+        "name": "casuals3",
+        "type": "mens",
+        "imageUrl": "http://placehold.it/200x200"
+    }, {
+        "id": 4,
+        "name": "casuals4",
+        "type": "mens",
+        "imageUrl": "http://placehold.it/200x200"
+    }, {
+        "id": 5,
+        "name": "casuals5",
+        "type": "mens",
+        "imageUrl": "http://placehold.it/200x200"
+    }, {
+        "id": 6,
+        "name": "casuals6",
+        "type": "mens",
+        "imageUrl": "http://placehold.it/200x200"
+    }]
 }
