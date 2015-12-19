@@ -2,12 +2,9 @@
 	<h2>Categories <small>Choose your shop product categories</small></h2>
      <div class="row">
       <div class="col-md-9">
-         <select class="cs-select cs-skin-elastic">
+         <select>
               <option value="" disabled selected>Select a Store</option>
-              <option value="france" data-class="flag-france">France</option>
-              <option value="brazil" data-class="flag-brazil">Brazil</option>
-              <option value="argentina" data-class="flag-argentina">Argentina</option>
-              <option value="south-africa" data-class="flag-safrica">South Africa</option>
+              <option ng-repeat="store in stores" value="{{store.id}}">{{store.name}}</option>              
         </select>
       </div>
     </div>

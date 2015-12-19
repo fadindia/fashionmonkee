@@ -1,17 +1,36 @@
  <div> 
-    <h2>Add/Edit <small>product catalogue</small></h2>
-  <form>
+  <a class="pull-right btn btn-primary btn-outline btn-rounded"  href="#/dashboard/catalogue-list">Go Back</a>
+    <h2>{{oper === 'new' && 'Add' || 'Edit'}} <small>product catalogue</small></h2>
+  <form angular-validator-submit="save()" name="myForm"  novalidate angular-validator>
    <div class="jumbotron row">
         <div class="col-xs-12">
           <div class="form-group ">
               <label>Name</label>
-              <input type="text" class="form-control" name="name" />
+              <input type="text" class="form-control" name="catalogueName" ng-model="model.name"      validate-on="dirty" 
+                    required-message="'Yo! This field is required..'"
+                    required/>
           </div>
       </div>
        <div class="col-xs-12">
           <div class="form-group">
               <label>Description</label>
-              <textarea name="description" class="form-control" rows="3"></textarea>
+              <textarea name="description" class="form-control" rows="3" ng-model="model.description" 
+                    validate-on="dirty" 
+                    required-message="'Yo! This field is required..'"
+                    required></textarea>
+          </div>
+      </div>
+       <div class="col-xs-12">
+          <div class="form-group ">
+              <label>Category</label>
+               <select style="width:100%" ui-select2  name="category" ng-model="model.category" validate-on="dirty" 
+                    required-message="'Yo! This field is required..'"
+                    required>
+                <option value="" disabled selected hidden >Choose Category</option>
+                  <option  value="mens">Mens</option>
+                  <option  value="womens">Womens</option>
+                  <option  value="kids">Kids</option>
+                 </select>
           </div>
       </div>
       <div class="col-xs-12" nv-file-drop="" uploader="uploader">
@@ -47,7 +66,7 @@
                     </table>
               </div>
       </div>
-     <button type="submit" class="btn btn-primary col-md-offset-5">Update</button> 
+     <button type="submit" class="btn btn-primary col-md-offset-5">{{oper === 'new' && 'save' || 'update'}}</button> 
   </div>
 
     

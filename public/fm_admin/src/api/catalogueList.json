@@ -1,0 +1,16 @@
+{
+	"catalogue":[
+	{
+		"id":1,
+		"name":"V T.Shirt",
+		"category":"Casuals",
+		"status":"Active"
+	},
+	{
+		"id":2,
+		"name":"Flower shirts",
+		"category":"Casuals",
+		"status":"Active"
+	}
+	]
+}
