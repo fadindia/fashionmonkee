@@ -17,11 +17,14 @@
 	background-color: #f7f7f7;
 	color: #74777b;
 	transition: background-color 0.2s, color 0.2s;
+	border-bottom: 2px solid transparent;
+
 }
 
 .tabs-style-bar nav ul li a:hover,
 .tabs-style-bar nav ul li a:focus {
-	color: #2CC185;
+	color: #028fcc;
+	border-bottom: 2px solid #028fcc;
 }
 
 .tabs-style-bar nav ul li a span {

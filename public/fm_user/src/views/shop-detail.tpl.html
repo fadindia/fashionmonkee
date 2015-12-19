@@ -108,7 +108,11 @@
                         <ul id="og-grid-category" class="og-grid">
                             <li id="ogGridCategory{{$index}}" ng-repeat="category in shopDetails.categories" ng-init="doOgGridInitialization($index, shopDetails.categories.length, 'og-grid-category')">
                                 <a data-largesrc="{{category.imageUrl}}" data-title="{{category.name}}" data-description="{{category.type}}">
-                                    <img src="{{category.imageUrl}}"/>
+                                    <img src="fm_user/{{category.imageUrl}}"/>
+                                    <div class="img-desc">
+                                        <span>Title</span>
+                                        <span>Description</span>
+                                    </div>
                                 </a>
                             </li>
                         </ul>
@@ -121,7 +125,7 @@
                         <ul id="og-grid-product" class="og-grid">
                             <li id="ogGridProduct{{$index}}" ng-repeat="product in shopDetails.products" ng-init="doOgGridInitialization($index, shopDetails.products.length, 'og-grid-product')">
                                 <a data-largesrc="{{product.imageUrl}}" data-title="{{product.name}}" data-description="{{product.description}}">
-                                    <img src="{{product.imageUrl}}"/>
+                                    <img src="fm_user/{{product.imageUrl}}"/>
                                 </a>
                             </li>
                         </ul>
@@ -134,7 +138,7 @@
                         <ul id="og-grid-offer" class="og-grid">
                             <li id="ogGridOffer{{$index}}" ng-repeat="offer in shopDetails.offers" ng-init="doOgGridInitialization($index, shopDetails.offers.length, 'og-grid-offer');setOfferDescription(offer, $index);">
                                 <a data-largesrc="{{offer.imageUrl}}" data-title="{{offer.name}}" data-description="{{offer.description}}">
-                                    <img src="{{offer.imageUrl}}"/>
+                                    <img src="fm_user/{{offer.imageUrl}}"/>
                                 </a>
                             </li>
                         </ul>
@@ -187,7 +191,7 @@
                                                     {{review.description}}
                                                     </br>
                                                     <span ng-repeat="image in review.reviewImages track by $index">
-                                                        <img src="{{image}}"/>
+                                                        <img src="fm_user/{{image}}"/>
                                                     </span>
                                                 </div>
                                             </div>
@@ -207,7 +211,7 @@
                         <ul id="og-grid-branch" class="og-grid">
                             <li id="ogGridBranch{{$index}}" ng-repeat="branch in shopDetails.branches" ng-init="doOgGridInitialization($index, shopDetails.branches.length, 'og-grid-branch')">
                                 <a data-largesrc="{{branch.imageUrl}}" data-title="{{branch.name}}" data-description="{{branch.address}}">
-                                    <img src="{{branch.imageUrl}}"/>
+                                    <img src="fm_user/{{branch.imageUrl}}"/>
                                 </a>
                             </li>
                         </ul>
@@ -223,7 +227,7 @@
     <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="container text-center">
             <div class="footer-logo">
-                <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+                <a href="index.html"><img class="img-responsive" src="fm_user/images/logo.png" alt=""></a>
             </div>
             <div class="social-icons">
                 <ul>
@@ -500,9 +504,10 @@ border: 1px solid #666666;
 color: #666666;
 font-size: 12px;
 font-weight: 600;
-padding: 11px 11px;
+padding: 8px 8px;
 text-transform: uppercase;
-border-radius: 10px;
+border-radius: 4px;
+    border-bottom: 4px solid #5EB0F7;
 
 }
 
@@ -526,18 +531,19 @@ background: #fff;
 float: left;
 width: 100%;
 -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6)";
--moz-box-shadow: 0 3px 3px #ada6a6;
--webkit-box-shadow: 0 3px 3px #ada6a6;
-box-shadow: 0 3px 3px #ada6a6;
+-moz-box-shadow: 0px -3px 7px #ada6a6;
+
+-webkit-box-shadow: 0px -3px 7px #ada6a6;
+box-shadow: 0px -3px 7px #ada6a6;
 filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3,Direction=180,Color=#ada6a6);
-border-radius: 10px;
+border-radius: 4px;
 border: #ececec solid 1px;
-padding: 60px 18px 60px 18px;
+padding: 28px 18px 28px 18px;
 margin-top: 10px;
 }
 .store-box span.storetitle {
 color: #4d4d49;
-font-size: 18px;
+font-size: 24px;
 float: left;
 font-weight: bold;
 }
@@ -554,7 +560,6 @@ color: #898989;
 font-size: 13px;
 font-weight: 400;
 margin-top: -15px;
-margin-right:110px;
 }
 .store-box .rating-box {
 background: #028fcc none repeat scroll 0 0;
@@ -605,7 +610,35 @@ font-size: 14px;
 margin-right: 25px;
 color: #898989;
 }
+.btn-categorymore {
+     border: 1px solid #028fcc;
+    }
+.og-grid li > a{
+    overflow: hidden;
+transition:top 0.5s;
+}
+.og-grid li > a img{
+    overflow: hidden;
+    top:0;
+    transition:top 0.5s;
+}
+.og-grid li > a .img-desc{
+    display: block;
+    position: absolute;
+    height: 40px;
+    background: black;
+    bottom: -40px;
+    width: 100%;
+    transition:bottom 0.5s;
 
+}
+.og-grid li > a:hover img{
+    top:-40px;
+   
+}
+.og-grid li > a:hover .img-desc{
+    bottom: 0px;
+}
 </style>
 
 <script type="text/javascript">

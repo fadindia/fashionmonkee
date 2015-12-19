@@ -9,8 +9,36 @@
   height: 28px;
   float: left;
   background-color: #fbedd9;
-  margin: 1px;
+  margin: 7px 1px 0 1px;
   text-align: center;
+}
+.br-theme-bars-1to10 .br-widget a:nth-child(1) {
+  width: 10px;
+  height: 20px;
+}
+.br-theme-bars-1to10 .br-widget a:nth-child(2) {
+  width: 10px;
+  height: 28px;
+  top: -8px;
+    position: relative;
+}
+.br-theme-bars-1to10 .br-widget a:nth-child(3) {
+  width: 10px;
+  height: 36px;
+  top: -16px;
+    position: relative;
+}
+.br-theme-bars-1to10 .br-widget a:nth-child(4) {
+  width: 10px;
+  height: 44px;
+  top: -24px;
+    position: relative;
+}
+.br-theme-bars-1to10 .br-widget a:nth-child(5) {
+  width: 10px;
+  height: 52px;
+  top: -32px;
+    position: relative;
 }
 .br-theme-bars-1to10 .br-widget a.br-active,
 .br-theme-bars-1to10 .br-widget a.br-selected {
