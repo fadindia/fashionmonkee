@@ -39,6 +39,7 @@ class ShopController extends Controller
         log::info($shopId);
         $addressData = $this->formAddress($request);
         $addressData['shop_id'] = $shopId;
+        log::info($addressData);
 
         $locId = Address::addLocation($addressData);
 
@@ -49,11 +50,12 @@ class ShopController extends Controller
         $addressData = array(
             "address1" => $request->get("address1"),
             "address2" => $request->get("address2"),
+            "area" => $request->get("area"),
             "city" => $request->get("city"),
             "state" => $request->get("state"),
             "country" => $request->get("country"),
             "zip_code" => $request->get("zip_code"),
-            "mobile_no" => $request->get("mobile"),
+            "mobile" => $request->get("mobile_no"),
             "phone" => $request->get("phone")
         );
 

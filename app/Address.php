@@ -4,14 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Location;
+use Illuminate\Support\Facades\Log;
 
 class Address extends Model
 {
      protected $table = 'address';
 
      protected $fillable = [
-            'address_1',
-            'address_2',
+            'address1',
+            'address2',
             'area',
             'city',
             'state',
@@ -22,6 +23,7 @@ class Address extends Model
      ];
 
      public static function addAddress($addressData){
+        log::info($addressData);
          $addressId = Address::create($addressData)->id;
         return $addressId;
 
