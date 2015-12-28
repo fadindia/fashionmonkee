@@ -11,6 +11,13 @@ angular.module('yapp').factory('getdata', ['$api',
         
       };
 
+      this.find = function(api) {
+        
+          return new API(api).list();
+    
+        
+      };
+
 
     };
     return getdata;

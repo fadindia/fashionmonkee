@@ -70,7 +70,7 @@
      <script src="fm_admin/src/controllers/detail.js"></script>
     <script src="fm_admin/src/controllers/login.js"></script>
     <script src="fm_admin/src/controllers/dashboard.js"></script>
-    <script src="fm_admin/src/controllers/offer.js"></script>
+    <script src="fm_admin/src/controllers/categories.js"></script>
 
     <script src="fm_admin/src/directives/file-upload-directive.js"></script>
 

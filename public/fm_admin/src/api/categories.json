@@ -1,0 +1,14 @@
+{
+	"categories":[
+	{
+		"id":1,
+		"name":"Casuals",
+		"description":"What have you been upto"		
+	},
+	{
+		"id":2,
+		"name":"Formals",
+		"description":"What have you been upto"
+	}
+	]
+}

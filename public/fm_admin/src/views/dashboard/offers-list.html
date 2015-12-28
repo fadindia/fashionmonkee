@@ -1,11 +1,13 @@
 <div> 
     <h2>Offers <small>Add your offers</small></h2>
     <div class="row">
-      <div class="col-md-9">
-         <select>
+       <div class="col-md-9">
+        <div class="form-group col-md-3">
+         <select ui-select2 style="width:100%" ng-model="location">
               <option value="" disabled selected>Select a Store</option>
               <option ng-repeat="store in stores" value="{{store.id}}">{{store.name}}</option>              
         </select>
+        </div>
       </div>
       <div class="col-md-3">
     <button class="btn btn-primary btn-lg btn-rounded"  ng-click="goEdit('dashboard/offers-edit','new')"  >Add offers</button>

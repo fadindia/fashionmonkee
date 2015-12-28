@@ -69,7 +69,17 @@ angular
           .state('categories', {
             url: '/categories',
             parent: 'dashboard',
-            templateUrl: 'fm_admin/src/views/dashboard/categories.html'
+            templateUrl: 'fm_admin/src/views/dashboard/categories.html',
+            controller:'categoryCtrl',
+            resolve: {
+              itemModel: function(getdata) {
+              var list = new getdata();
+                return list.find('categories.json');
+            },
+              item: function() {
+                return 'categories';
+            }
+          }
           })
            .state('catalogue-list', {
             url: '/catalogue-list',
