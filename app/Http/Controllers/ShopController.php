@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use App\Shops;
 use App\Address;
+use App\Catalog;
 use Response;
 use DB;
 
@@ -79,6 +80,40 @@ class ShopController extends Controller
         $locId = Address::addLocation($addressData);
 
         return Response::json($locId);
+    }
+
+    public function addCatalog(Request $request){
+        log::info('add catalog');
+        log::info($request);
+
+        try{
+        if ($request->get("img") != null) {
+            log::info('if');
+            $base64data = $request->get("img");
+            $filename = str_random ( 60 );
+            $uri = substr($base64data, strpos ( $base64data, "," ) + 1 );
+            $url = public_path () . '/fm_user/images/fm/catalog/'.$request->get('shop_id').'/';
+            if (! File::exists ( $url )) {
+                File::makeDirectory ( $url, $mode = 0777, true, true );
+            }
+            File::put ( $url . $filename . '.jpg', base64_decode ( $uri ) );
+            $catalogData = array (
+                'media_url' => $url . $filename . '.jpg' 
+            );
+        }
+
+            $catalogData['location_id'] = $request->get('location_id');
+            $catalogData['description'] = $request->get('description');
+            $catalogData['name'] = $request->get('name');
+
+            $catalogId = Catalog::create($catalogData)->id;
+            return Response::json($catalogId);
+        }
+        catch(Exception $e){
+            log::info($e);
+            return Response::json('ERROR');
+
+        }
     }
 
 
