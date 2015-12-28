@@ -27,6 +27,7 @@ Route::group(array('prefix' => '/'), function() {
     Route::post('newShop','ShopController@newShop'); // for people who willing to contact - Draft
     Route::post('addLocation','ShopController@addLocation');
     Route::post('addAddress','ShopController@addAddress');
+    Route::post('addCatalog','ShopController@addCatalog');
     
 
 });
