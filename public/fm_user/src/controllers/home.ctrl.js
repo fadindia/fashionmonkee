@@ -91,5 +91,17 @@ $('#search-city').typeahead({
         $scope.goToShopList = function (areaId, areaName) {
           $state.go('shops', { areaId: areaId, areaName: areaName });
         };
+
+	$scope.goToUserProfile = function () {
+          if(userInfo.getCurrentlyLoggedInUser().id === null){
+            $('.login').trigger('click');
+            var loginDetails = new $api('user/loginDetails.json');
+            loginDetails.list().then(function (response) {
+              userInfo.setCurrentlyLoggedInUser(response.data);
+            });
+          }else{
+            $state.go('user', { userId: userInfo.getCurrentlyLoggedInUser().id });
+          }
+        };
 });
 
