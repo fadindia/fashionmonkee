@@ -1,79 +1,192 @@
 {
-	"user":{
-		"id":1,		
-		"profile":{
-			"name":"Marcus Doe",
-			"place":"Chennai",
-			"mobile":"9597045243",
-			"aboutYourself":"I am a designer"
-
-		},
-		"reviews":[{
-			"id":1,
-			"imageUrls":["images/blog/1.jpg"],
-			"blogHeading":"Lorem ipsum dolor sit amet consectetur adipisicing elit",
-			"blogData":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			"category":"Mens",
-			"createdDt":"June 26, 2014",
-			"updatedDt":"",
-			"reviews":"10",
-			"likes":"10"	
-			}],
-		"photos":["http://placehold.it/600x350","http://placehold.it/600x350/2255EE","http://placehold.it/600x350/777","http://placehold.it/600x350/992233"],
-		"followers":[{
-			"id":1,
-			"name":"Harita Naidu",
-			"followers":"22",
-			"reviews":"15",
-			"imageUrl":"https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg"
-			},
-			{
-			"id":2,
-			"name":"Harita Naidu",
-			"followers":"22",
-			"reviews":"15",
-			"imageUrl":"https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg"
-			}],
-		"following":[{
-			"id":1,
-			"name":"Harita Naidu",
-			"followers":"22",
-			"reviews":"15",
-			"imageUrl":"https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg"
-			},
-			{
-			"id":2,
-			"name":"Harita Naidu",
-			"followers":"22",
-			"reviews":"15",
-			"imageUrl":"https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg"
-			}],
-			"bookmarks":[{
-				"id":1,
-				"name":"Fashion one",
-				"address":"velachery,chennai",
-				"rating":4.1
-				},
-				{
-				"id":2,
-				"name":"Fashion one",
-				"address":"velachery,chennai",
-				"rating":4.1
-				}],
-			"rating":[{
-				"id":1,
-				"name":"Fashion one",
-				"address":"velachery,chennai",
-				"rating":4.1
-				},
-				{
-				"id":2,
-				"name":"Fashion one",
-				"address":"velachery,chennai",
-				"rating":4.1
-				}]
-
-	}
-
-		
+    "user": {
+        "id": 1,
+        "profileImage": "fm_user/images/sankar.jpg",
+        "isFollowedByLoggedInUser": false,
+        "profile": {
+            "name": "Marcus Doe",
+            "place": "Chennai",
+            "mobile": "9597045243",
+            "aboutYourself": "I am a designer"
+        },
+        "reviews": [{
+            "shopId": 5,
+            "shopName": "Chennai Silks",
+            "shopShortAddress": "Velachery",
+            "rating": 3.5,
+            "shopImage": "fm_user/images/a.jpg",
+            "shopReviews": [{
+                "id": 1,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "ts": "June 26, 2014"
+            },{
+                "id": 1,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "ts": "June 26, 2014"
+            }]
+        },{
+            "shopId": 5,
+            "shopName": "Chennai Silks",
+            "shopShortAddress": "Velachery",
+            "rating": 3.5,
+            "shopImage": "fm_user/images/b.jpg",
+            "shopReviews": [{
+                "id": 1,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "ts": "June 26, 2014"
+            }]
+        }],
+        "photos": [
+            "fm_user/images/b.jpg",
+            "fm_user/images/sankar.jpg",
+            "fm_user/images/a.jpg",
+            "fm_user/images/features-bg.jpg",
+            "fm_user/images/contacts-bg.jpg",
+            "fm_user/images/3.jpg",
+            "fm_user/images/2.jpg",
+            "fm_user/images/logo.png",
+            "fm_user/images/twitter-bg.jpg",
+            "fm_user/images/about-bg.jpg"
+        ],
+        "followers": [{
+            "id": 1,
+            "name": "Sankar",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Naveen",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Naveen",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Naveen",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Naveen",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Naveen",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Naveen",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }],
+        "following": [{
+            "id": 1,
+            "name": "Suriya",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Sankar",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Sankar",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Sankar",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Sankar",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Sankar",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }, {
+            "id": 2,
+            "name": "Sankar",
+            "followers": "22",
+            "reviews": "15",
+            "userImage": "fm_user/images/sankar.jpg"
+        }],
+        "bookmarks": [{
+            "id": 1,
+            "name": "Fashion one",
+            "address": "velachery,chennai",
+            "rating": 4.1,
+            "shopImage": "fm_user/images/a.jpg"
+        }, {
+            "id": 2,
+            "name": "Fashion one",
+            "address": "velachery,chennai",
+            "rating": 4.1,
+            "shopImage": "fm_user/images/a.jpg"
+        }, {
+            "id": 3,
+            "name": "Chennai silks",
+            "address": "velachery,chennai",
+            "rating": "",
+            "shopImage": "fm_user/images/a.jpg"
+        }, {
+            "id": 4,
+            "name": "Fashion one",
+            "address": "velachery,chennai",
+            "rating": "",
+            "shopImage": "fm_user/images/a.jpg"
+        }],
+        "ratings": [{
+            "id": 1,
+            "name": "Fashion one",
+            "address": "velachery,chennai",
+            "rating": 4.1,
+            "shopImage": "fm_user/images/a.jpg",
+            "isBookmarked": true
+        }, {
+            "id": 2,
+            "name": "Fashion one",
+            "address": "velachery,chennai",
+            "rating": 4.1,
+            "shopImage": "fm_user/images/a.jpg",
+            "isBookmarked": false
+        }, {
+            "id": 3,
+            "name": "Chennai silks",
+            "address": "velachery,chennai",
+            "rating": "5",
+            "shopImage": "fm_user/images/a.jpg",
+            "isBookmarked": false
+        }, {
+            "id": 4,
+            "name": "Fashion one",
+            "address": "velachery,chennai",
+            "rating": "3",
+            "shopImage": "fm_user/images/a.jpg",
+            "isBookmarked": true
+        }]
+    }
 }
