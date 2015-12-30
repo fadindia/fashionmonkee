@@ -1,1870 +1,1257 @@
-     
+<div id="shopListLoader" class="shop-list-loader" ng-if="showLoader">
+    <div class="overlay-loader">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
 <header>
- <div class="main-nav">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">
-            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
-          </a>                    
+    <div class="main-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="index.html">
+                    <h1><img class="img-responsive" src="fm_user/images/logo.png" alt="logo" width="300" height="100"></h1> </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="scroll active"><a href="#home">Home</a></li>
+                    <li class="scroll"><a href="#portfolio">Collections</a></li>
+                    <li class="scroll"><a href="#features">Features</a></li>
+                    <li class="scroll"><a href="#pricing">Areas</a></li>
+                    <li class="scroll"><a href="#blog">Blog</a></li>
+                    <li class="scroll"><a href="#contact">Contact</a></li>
+                    <li class="scroll login"><a href="">Login</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">                 
-           <li class="scroll"><a href="#home">Login</a></li>
-              
-          </ul>
-        </div>
-      </div>
-    </div><!--/#main-nav-->
-  </header><!--/#home-->
-  <section id="user">
+    </div>
+    <!--/#main-nav-->
+</header>
+<section id="user">
     <div class="container">
-    <div class="row profile">
-        <div class="col-md-3">
-            <div class="profile-sidebar">
-                <!-- SIDEBAR USERPIC -->
-                <div class="profile-userpic">
-                    <img src="images/team/1.jpg" class="img-responsive" alt="">
-                </div>
-                <!-- END SIDEBAR USERPIC -->
-                <!-- SIDEBAR USER TITLE -->
-                <div class="profile-usertitle">
-                    <div class="profile-usertitle-name">
-                        {{user.profile.name}}
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic"> <img src="{{user.profileImage}}" class="img-responsive" alt=""> </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name"> {{user.profile.name}} </div>
+                        <div class="profile-usertitle-job"> {{user.profile.place}} </div>
                     </div>
-                    <div class="profile-usertitle-job">
-                        {{user.profile.place}}
+                    <!-- END SIDEBAR USER TITLE -->
+                    <!-- SIDEBAR BUTTONS -->
+                    <div class="profile-userbuttons">
+                        <button type="button" ng-if="idOfCurrentUser !== idOfCurrentlyLoggedInUser && !user.isFollowedByLoggedInUser" class="btn btn-success btn-sm" ng-click="followThisUser()">Follow</button>
+                        <!--  <button type="button" class="btn btn-danger btn-sm">Settings</button> -->
                     </div>
-                </div>
-                <!-- END SIDEBAR USER TITLE -->
-                <!-- SIDEBAR BUTTONS -->
-                <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-success btn-sm">Follow</button>
-                   <!--  <button type="button" class="btn btn-danger btn-sm">Settings</button> -->
-                </div>
-                <!-- END SIDEBAR BUTTONS -->
-                <!-- SIDEBAR MENU -->
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li class="active" ng-click="setTabContent('profile')">
-                            <a href="">
-                            <i class="glyphicon glyphicon-user"></i>
-                            Profile </a>
-                        </li>
-                        <li ng-click="setTabContent('reviews')">
-                            <a href="">
-                            <i class="glyphicon glyphicon-comment"></i>
-                            Reviews </a>
-                        </li>
-                        <li ng-click="setTabContent('photos')">
-                            <a href="" >
-                            <i class="glyphicon glyphicon-camera"></i>
-                            Photos </a>
-                        </li>
-                        <li ng-click="setTabContent('followers')">
-                            <a href="">
-                            <i class="glyphicon glyphicon-flag"></i>
-                            Followers </a>
-                        </li>
-                        <li ng-click="setTabContent('bookmarks')">
-                            <a href="">
-                            <i class="glyphicon glyphicon-bookmark"></i>
-                            Bookmarks </a>
-                        </li>
-                         <li ng-click="setTabContent('ratings')">
-                            <a href="">
-                            <i class="glyphicon glyphicon-star"></i>
-                            ratings </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END MENU -->
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="profile-content">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="user-comments" ng-show="currentTab=='reviews'">
-                <div class="articlehead05">
-                     <div class="username05">
-                        <div class="userimg05"><img src="http://www.zakoopi.com/images/hanger-img.png">
-                        </div>
-                        <a><span>Wills Lifestyle</span></a><br>Select Citywalk
+                    <!-- END SIDEBAR BUTTONS -->
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li id="profileMenu" ng-class="currentTab === 'profile' && 'active'" ng-click="setTabContent('profile')">
+                                <a href=""> <i class="glyphicon glyphicon-user"></i> Profile </a>
+                            </li>
+                            <li id="reviewsMenu" ng-class="currentTab === 'reviews' && 'active'" ng-click="setTabContent('reviews')">
+                                <a href=""> <i class="glyphicon glyphicon-comment"></i> Reviews </a>
+                            </li>
+                            <li id="photosMenu" ng-class="currentTab === 'photos' && 'active'" ng-click="setTabContent('photos')">
+                                <a href=""> <i class="glyphicon glyphicon-camera"></i> Photos </a>
+                            </li>
+                            <li id="followersMenu" ng-class="currentTab === 'followers' && 'active'" ng-click="setTabContent('followers')">
+                                <a href=""> <i class="glyphicon glyphicon-flag"></i> Followers </a>
+                            </li>
+                            <li id="bookmarksMenu" ng-class="currentTab === 'bookmarks' && 'active'" ng-click="setTabContent('bookmarks')">
+                                <a href=""> <i class="glyphicon glyphicon-bookmark"></i> Bookmarks </a>
+                            </li>
+                            <li id="ratingsMenu" ng-class="currentTab === 'ratings' && 'active'" ng-click="setTabContent('ratings')">
+                                <a href=""> <i class="glyphicon glyphicon-star"></i> ratings </a>
+                            </li>
+                        </ul>
                     </div>
-           
-                </div>
-        <div class="articleinfo05">
-            <div class="atriclereate05"><span>Rated</span>
-            <span class="box" style="background-color:#A4d816">3.5</span>           
-            </div>
-            
-            <span>
-                <span  class="final_review_txt">Wills lifestyle is a well established brand and has this huge showroom on the ground floor of select city walk. The showroom is in the tones of red, white and minimal black and it is very classy, just like the collection of this store. The staff is very helpful regarding garment selection and suggestions as well. There are apparels from men and women in the store. Very classic, fashionable and sophisticated collection of kurtas, shirts, tops, trousers, jackets for women and shirts, tshirts, trousers, pants for men. They offer accessories for men as well, such as ties, cuff links and...</span>
-                </span><span>
-                <a class="review_in_more"  href="#">more</a>
-            </span>
-            
-        </div>
-        <div class="articlecomment05">
-            <div class="topbar05" style="padding-top: 10px;padding-bottom: 0px;">
-                <div class="user-name">
-                    <span class="circle-box">
-                        <img  src="http://zkp-www.s3.amazonaws.com/uploads/profile_pics/lakshita-1438186795.jpg">
-                    </span>
-                    <span class="title">
-                        <a  href="/profile/lakshita-sehgal">
-                            <span>lakshita sehgal</span>
-                        </a>  
-                    </span>
-                </div>
-                <div  class="like05">
-                    <span class="like_inside">
-                        
-                    </span> 
-                    <span class="comment_inside">
-                         
-                    </span> 
+                    <!-- END MENU -->
                 </div>
             </div>
-            
-        </div>        
-       <!--  <div class="articlefooter05">
-            <div class="usercomment05">
-                <div class="usershare05"> 
-                    <div class="iconssmaller">
-                        <div class="svg_in">
-                            <i class="glyphicon glyphicon-thumbs-up"></i>                           
+            <div class="col-md-9 content-wrapper">
+                <div class="profile-content">
+                    <form class="form-horizontal profile-form" ng-show="currentTab=='profile'">
+                        <table class="table table-hover table-striped">
+                            <tbody>
+                                <tr>
+                                    <td width="50%" style="vertical-align: middle">Name:</td>
+                                    <td ng-if="!isProfileInEditMode">{{user.profile.name}}</td>
+                                    <td ng-if="isProfileInEditMode">
+                                        <input class="form-control input-md" ng-model="profileEditModel.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%" style="vertical-align: middle">Location:</td>
+                                    <td ng-if="!isProfileInEditMode">{{user.profile.place}}</td>
+                                    <td ng-if="isProfileInEditMode">
+                                        <input class="form-control input-md" ng-model="profileEditModel.place"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%" style="vertical-align: middle">Contact:</td>
+                                    <td ng-if="!isProfileInEditMode">{{user.profile.mobile}}</td>
+                                    <td ng-if="isProfileInEditMode">
+                                        <input class="form-control input-md" ng-model="profileEditModel.mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%" style="vertical-align: middle">About:</td>
+                                    <td ng-if="!isProfileInEditMode">{{user.profile.aboutYourself}}</td>
+                                    <td ng-if="isProfileInEditMode">
+                                        <textarea class="form-control input-md" ng-model="profileEditModel.aboutYourself"/>
+                                    </td>
+                                </tr>
+                                <tr ng-if="!isProfileInEditMode && idOfCurrentUser === idOfCurrentlyLoggedInUser">
+                                    <td colspan="2" style="text-align: center">
+                                        <button class="btn btn-success" ng-click="toggleProfileEditMode()">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr ng-if="isProfileInEditMode && idOfCurrentUser === idOfCurrentlyLoggedInUser">
+                                    <td style="text-align: right" width="50%">
+                                        <button class="btn btn-success" ng-click="updateUserDetails()">Update</button>
+                                    </td>
+                                    <td style="text-align: left">
+                                        <button class="btn btn-default" ng-click="toggleProfileEditMode()">Cancel</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    <div class="user-comments" ng-show="currentTab=='reviews'">
+                        <div ng-repeat="shopReview in user.reviews">
+                            <div class="articlehead05" ng-class="$index !== 0 && 'articlehead05-with-margin'">
+                                <div class="username05">
+                                    <div class="userimg05"><img src="{{shopReview.shopImage}}"> </div>
+                                    <div><h4>{{shopReview.shopName}}</h4></div>
+                                    {{shopReview.shopShortAddress}}
+                                </div>
+                                <div class="atriclereate05"><div>Rated</div> <div class="box" style="background-color:#A4d816">{{shopReview.rating}}</div> </div> 
+                            </div>
+                            <div ng-repeat="oneReview in shopReview.shopReviews">
+                                <div class="articleinfo05">
+                                    <div class="review-timestamp"><i class="fa fa-clock-o"></i>{{oneReview.ts}}</div>
+                                    <div class="final_review_txt">{{oneReview.description}}</div>
+                                </div>
+                            </div>             
+                            <!-- <div class="articlefooter05">
+                                <div class="usercomment05">
+                                    <div class="usershare05">
+                                        <div class="iconssmaller">
+                                            <div class="svg_in"> <i class="glyphicon glyphicon-thumbs-up"></i> </div>
+                                        </div>
+                                    </div>
+                                    <div class="usercommentmargin05">
+                                        <div class="commentinput05">
+                                            <input type="text" name="" placeholder="Add comment ...">
+                                            <a href="javascript:void(0);"><img src="http://www.zakoopi.com/images/comment-submit.jpg"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
                         </div>
-                    </div>                   
-                </div>
-                <div class="usercommentmargin05">
-                    <div class="commentinput05">
-                        <input type="text" name="" placeholder="Add comment ...">
-                     
-                        <a  href="javascript:void(0);"><img src="http://www.zakoopi.com/images/comment-submit.jpg"></a> 
                     </div>
-                </div>
-            </div>            
-        </div> -->
-
-
-        <div class="articlehead05">
-                     <div class="username05">
-                        <div class="userimg05"><img src="http://www.zakoopi.com/images/hanger-img.png">
+                    <div class="container-fluid" ng-show="currentTab=='photos'">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-4 col-xs-6 user-photos" ng-repeat="photo in user.photos track by $index">
+                                <img class="thumbnail img-responsive" src="{{photo}}" />
+                            </div>
                         </div>
-                        <a><span>Wills Lifestyle</span></a><br>Select Citywalk
                     </div>
-           
-                </div>
-        <div class="articleinfo05">
-            <div class="atriclereate05"><span>Rated</span>
-            <span class="box" style="background-color:#A4d816">3.5</span>           
-            </div>
-            
-            <span>
-                <span  class="final_review_txt">Wills lifestyle is a well established brand and has this huge showroom on the ground floor of select city walk. The showroom is in the tones of red, white and minimal black and it is very classy, just like the collection of this store. The staff is very helpful regarding garment selection and suggestions as well. There are apparels from men and women in the store. Very classic, fashionable and sophisticated collection of kurtas, shirts, tops, trousers, jackets for women and shirts, tshirts, trousers, pants for men. They offer accessories for men as well, such as ties, cuff links and...</span>
-                </span><span>
-                <a class="review_in_more"  href="#">more</a>
-            </span>
-            
-        </div>
-        <div class="articlecomment05">
-            <div class="topbar05" style="padding-top: 10px;padding-bottom: 0px;">
-                <div class="user-name">
-                    <span class="circle-box">
-                        <img  src="http://zkp-www.s3.amazonaws.com/uploads/profile_pics/lakshita-1438186795.jpg">
-                    </span>
-                    <span class="title">
-                        <a  href="/profile/lakshita-sehgal">
-                            <span>lakshita sehgal</span>
-                        </a>  
-                    </span>
-                </div>
-                <div  class="like05">
-                    <span class="like_inside">
-                        
-                    </span> 
-                    <span class="comment_inside">
-                         
-                    </span> 
-                </div>
-            </div>
-            
-        </div>        
-        <div class="articlefooter05">
-            <div class="usercomment05">
-                <div class="usershare05"> 
-                    <div class="iconssmaller">
-                        <div class="svg_in">
-                            <i class="glyphicon glyphicon-thumbs-up"></i>                           
+                    <div class="row" id="network" ng-show="currentTab=='bookmarks'">
+                        <div class="col-lg-3 col-sm-4 col-xs-6 user-photos" ng-repeat="bookmarkedShop in user.bookmarks">
+                            <img class="thumbnail img-responsive" src="{{bookmarkedShop.shopImage}}"/>
+                            <div class="bookmark-thumbnail">
+                                <div class="bookmark-shop-title">
+                                    <h4>{{bookmarkedShop.name}}</h4>
+                                    <div>{{bookmarkedShop.address}}</div>
+                                </div>
+                                <i class="glyphicon glyphicon-bookmark"></i>
+                                <label class="label label-success">{{bookmarkedShop.rating}}</label>
+                            </div>
                         </div>
-                    </div>                   
-                </div>
-                <div class="usercommentmargin05">
-                    <div class="commentinput05">
-                        <input type="text" name="" placeholder="Add comment ...">
-                     
-                        <a  href="javascript:void(0);"><img src="http://www.zakoopi.com/images/comment-submit.jpg"></a> 
                     </div>
-                </div>
-            </div>            
-        </div>
-
-
-        <div class="articlehead05">
-                     <div class="username05">
-                        <div class="userimg05"><img src="http://www.zakoopi.com/images/hanger-img.png">
+                    <div class="row" id="network" ng-show="currentTab=='ratings'">
+                        <div class="col-lg-3 col-sm-4 col-xs-6 user-photos" ng-repeat="ratedShop in user.ratings">
+                            <img class="thumbnail img-responsive" src="{{ratedShop.shopImage}}"/>
+                            <div class="bookmark-thumbnail">
+                                <div class="bookmark-shop-title">
+                                    <h4>{{ratedShop.name}}</h4>
+                                    <div>{{ratedShop.address}}</div>
+                                </div>
+                                <i ng-if="ratedShop.isBookmarked" class="glyphicon glyphicon-bookmark"></i>
+                                <label class="label label-success">{{ratedShop.rating}}</label>
+                            </div>
                         </div>
-                        <a><span>Wills Lifestyle</span></a><br>Select Citywalk
                     </div>
-           
-                </div>
-        <div class="articleinfo05">
-            <div class="atriclereate05"><span>Rated</span>
-            <span class="box" style="background-color:#A4d816">3.5</span>           
-            </div>
-            
-            <span>
-                <span  class="final_review_txt">Wills lifestyle is a well established brand and has this huge showroom on the ground floor of select city walk. The showroom is in the tones of red, white and minimal black and it is very classy, just like the collection of this store. The staff is very helpful regarding garment selection and suggestions as well. There are apparels from men and women in the store. Very classic, fashionable and sophisticated collection of kurtas, shirts, tops, trousers, jackets for women and shirts, tshirts, trousers, pants for men. They offer accessories for men as well, such as ties, cuff links and...</span>
-                </span><span>
-                <a class="review_in_more"  href="#">more</a>
-            </span>
-            
-        </div>
-        <div class="articlecomment05">
-            <div class="topbar05" style="padding-top: 10px;padding-bottom: 0px;">
-                <div class="user-name">
-                    <span class="circle-box">
-                        <img  src="http://zkp-www.s3.amazonaws.com/uploads/profile_pics/lakshita-1438186795.jpg">
-                    </span>
-                    <span class="title">
-                        <a  href="/profile/lakshita-sehgal">
-                            <span>lakshita sehgal</span>
-                        </a>  
-                    </span>
-                </div>
-                <div  class="like05">
-                    <span class="like_inside">
-                        
-                    </span> 
-                    <span class="comment_inside">
-                         
-                    </span> 
-                </div>
-            </div>
-            
-        </div>        
-        <div class="articlefooter05">
-            <div class="usercomment05">
-                <div class="usershare05"> 
-                    <div class="iconssmaller">
-                        <div class="svg_in">
-                            <i class="glyphicon glyphicon-thumbs-up"></i>                           
+                    <div class="row follower-wrapper" id="network" ng-show="currentTab=='followers'">
+                        <div class="col-md-6 col-sm-6 col-xsm-6 col-lg-6 well">
+                            <div class="widget-head"><h4>I follow</h4><hr /></div>
+                            <div ng-repeat="f in user.following" ng-click="goToUser(f.id)" class="follower profile-userpic">
+                                <img class="img-responsive thumbnail" src="{{f.userImage}}"/>
+                                <div class="follower-details">
+                                    <div class="follower-name">{{f.name}}</div>
+                                    <div class="follower-badge">{{f.reviews}} Reviews, {{f.followers}} followers</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>                   
-                </div>
-                <div class="usercommentmargin05">
-                    <div class="commentinput05">
-                        <input type="text" name="" placeholder="Add comment ...">
-                     
-                        <a  href="javascript:void(0);"><img src="http://www.zakoopi.com/images/comment-submit.jpg"></a> 
+                        <div class="col-md-6 col-sm-6 col-xsm-6 col-lg-6 well">
+                            <div class="widget-head"><h4>Following me</h4><hr /></div>
+                            <div ng-repeat="f in user.followers" ng-click="goToUser(f.id)" class="follower profile-userpic">
+                                <img class="img-responsive thumbnail" src="{{f.userImage}}"/>
+                                <div class="follower-details">
+                                    <div class="follower-name">{{f.name}}</div>
+                                    <div class="follower-badge">{{f.reviews}} Reviews, {{f.followers}} followers</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
-            </div>            
-        </div>
-    </div>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="row" id="network"  ng-show="currentTab=='bookmarks'">
-        <div class="col-l-16 clearfix pbot2">
-            <div class="s-title mbot0 borderless">Bookmarks 
-                <span class="grey-text">145</span>
-            </div>
-            <div class="zs-load-more-container">
-                <div class="zs-following-list pbot0 clearfix user-profile-network-tab">
-                    <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="book-more">
-                                   <a href="" class="btn-followmore"><i class="fa fa-bookmark-o"></i> </a>
-                                   </div>
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="book-more">
-                                   <a href="" class="btn-followmore"><i class="fa fa-bookmark-o"></i> </a>
-                                   </div>
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                     <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                               <div class="snippet__action">
-                                 <div class="book-more">
-                                   <a href="" class="btn-followmore"><i class="fa fa-bookmark-o"></i> </a>
-                                   </div>
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="book-more">
-                                   <a href="" class="btn-followmore"><i class="fa fa-bookmark-o"></i> </a>
-                                   </div>
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                     </div>
-                    </div>
-                    <div data-page="1" data-limit="10" data-profile_action="follows" data-entity_id="16100018" class="bt bb zs-load-more">
-                    <div class="bg-line">&nbsp;</div>
-                    <div class="load-more">Load More <span class="zs-load-more-count">226</span></div>
-                </div>
-                    <div class="clear"></div>
-                </div>               
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <div class="row" id="network"  ng-show="currentTab=='ratings'">
-        <div class="col-l-16 clearfix pbot2">
-            <div class="s-title mbot0 borderless">Ratings 
-                <span class="grey-text">145</span>
-            </div>
-            <div class="zs-load-more-container">
-                <div class="zs-following-list pbot0 clearfix user-profile-network-tab">
-                    <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow">                                   
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                        
-                                   </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow">
-                                   
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                        
-                                   </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                     <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow">
-                                  
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                        
-                                   </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-      <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img  src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">FashionOne</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> velachery</span>,
-                                            <span class="snippet__followers">chennai</span>
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow">
-                                  
-                                   <div class="rating">
-                                        <span class="rating-box">4.1</span>
-                                        
-                                   </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                     </div>
-                    </div>
-                    <div data-page="1" data-limit="10" data-profile_action="follows" data-entity_id="16100018" class="bt bb zs-load-more">
-                    <div class="bg-line">&nbsp;</div>
-                    <div class="load-more">Load More <span class="zs-load-more-count">226</span></div>
-                </div>
-                    <div class="clear"></div>
-                </div>               
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="row" id="network"  ng-show="currentTab=='followers'">
-        <div class="col-l-16 clearfix pbot2">
-            <div class="s-title mbot0 borderless">Followers 
-                <span class="grey-text">145</span>
-            </div>
-            <div class="zs-load-more-container">
-                <div class="zs-following-list pbot0 clearfix user-profile-network-tab">
-                    <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more wow " >
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="mbot0">
-                            <div class="snippet snippet-user snippet-user--primary">
-                                <div class="snippet__head">
-                                    <a href="https://www.zomato.com/OneCupOfCoffeePlease">
-
-                                         <img data-original="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" src="https://d.zmtcdn.com/data/user_profile_pictures/628/c013c4191f9e124342f2e6a177201628_100_thumb.jpg" class="snippet__image usr-pic" alt="Harita Naidu" style="display: inline-block;">
-      
-                                    </a>
-
-                                </div>
-                                 <div class="snippet__data">
-                                    <div class="snippet__name">
-                                        <a data-entity_id="1885208" href="https://www.zomato.com/OneCupOfCoffeePlease" class="snippet__link">
-                                            <span class="h-level4 zblack">Harita Naidu</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="snippet__stats">
-                                        <div tabindex="0" class="zdark fontsize5">
-                                            <span class="snippet__reviews"> 22</span>&nbsp;Reviews ,
-                                            <span class="snippet__followers">15</span>&nbsp;Followers
-                                        </div>
-                                    </div>
-                                 </div>
-                                <div class="snippet__action">
-                                 <div class="follow-more">
-                                   <a href="" class="btn-followmore"><i class="fa fa-user-plus"></i> </a>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-
-                     </div>
-                    </div>
-                    <div data-page="1" data-limit="10" data-profile_action="follows" data-entity_id="16100018" class="bt bb zs-load-more">
-                    <div class="bg-line">&nbsp;</div>
-                    <div class="load-more">Load More <span class="zs-load-more-count">226</span></div>
-                    </div>
-                    <div class="clear"></div>
-                </div>               
-            </div>
-
-
-
-
-    <div class="container-fluid" ng-show="currentTab=='photos'">
-    <h1>Photos</h1>
-    <div class="row">
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="//placehold.it/1024x768"><img class="thumbnail img-responsive" src="http://placehold.it/600x350"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 2" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/2255EE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 3" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/449955/FFF"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 4" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/992233"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 5" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/2255EE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 6" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/449955/FFF"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 8" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/777"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 9" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/992233"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 10" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/EEE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 11" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/449955/FFF"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 12" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/DDD"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 13" href="#"><img class="thumbnail img-responsive" src="http://placehold.it/600x350/992233"></a></div>
-    </div>
-    <hr>
-    <div data-page="1" data-limit="10" data-profile_action="follows" data-entity_id="16100018" class="bt bb zs-load-more">
-                    <div class="bg-line">&nbsp;</div>
-                    <div class="load-more">Load More <span class="zs-load-more-count">226</span></div>
-                    </div>
-                    <div class="clear"></div>
-    <hr>
-</div>
-<div class="modal" id="myModal" role="dialog">
-  <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-        <button class="close" type="button" data-dismiss="modal">×</button>
-        <h3 class="modal-title"></h3>
-    </div>
-    <div class="modal-body">
-        <div id="modalCarousel" class="carousel">
-          <div class="carousel-inner"></div>
-          <!-- <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-          <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> -->
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal">Close</button>
-    </div>
-   </div>
-  </div>
-</div>
-
-
-
-
-
-
-<form class="form-horizontal profile-form" ng-show="currentTab=='profile'">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Profile Info</legend>
-
-
-
-<!-- Text input-->
-<div class="form-group ">
-  <label class="col-md-4 control-label" for="textinput">Your Full Name</label>  
-  <div class="col-md-5">
-  <input id="textinput" name="textinput" placeholder="" class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="currentplace">Current Place</label>  
-  <div class="col-md-5">
-  <input id="currentplace" name="currentplace" placeholder="" class="form-control input-md" type="text">
-    
-  </div>
-</div>
-
-
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="mobilenumber">Mobile Number</label>  
-  <div class="col-md-5">
-  <input id="mobilenumber" name="mobilenumber" placeholder="" class="form-control input-md" type="text">
-    
-  </div>
-</div>
-
-
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="aboutyourself">About Yourself</label>
-  <div class="col-md-5">                     
-    <textarea class="form-control" id="aboutyourself" name="aboutyourself"></textarea>
-  </div>
-</div>
-
-
-<!-- Button (Double) -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="button1id"></label>
-  <div class="col-md-8">
-    <button id="button1id" name="button1id" class="btn btn-success">Update</button>
-    <button id="button2id" name="button2id" class="btn btn-danger">Cancel</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </div>
     </div>
-</div>
 </section>
-
 <footer id="footer">
-    <div class="footer-top wow " data-wow-duration="1000ms" data-wow-delay="300ms">
-      <div class="container text-center">
-        <div class="footer-logo">
-          <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+            </div>
+            <div class="social-icons">
+                <ul>
+                    <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="social-icons">
-          <ul>
-            <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> 
-            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>&copy; 2014 Smashers.</p>
-          </div>
-          <div class="col-sm-6">
-            <p class="pull-right">Designed by <a href="http://www.themeum.com/">Smashers</a></p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>&copy; 2014 Smashers.</p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right">Designed by <a href="http://www.themeum.com/">Smashers</a></p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
-
-
-  <script type="text/javascript">
-/* copy loaded thumbnails into carousel */
-$('.row .thumbnail').on('load', function() {
-  
-}).each(function(i) {
-  if(this.complete) {
-    var item = $('<div class="item"></div>');
-    var itemDiv = $(this).parents('div');
-    var title = $(this).parent('a').attr("title");
-    
-    item.attr("title",title);
-    $(itemDiv.html()).appendTo(item);
-    item.appendTo('.carousel-inner'); 
-    if (i==0){ // set first item active
-     item.addClass('active');
-    }
-  }
-});
-
-/* activate the carousel */
-$('#modalCarousel').carousel({interval:false});
-
-/* change modal title when slide changes */
-$('#modalCarousel').on('slid.bs.carousel', function () {
-  $('.modal-title').html($(this).find('.active').attr("title"));
-})
-
-/* when clicking a thumbnail */
-$('.row .thumbnail').click(function(){
-    var idx = $(this).parents('div').index();
-    var id = parseInt(idx);
-    $('#myModal').modal('show'); // show the modal
-    $('#modalCarousel').carousel(id); // slide carousel to selected
-    
-});
-
-
-  </script>
-
-
+</footer>
 <style type="text/css">
+    .shop-list-loader {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+        z-index: 5;
+        opacity: 0.8;
+        padding-top: 25%;
+    }
+    
+    .overlay-loader {
+        display: block;
+        margin: auto;
+        width: 90px;
+        height: 90px;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 90px;
+        height: 90px;
+        animation-name: rotateAnim;
+        -o-animation-name: rotateAnim;
+        -ms-animation-name: rotateAnim;
+        -webkit-animation-name: rotateAnim;
+        -moz-animation-name: rotateAnim;
+        animation-duration: 0.67s;
+        -o-animation-duration: 0.67s;
+        -ms-animation-duration: 0.67s;
+        -webkit-animation-duration: 0.67s;
+        -moz-animation-duration: 0.67s;
+        animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -o-animation-timing-function: linear;
+        -ms-animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+    }
+    
+    .loader div {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        border: 1px solid rgb(0, 0, 0);
+        position: absolute;
+        top: 2px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    .loader div:nth-child(odd) {
+        border-top: none;
+        border-left: none;
+    }
+    
+    .loader div:nth-child(even) {
+        border-bottom: none;
+        border-right: none;
+    }
+    
+    .loader div:nth-child(2) {
+        border-width: 2px;
+        left: 0px;
+        top: -4px;
+        width: 11px;
+        height: 11px;
+    }
+    
+    .loader div:nth-child(3) {
+        border-width: 2px;
+        left: -1px;
+        top: 3px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .loader div:nth-child(4) {
+        border-width: 3px;
+        left: -1px;
+        top: -4px;
+        width: 22px;
+        height: 22px;
+    }
+    
+    .loader div:nth-child(5) {
+        border-width: 3px;
+        left: -1px;
+        top: 4px;
+        width: 29px;
+        height: 29px;
+    }
+    
+    .loader div:nth-child(6) {
+        border-width: 4px;
+        left: 0px;
+        top: -4px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .loader div:nth-child(7) {
+        border-width: 4px;
+        left: 0px;
+        top: 5px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    @keyframes rotateAnim {
+        from {
+            transform: rotate(360deg);
+        }
+        to {
+            transform: rotate(0deg);
+        }
+    }
+    
+    @-o-keyframes rotateAnim {
+        from {
+            -o-transform: rotate(360deg);
+        }
+        to {
+            -o-transform: rotate(0deg);
+        }
+    }
+    
+    @-ms-keyframes rotateAnim {
+        from {
+            -ms-transform: rotate(360deg);
+        }
+        to {
+            -ms-transform: rotate(0deg);
+        }
+    }
+    
+    @-webkit-keyframes rotateAnim {
+        from {
+            -webkit-transform: rotate(360deg);
+        }
+        to {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+    
+    @-moz-keyframes rotateAnim {
+        from {
+            -moz-transform: rotate(360deg);
+        }
+        to {
+            -moz-transform: rotate(0deg);
+        }
+    }
+    
+    .ad-list img {
+        width: 100%;
+    }
 
-.profile-form .form-control {
-    border: 1px solid #cfd9db !important;
-}
-.modal-dialog {}
-.thumbnail {margin-bottom:6px;}
-
-.carousel-control.left,.carousel-control.right{
-  background-image:none;
-}
-
-.rating {
+    .profile-form .form-control {
+        border: 1px solid #cfd9db !important;
+    }
+    
+    .modal-dialog {}
+    
+    .thumbnail {
+        margin-bottom: 6px;
+        height: 150px;
+        width: 100%;
+    }
+    
+    .carousel-control.left,
+    .carousel-control.right {
+        background-image: none;
+    }
+    
+    .rating {
         float: right;
         color: #898989;
         font-size: 13px;
         font-weight: 400;
-        margin-top: 15px
-        margin-right:110px; 
+        margin-top: 15px margin-right: 110px;
+    }
+    
+    .rating-box {
+        background: #028fcc none repeat scroll 0 0;
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        float: right;
+        font-size: 18px;
+        font-weight: 700;
+        height: 28px;
+        line-height: 28px;
+        margin-left: 13px;
+        position: relative;
+        right: -50px;
+        text-align: center;
+        top: -8px;
+        width: 45px;
+    }
+    
+    .book-more {
+        display: inline-block;
+        float: right;
+        margin-left: 13px;
+        position: relative;
+        right: 0;
+        text-align: center;
+        top: 14px;
+        width: 45px;
+    }
+    
+    .follow-more {
+        display: inline-block;
+        float: right;
+        margin-left: 13px;
+        position: relative;
+        right: 0;
+        text-align: center;
+        top: 4px;
+        width: 45px;
+    }
+    
+    .btn-followmore {
+        border: 1px solid #666666;
+        color: #666666;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 11px 11px;
+        text-transform: uppercase;
+        border-radius: 10px;
+    }
+    
+    .btn-followmore i {
+        font-size: 15px;
+    }
+    
+    .btn-followmore:hover {
+        background-color: #017fb5;
+        color: #fff !important;
+    }
+    
+    .pbot2 {
+        padding-bottom: 40px;
+    }
+    
+    .col-l-16 {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+        float: left;
+    }
+    
+    .s-title {
+        color: #5d5d5d;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 24px;
+        text-shadow: 0 1px 1px #fff;
+        text-transform: uppercase;
+        word-spacing: -1px;
+    }
+    
+    .borderless {
+        border-width: 0 !important;
+    }
+    
+    .mbot0 {
+        margin-bottom: 10px;
+    }
+    
+    .grey-text {
+        color: #8d8d8d;
+    }
+    
+    .pbot0 {
+        padding-bottom: 10px;
+    }
+    
+    .mbot0 {
+        margin-bottom: 10px;
+    }
+    
+    .user-profile-network-tab .snippet {
+        max-width: 300px;
+    }
+    
+    .snippet-user {
+        margin-bottom: 7px;
+        table-layout: fixed;
+    }
+    
+    .snippet {
+        display: table;
+        text-align: left;
+        width: 100%;
+    }
+    
+    .snippet-user--primary .snippet__head {
+        height: 34px;
+        width: 34px;
+    }
+    
+    .snippet-user .snippet__head {
+        position: relative;
+        width: 46px;
+    }
+    
+    .snippet > * {
+        box-sizing: border-box;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .snippet-user .snippet__image {
+        border-radius: 100%;
+    }
+    
+    .snippet .snippet__image {
+        border-radius: 3px;
+        display: inline-block;
+        height: auto;
+        width: 100%;
+    }
+    
+    .snippet-user--primary .snippet__data {
+        line-height: 19px;
+    }
+    
+    .snippet .snippet__data {
+        padding-left: 10px;
+        text-transform: capitalize;
+    }
+    
+    .snippet > * {
+        box-sizing: border-box;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .snippet .snippet__name {
+        display: block;
+        height: 20px;
+        line-height: 22px;
+    }
+    
+    .snippet .snippet__stats {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    
+    .snippet .snippet__stats {
+        color: #8d8d8d;
+        display: block;
+    }
+    
+    .snippet-user .snippet__action {
+        width: 60px;
+    }
+    
+    .snippet .snippet__action {
+        text-align: right;
+    }
+    
+    .snippet > * {
+        box-sizing: border-box;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .snippet-user .snippet__action .zs-follow-btn-container {
+        display: inline-block;
+    }
+    
+    .snippet .snippet__action * {
+        box-sizing: border-box;
+    }
+    
+    .follow_icon {
+        margin-top: 0 !important;
+        text-indent: 0 !important;
+    }
+    
+    .follow-social[data-icon]:before,
+    .following-social[data-icon]:before {
+        margin-right: 0;
+        text-indent: 0;
+    }
+    
+    .social-button:before {
+        font-size: 130%;
+        line-height: 18px;
+        margin-left: -2px;
+    }
+    
+    [data-icon]:before {
+        content: attr(data-icon);
+        display: block;
+        float: left;
+        font-family: zombatsregular !important;
+        font-weight: 400;
+        margin-right: 5px;
+        text-transform: none;
+    }
+    
+    .snippet-user .snippet__action .zs-follow-user-button {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    .snippet .snippet__action * {
+        box-sizing: border-box;
+    }
+    
+    .follow-social,
+    .following-social {
+        line-height: 18px;
+        padding: 5px 10px;
+        text-indent: -9999px;
+        width: 33px;
+    }
+    
+    .social-button {
+        font-weight: 400;
+        text-decoration: none;
+    }
+    
+    .zs-follow-user-button {
+        border-color: #9a9a9a;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        box-sizing: border-box;
+        color: #8d8d8d;
+        display: inline-block;
+        line-height: 20px;
+        padding: 5px 16px;
+        text-align: center;
+    }
+    
+    .user-tab-content .zs-load-more {
+        font-size: 16px;
+    }
+    
+    .zs-load-more {
+        background-color: #fff;
+        color: #4d4d4d;
+        cursor: pointer;
+        font-size: 10pt;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .bt {
+        border-top: 1px solid #f0f0f0;
+    }
+    
+    .bb {
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .zs-load-more .bg-line {
+        background: url("https://b.zmtcdn.com/images/floading.gif") no-repeat scroll 50% 50% transparent;
+        display: none;
+    }
+    
+    .zs-following-list .load-more {
+        text-align: left;
+    }
+    
+    .zs-load-more .load-more {
+        background-color: #fff;
+        height: 58px;
+        line-height: 58px;
+        margin-top: 0px !important;
+    }
+    
+    .zs-load-more-count {
+        color: #8d8d8d;
+    }
+    
+    .user-comments {
+        margin-bottom: 3px;
+    }
+    
+    .articlehead05 {
+        background: none repeat scroll 0 0 #f9f9f9;
+        border-top: 1px solid #d7d7d7;
+        border-right: 1px solid #d7d7d7;
+        border-left: 1px solid #d7d7d7;
+        border-bottom: 2px solid #d7d7d7;
+        border-radius: 5px 5px 0 0;
+        color: #acacac;
+        float: left;
+        font-size: 12px;
+        padding-bottom: 2px;
+        position: relative;
+        width: 100%;
+    }
+    
+    .articlehead05 .username05 {
+        color: #acacac;
+        float: left;
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 5px;
+        padding-left: 19px;
+        padding-top: 10px;
+        width: 66%;
+    }
+    
+    .userimg05 {
+        float: left;
+        margin-right: 10px;
+        position: relative;
+        top: 0;
     }
 
-.rating-box {
-    background: #028fcc none repeat scroll 0 0;
-    border-radius: 5px;
-    color: #fff;
-    display: inline-block;
-    float: right;
-    font-size: 18px;
-    font-weight: 700;
-    height: 28px;
-    line-height: 28px;
-    margin-left: 13px;
-    position: relative;
-    right: -50px;
-    text-align: center;
-    top: -8px;
-    width: 45px;
-}
-
-.book-more {
-    display: inline-block;
-    float: right;
-    margin-left: 13px;
-    position: relative;
-    right: 0;
-    text-align: center;
-    top: 14px;
-    width: 45px;
-  
-}
-.follow-more {
- display: inline-block;
-    float: right;
-    margin-left: 13px;
-    position: relative;
-    right: 0;
-    text-align: center;
-    top: 4px;
-    width: 45px;
-  
-}
-
-.btn-followmore {
-  border: 1px solid #666666;
-  color: #666666;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 11px 11px;
-  text-transform: uppercase;
-  border-radius: 10px;
-  
-}
-
-.btn-followmore i{
-    font-size: 15px;
-  }
-
-.btn-followmore:hover {
-  background-color: #017fb5;
-  color:#fff !important;
-}
-
-
-
-.pbot2 {
-    padding-bottom: 40px;
-}
-.col-l-16 {
-    box-sizing: border-box;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-    position: relative;
-    float: left;
-}
-.s-title {
-    color: #5d5d5d;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 24px;
-    text-shadow: 0 1px 1px #fff;
-    text-transform: uppercase;
-    word-spacing: -1px;
-}
-.borderless {
-    border-width: 0 !important;
-}
-.mbot0 {
-    margin-bottom: 10px;
-}
-.grey-text {
-    color: #8d8d8d;
-}
-.pbot0 {
-    padding-bottom: 10px;
-}
-
-.mbot0 {
-    margin-bottom: 10px;
-}
-.user-profile-network-tab .snippet {
-    max-width: 300px;
-}
-.snippet-user {
-    margin-bottom: 7px;
-    table-layout: fixed;
-}
-.snippet {
-    display: table;
-    text-align: left;
-    width: 100%;
-}
-
-.snippet-user--primary .snippet__head {
-    height: 34px;
-    width: 34px;
-}
-.snippet-user .snippet__head {
-    position: relative;
-    width: 46px;
-}
-.snippet > * {
-    box-sizing: border-box;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.snippet-user .snippet__image {
-    border-radius: 100%;
-}
-.snippet .snippet__image {
-    border-radius: 3px;
-    display: inline-block;
-    height: auto;
-    width: 100%;
-}
-.snippet-user--primary .snippet__data {
-    line-height: 19px;
-}
-.snippet .snippet__data {
-    padding-left: 10px;
-    text-transform: capitalize;
-}
-.snippet > * {
-    box-sizing: border-box;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.snippet .snippet__name {
-    display: block;
-    height: 20px;
-    line-height: 22px;
-}
-.snippet .snippet__stats {
-    font-size: 12px;
-    line-height: 14px;
-}
-.snippet .snippet__stats {
-    color: #8d8d8d;
-    display: block;
-}
-.snippet-user .snippet__action {
-    width: 60px;
-}
-.snippet .snippet__action {
-    text-align: right;
-}
-.snippet > * {
-    box-sizing: border-box;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.snippet-user .snippet__action .zs-follow-btn-container {
-    display: inline-block;
-}
-.snippet .snippet__action * {
-    box-sizing: border-box;
-}
-.follow_icon {
-    margin-top: 0 !important;
-    text-indent: 0 !important;
-}
-
-.follow-social[data-icon]:before, .following-social[data-icon]:before {
-    margin-right: 0;
-    text-indent: 0;
-}
-.social-button:before {
-    font-size: 130%;
-    line-height: 18px;
-    margin-left: -2px;
-}
-[data-icon]:before {
-    content: attr(data-icon);
-    display: block;
-    float: left;
-    font-family: zombatsregular !important;
-    font-weight: 400;
-    margin-right: 5px;
-    text-transform: none;
-}
-.snippet-user .snippet__action .zs-follow-user-button {
-    display: inline-block;
-    text-align: center;
-}
-.snippet .snippet__action * {
-    box-sizing: border-box;
-}
-.follow-social, .following-social {
-    line-height: 18px;
-    padding: 5px 10px;
-    text-indent: -9999px;
-    width: 33px;
-}
-.social-button {
-    font-weight: 400;
-    text-decoration: none;
-}
-.zs-follow-user-button {
-    border-color: #9a9a9a;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    box-sizing: border-box;
-    color: #8d8d8d;
-    display: inline-block;
-    line-height: 20px;
-    padding: 5px 16px;
-    text-align: center;
-}
-.user-tab-content .zs-load-more {
-    font-size: 16px;
-}
-.zs-load-more {
-    background-color: #fff;
-    color: #4d4d4d;
-    cursor: pointer;
-    font-size: 10pt;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-}
-.bt {
-    border-top: 1px solid #f0f0f0;
-}
-.bb {
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.zs-load-more .bg-line {
-    background: url("https://b.zmtcdn.com/images/floading.gif") no-repeat scroll 50% 50% transparent;
-    display: none;
-}
-
-.zs-following-list .load-more {
-    text-align: left;
-
-}
-.zs-load-more .load-more {
-    background-color: #fff;
-    height: 58px;
-    line-height: 58px;
-     margin-top: 0px !important;
-}
-
-.zs-load-more-count {
-    color: #8d8d8d;
-}
-
-
-
-
-
-
-
-
-
-
-.user-comments{
-    margin-bottom: 3px;
-}
-
-.articlehead05 {
-    background: none repeat scroll 0 0 #f9f9f9;
-    border-bottom: 1px solid #d7d7d7;
-    border-radius: 5px 5px 0 0;
-    color: #acacac;
-    float: left;
-    font-size: 12px;
-    padding-bottom: 2px;
-    position: relative;
-    width: 100%;
-}
-
-
-.articlehead05 .username05 {
-    color: #acacac;
-    float: left;
-    font-size: 12px;
-    line-height: 16px;
-    margin-bottom: 5px;
-    padding-left: 19px;
-    padding-top: 10px;
-    width: 66%;
-}
-.userimg05 {
-    float: left;
-    margin-right: 10px;
-    position: relative;
-    top: 0;
-}
-
-
-.articleinfo05 {
-    color: #898989;
-    float: left;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 15px 20px 0;
-    width: 100%;
-}
-
-.atriclereate05 {
-    float: left;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-.atriclereate05 span.box {
-    background: none repeat scroll 0 0 #f7941d;
-    border-radius: 5px;
-    color: #fff;
-    float: left;
-    font-weight: 600;
-    height: 22px;
-    line-height: 22px;
-    position: relative;
-    right: 6px;
-    text-align: center;
-    top: -2px;
-    width: 30px;
-}
-.atriclereate05 span {
-    float: left;
-    font-weight: 600;
-    margin-right: 15px;
-}
-
-.articleinfo05 p {
-    margin-bottom: 19px;
-    margin-top: 5px;
-}
-
-.articlecomment05 .topbar05 {
-    color: #898989;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    padding-bottom: 13px;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
-}
-.topbar05 {
-    min-height: 44px;
-}
-
-
-.articlecomment05 .topbar05 .user-name {
-    float: left;
-}
-.topbar05 .user-name {
-    display: table;
-}
-.topbar05 .circle-box {
-    margin-right: 10px;
-}
-.circle-box img {
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-}
-
-.like05 {
-    cursor: pointer;
-    float: right;
-    margin-top: 6px;
-}
-
-.like05 span {
-    cursor: pointer;
-    margin-right: 10px;
-    width: 100%;
-}
-
-.articlecollase05 {
-    border-bottom: 3px solid #f26c4f;
-}
-.articlefooter05 {
-    background: none repeat scroll 0 0 #fff;
-    border-bottom: 3px solid #27b3ad;
-    border-radius: 0 0 5px 5px;
-    border-top: 1px solid #d7d7d7;
-    float: left;
-    min-height: 68px;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.usershare05 {
-    float: left;
-    text-align: center;
-    width: 117px;
-}
-.usercomment05 {
-    margin-top: 14px;
-}
-.usercomment05 {
-    margin-bottom: 14px;
-}
-.usercomment05 {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-
-.commentinput05 {
-    background: none repeat scroll 0 0 #fff;
-    border: 1px solid #d7d7d7;
-    border-radius: 0;
-    float: left;
-    padding: 5px;
-    position: relative;
-    width: 100%;
-}
-.commentinput05 {
-    float: left;
-    width: 100%;
-}
-
-.commentinput05 input {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: medium none;
-    color: #acacac;
-    float: left;
-    font-size: 14px;
-    padding: 0 0 0 10px;
-    width: 80%;
-}
-.usershare05 {
-    float: left;
-    text-align: center;
-    width: 117px;
-}
-
-.iconssmaller {
-    float: left;
-    font-size: 25px;
-    margin-left: 25px;
-    margin-top: 5px;
-    width: 100%;
-}
-
-.svg_in {
-    margin: 0 auto;
-    width: 100px;
-}
-.usercommentmargin05 {
-    margin-left: 117px;
-    margin-right: 60px;
-}
-.commentinput05 img {
-    float: right;
-    margin-right: -50px;
-    position: absolute;
-    right: 0;
-    top: -1px;
-}
-
-
-
-
-
-
-
+    .userimg05 img {
+        border-radius: 50% !important;
+        float: none;
+        height: 60px;
+        margin: 0 auto;
+        width: 60px;
+    }
     
-section#user{
-    padding-top: 10px ;
-    padding-bottom: 10px;
-}
-/* Profile container */
-.profile {
-  margin: 20px 0;
-}
-
-.profile {
-    box-shadow: none;
-}
-.profile {
-    background: #fff;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6)";
-    -moz-box-shadow: 0 3px 3px #ada6a6;
-    -webkit-box-shadow: 0 3px 3px #ada6a6;
-    box-shadow: 0 3px 3px #ada6a6;
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3,Direction=180,Color=#ada6a6);
-    border-radius: 10px;
-    border: #ececec solid 1px;
-}
-
-/* Profile sidebar */
-.profile-sidebar {
-  padding: 20px 0 10px 0;
-  background: #fff;
-}
-
-.profile-userpic img {
-  float: none;
-  margin: 0 auto;
-  width: 50%;
-  height: 50%;
-  -webkit-border-radius: 50% !important;
-  -moz-border-radius: 50% !important;
-  border-radius: 50% !important;
-}
-
-.profile-usertitle {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.profile-usertitle-name {
-  color: #5a7391;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 7px;
-}
-
-.profile-usertitle-job {
-  text-transform: uppercase;
-  color: #5b9bd1;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.profile-userbuttons {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.profile-userbuttons .btn {
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 6px 15px;
-  margin-right: 5px;
-}
-
-.profile-userbuttons .btn:last-child {
-  margin-right: 0px;
-}
+    .articleinfo05 {
+        color: #898989;
+        float: left;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 15px 20px;
+        width: 100%;
+        border-right: 1px solid #F9F9F9;
+        border-left: 1px solid #F9F9F9;
+        border-bottom: 1px solid #F9F9F9;
+    }
     
-.profile-usermenu {
-  margin-top: 30px;
-}
+    .atriclereate05 {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .atriclereate05 div.box {
+        background: none repeat scroll 0 0 #f7941d;
+        border-radius: 5px;
+        color: #fff;
+        float: left;
+        font-weight: 600;
+        height: 22px;
+        line-height: 22px;
+        position: relative;
+        right: 6px;
+        text-align: center;
+        width: 30px;
+    }
+    
+    .atriclereate05 div {
+        float: left;
+        font-weight: 600;
+        margin-right: 15px;
+        margin-top: 30px;
+    }
 
-.profile-usermenu ul li {
-  border-bottom: 1px solid #f0f4f7;
-}
+    .articlehead05-with-margin {
+        margin-top: 20px;
+    }
+    
+    .articleinfo05 p {
+        margin-bottom: 19px;
+        margin-top: 5px;
+    }
+    
+    .articlecomment05 .topbar05 {
+        color: #898989;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        padding-bottom: 13px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+    }
+    
+    .topbar05 {
+        min-height: 44px;
+    }
+    
+    .articlecomment05 .topbar05 .user-name {
+        float: left;
+    }
+    
+    .topbar05 .user-name {
+        display: table;
+    }
+    
+    .topbar05 .circle-box {
+        margin-right: 10px;
+    }
+    
+    .circle-box img {
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+    }
+    
+    .like05 {
+        cursor: pointer;
+        float: right;
+        margin-top: 6px;
+    }
+    
+    .like05 span {
+        cursor: pointer;
+        margin-right: 10px;
+        width: 100%;
+    }
+    
+    .articlecollase05 {
+        border-bottom: 3px solid #f26c4f;
+    }
+    
+    .articlefooter05 {
+        background: none repeat scroll 0 0 #fff;
+        border-bottom: 3px solid #27b3ad;
+        border-radius: 0 0 5px 5px;
+        border-top: 1px solid #d7d7d7;
+        float: left;
+        min-height: 68px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .usershare05 {
+        float: left;
+        text-align: center;
+        width: 117px;
+    }
+    
+    .usercomment05 {
+        margin-top: 14px;
+    }
+    
+    .usercomment05 {
+        margin-bottom: 14px;
+    }
+    
+    .usercomment05 {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+    
+    .commentinput05 {
+        background: none repeat scroll 0 0 #fff;
+        border: 1px solid #d7d7d7;
+        border-radius: 0;
+        float: left;
+        padding: 5px;
+        position: relative;
+        width: 100%;
+    }
+    
+    .commentinput05 {
+        float: left;
+        width: 100%;
+    }
+    
+    .commentinput05 input {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: medium none;
+        color: #acacac;
+        float: left;
+        font-size: 14px;
+        padding: 0 0 0 10px;
+        width: 80%;
+    }
+    
+    .usershare05 {
+        float: left;
+        text-align: center;
+        width: 117px;
+    }
+    
+    .iconssmaller {
+        float: left;
+        font-size: 25px;
+        margin-left: 25px;
+        margin-top: 5px;
+        width: 100%;
+    }
+    
+    .svg_in {
+        margin: 0 auto;
+        width: 100px;
+    }
+    
+    .usercommentmargin05 {
+        margin-left: 117px;
+        margin-right: 60px;
+    }
+    
+    .commentinput05 img {
+        float: right;
+        margin-right: -50px;
+        position: absolute;
+        right: 0;
+        top: -1px;
+    }
+    
+    section#user {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    /* Profile container */
+    
+    .profile {
+        margin: 20px 0;
+    }
+    
+    .profile {
+        box-shadow: none;
+    }
+    
+    .profile {
+        background: #fff;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6)";
+        -moz-box-shadow: 0 3px 3px #ada6a6;
+        -webkit-box-shadow: 0 3px 3px #ada6a6;
+        box-shadow: 0 3px 3px #ada6a6;
+        filter: progid: DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#ada6a6);
+        border-radius: 10px;
+        border: #ececec solid 1px;
+    }
+    /* Profile sidebar */
+    
+    .profile-sidebar {
+        padding: 20px 0 10px 0;
+        background: #fff;
+    }
+    
+    .profile-userpic img {
+        float: none;
+        margin: 0 auto;
+        width: 50%;
+        height: 50%;
+        -webkit-border-radius: 50% !important;
+        -moz-border-radius: 50% !important;
+        border-radius: 50% !important;
+    }
+    
+    .profile-usertitle {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .profile-usertitle-name {
+        color: #5a7391;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+    
+    .profile-usertitle-job {
+        text-transform: uppercase;
+        color: #5b9bd1;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .profile-userbuttons {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .profile-userbuttons .btn {
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 6px 15px;
+        margin-right: 5px;
+    }
+    
+    .profile-userbuttons .btn:last-child {
+        margin-right: 0px;
+    }
+    
+    .profile-usermenu {
+        margin-top: 30px;
+    }
+    
+    .profile-usermenu ul li {
+        border-bottom: 1px solid #f0f4f7;
+    }
+    
+    .profile-usermenu ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .profile-usermenu ul li a {
+        color: #93a3b5;
+        font-size: 14px;
+        font-weight: 400;
+        outline: none !important;
+    }
+    
+    .profile-usermenu ul li a i {
+        margin-right: 8px;
+        font-size: 14px;
+    }
+    
+    .profile-usermenu ul li a:hover {
+        background-color: #fafcfd;
+        color: #5b9bd1;
+    }
+    
+    .profile-usermenu ul li.active {
+        border-bottom: none;
+    }
+    
+    .profile-usermenu ul li.active a {
+        color: #5b9bd1;
+        background-color: #f6f9fb;
+        border-left: 2px solid #5b9bd1;
+        margin-left: -2px;
+    }
+    /* Profile Content */
+    
+    .profile-content {
+        padding: 20px;
+        background: #fff;
+        min-height: 460px;
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+    }
+    
+    .ad-list div {
+        padding-top: 5px;
+    }
 
-.profile-usermenu ul li:last-child {
-  border-bottom: none;
-}
+    .content-wrapper {
+        display: table;
+        min-height: 460px;
+    }
 
-.profile-usermenu ul li a {
-  color: #93a3b5;
-  font-size: 14px;
-  font-weight: 400;
-}
+    .review-timestamp {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
 
-.profile-usermenu ul li a i {
-  margin-right: 8px;
-  font-size: 14px;
-}
+    .review-timestamp i {
+        padding-right: 5px;
+        font-size: 15px;
+    }
 
-.profile-usermenu ul li a:hover {
-  background-color: #fafcfd;
-  color: #5b9bd1;
-}
+    .user-photos {
+        padding: 2px;
+    }
 
-.profile-usermenu ul li.active {
-  border-bottom: none;
-}
+    .bookmark-thumbnail {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 1px solid #ddd;
+        border-top: none;
+        font-size: 5px;
+        height: 82px;
+        margin-top: -8px;
+        padding: 5px;
+        position: relative;
+    }
 
-.profile-usermenu ul li.active a {
-  color: #5b9bd1;
-  background-color: #f6f9fb;
-  border-left: 2px solid #5b9bd1;
-  margin-left: -2px;
-}
+    .bookmark-thumbnail i {
+        color: lightblue;
+        font-size: 15px;
+        display: inline;
+        position: absolute;
+    }
 
-/* Profile Content */
-.profile-content {
-  padding: 20px;
-  background: #fff;
-  min-height: 460px;
-}
+    .bookmark-thumbnail label {
+        font-size: 10px;
+        display: inline;
+        position: absolute;
+        right: 8px;
+    }
 
+    .bookmark-shop-title {
+        display: inline-block;
+        width: 75%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
+    .bookmark-shop-title h4 {
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .bookmark-shop-title div {
+        font-size: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .follower {
+        cursor: pointer;
+    }
+
+    .follower-wrapper img {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        margin-top: -20px;
+    }
+
+    .follower-wrapper .follower-details {
+        display: inline-block;
+    }
+
+    .follower-name {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .follower-badge {
+        font-weight: 100;
+        font-size: 10px;
+    }
+}​
 </style>
+<script type="text/javascript">
+    /* copy loaded thumbnails into carousel */
+    $('.row .thumbnail')
+        .on('load', function () {})
+        .each(function (i) {
+            if (this.complete) {
+                var item = $('<div class="item"></div>');
+                var itemDiv = $(this)
+                    .parents('div');
+                var title = $(this)
+                    .parent('a')
+                    .attr("title");
+                item.attr("title", title);
+                $(itemDiv.html())
+                    .appendTo(item);
+                item.appendTo('.carousel-inner');
+                if (i == 0) { // set first item active
+                    item.addClass('active');
+                }
+            }
+        });
+    /* activate the carousel */
+    $('#modalCarousel')
+        .carousel({
+            interval: false
+        });
+    /* change modal title when slide changes */
+    $('#modalCarousel')
+        .on('slid.bs.carousel', function () {
+            $('.modal-title')
+                .html($(this)
+                    .find('.active')
+                    .attr("title"));
+        })
+        /* when clicking a thumbnail */
+    $('.row .thumbnail')
+        .click(function () {
+            var idx = $(this)
+                .parents('div')
+                .index();
+            var id = parseInt(idx);
+            $('#myModal')
+                .modal('show'); // show the modal
+            $('#modalCarousel')
+                .carousel(id); // slide carousel to selected
+        });
+</script>
