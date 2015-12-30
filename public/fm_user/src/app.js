@@ -27,7 +27,7 @@ var fashionApp = angular.module('fashionApp', ["ui.router","siyfion.sfTypeahead"
 	        controller: "shopDetailCtrl"
         })
          .state('user', {
-            url: "/user",
+            url: "/user/{userId}",
             templateUrl: 'fm_user/src/views/user.tpl.html',
             controller: 'userCtrl'
         })        
