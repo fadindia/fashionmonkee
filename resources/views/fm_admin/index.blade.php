@@ -60,6 +60,7 @@
     <script src="fm_admin/scripts/ui-select2.js"></script>
     <script src="fm_admin/scripts/magicselection.js"></script>
     <script src="fm_admin/scripts/bootstrap-dp.js"></script>
+    <script src="fm_admin/scripts/satellizer.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

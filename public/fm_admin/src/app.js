@@ -15,7 +15,8 @@ angular
     'angularFileUpload',
     'ui.bootstrap',
     'ui.select2',
-    'ng-bootstrap-datepicker'
+    'ng-bootstrap-datepicker',
+    'satellizer'
   ])
   .config(function($stateProvider, $urlRouterProvider) {
 
