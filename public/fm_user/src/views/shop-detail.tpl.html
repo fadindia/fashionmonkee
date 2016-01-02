@@ -137,8 +137,11 @@
             <section id="section-bar-3">
                 <div class="container">
                     <div class="main">
-                        <ul id="og-grid-offer" class="og-grid">
-                            <li id="ogGridOffer{{$index}}" ng-repeat="offer in shopDetails.offers" ng-init="doOgGridInitialization($index, shopDetails.offers.length, 'og-grid-offer');setOfferDescription(offer, $index);">
+                        <div id="og-grid-offer" class="col-md-12">
+                            <div class="col-md-4 offer-box" id="ogGridOffer{{$index}}" ng-repeat="offer in shopDetails.offers" ng-init="doOgGridInitialization($index, shopDetails.offers.length, 'og-grid-offer');setOfferDescription(offer, $index);">
+                                <span class="ribbon red">
+                                    <!-- fill the text if need -->
+                                </span>
                                 <a data-largesrc="{{offer.imageUrl}}" data-title="{{offer.name}}" data-description="{{offer.description}}">
                                     <img src="fm_user/{{offer.imageUrl}}"/>
                                 </a>
@@ -150,7 +153,7 @@
             <section id="section-bar-4">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="widget-area no-padding blank">
                                 <div class="status-upload">
                                     <form>
@@ -177,8 +180,8 @@
                                 <!-- First Comment -->
                                 <div class="row" ng-repeat="review in shopDetails.reviews">
                                     <div class="col-md-2 col-sm-2 hidden-xs">
-                                        <figure class="thumbnail">
-                                            <img class="img-responsive" src="{{review.userImage}}">
+                                        <figure class="thumbnail user-thumbnail">
+                                            <img class="img-responsive" src="fm_user/{{review.userImage}}">
                                             <figcaption class="text-center">{{review.username}}</figcaption>
                                         </figure>
                                     </div>
@@ -186,8 +189,8 @@
                                         <div class="panel panel-default arrow left">
                                             <div class="panel-body">
                                                 <header class="text-left">
-                                                    <div class="comment-user"><i class="fa fa-user"></i>{{review.username}}</div>
-                                                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i>{{review.timestamp}}</time>
+                                                    <!-- <div class="comment-user"><i class="fa fa-user"></i>{{review.username}}</div> -->
+                                                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i><span class="time-stamp"> {{review.timestamp}}</span></time>
                                                 </header>
                                                 <div class="comment-post">
                                                     {{review.description}}
@@ -210,13 +213,15 @@
             <section id="section-bar-6">
                 <div class="container">
                     <div class="main">
-                        <ul id="og-grid-branch" class="og-grid">
-                            <li id="ogGridBranch{{$index}}" ng-repeat="branch in shopDetails.branches" ng-init="doOgGridInitialization($index, shopDetails.branches.length, 'og-grid-branch')">
+                        <div id="og-grid-branch" class="col-md-12">
+                            <div class="col-md-3 branch-box" id="ogGridBranch{{$index}}" ng-repeat="branch in shopDetails.branches" ng-init="doOgGridInitialization($index, shopDetails.branches.length, 'og-grid-branch')">
+                                  <span class="highlight-tag"> place</span>
                                 <a data-largesrc="{{branch.imageUrl}}" data-title="{{branch.name}}" data-description="{{branch.address}}">
                                     <img src="fm_user/{{branch.imageUrl}}"/>
                                 </a>
-                            </li>
-                        </ul>
+                              
+                            </div>
+                        </siv>
                     </div>
                 </div><!-- /container -->
             </section>
@@ -260,8 +265,116 @@
 
 
 <style type="text/css">
+.branch-box{
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.branch-box  img{
+    width: 100%;
+    height: 100%;
+}
+.highlight-tag{
+        float: left;
+    background: #0C5EB3;
+        width: 174px;
+    -webkit-transform: rotateZ(-45deg);
+    top: 37px;
+    position: absolute;
+    left: -38px;
+    height: 30px;
+    color: white;
+    box-shadow: -1px -1px 10px #DDD;
+}
+.offer-box img{
+    width: 100%;
+    height: 100%;
+}
+.ribbon {
+  float: left;
+  left: 40px;
+  top: -4px;
+    position: absolute;
+}
+/* End demo css */
 
+.ribbon {
+  display: block;
+  width: 30px;
+  position: relative;
+  color: #fff;
+  padding: 20px 0 10px;
+  text-align: center;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
 
+.ribbon:before {
+  display: block;
+  width: 30px;
+  height: 0;
+  position: absolute;
+  top: 4px;
+  content: "";
+  border-top: 1px dotted rgba(0, 0, 0, 0.2);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+
+.ribbon:after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  position: relative;
+  bottom: -25px;
+  z-index: 100;
+  border-width: 0 15px 15px 15px;
+  border-style: solid;
+}
+
+/* 
+    Ribbon colors 
+*/
+.ribbon.red {
+  background-color: #cb0000;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#fe0000), to(#cb0000));
+  background-image: -moz-linear-gradient(top, #fe0000, #cb0000);
+  background-image: -ms-linear-gradient(top, #fe0000, #cb0000);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fe0000), color-stop(100%, #cb0000));
+  background-image: -webkit-linear-gradient(top, #fe0000, #cb0000);
+  background-image: -o-linear-gradient(top, #fe0000, #cb0000);
+  background-image: linear-gradient(top, #fe0000, #cb0000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe0000', endColorstr='#cb0000', GradientType=0);
+}
+.ribbon.red:after {
+  border-color: #cb0000 #cb0000 transparent #cb0000;
+}
+.comment-date .time-stamp {
+    top: -3px;
+position: relative;
+  font-style: italic;
+}
+.comment-date i {
+  color: #028fcc;
+  font-size: 20px;
+  margin-right: 10px;
+}
+#og-grid-offer img {
+  height: 250px;
+  width: 300px;
+border-radius: 6px;
+}
+.user-thumbnail {
+  border-radius: 78px;
+   /* border-color: #028fcc;*/
+        padding: 12px;
+}
+.user-thumbnail img {
+  width: 120px;
+  height: 120px;
+  border-radius: 61px;
+}
 .comment-list .row {
 margin-bottom: 0px;
 }
@@ -285,6 +398,8 @@ padding-top: 6px;
 .comment-list figcaption {
 /*For wrap text is thumbnail*/
 word-wrap: break-word;
+font-weight: bold;
+    color: #169FA7;
 }
 /* Portrait tablets and medium desktops */
 @media (min-width: 768px) {
@@ -336,6 +451,7 @@ border-width: 15px;
 }
 .comment-list .comment-post {
 margin-top: 6px;
+text-align: left;
 }
 
 
@@ -438,7 +554,7 @@ width: 30px;
 cursor: pointer;
 }
 .status-upload ul > li > a:hover {
-background: none repeat scroll 0 0 #606060;
+background: none repeat scroll 0 0 #028fcc;
 color: #fff;
 }
 .status-upload form button {
@@ -627,20 +743,33 @@ transition:top 0.5s;
 .og-grid li > a .img-desc{
     display: block;
     position: absolute;
-    height: 40px;
+    height: 45px;
     background: black;
     bottom: -40px;
     width: 100%;
     transition:bottom 0.5s;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
 
 }
 .og-grid li > a:hover img{
-    top:-40px;
+    top:-45px;
    
 }
 .og-grid li > a:hover .img-desc{
     bottom: 0px;
+    padding-left: 5px;
 }
+.img-desc span:first-child {
+  display: block;
+  text-align: left;
+}
+.img-desc span:last-child {
+     display: block;
+  text-align: left;
+}
+
 </style>
 
 <script type="text/javascript">
