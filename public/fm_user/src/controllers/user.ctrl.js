@@ -10,7 +10,7 @@ angular.module('fashionApp').controller('userCtrl', function($scope, $api, $stat
         loginDetailsChecker = loginDetailsChecker.resolve() || loginDetailsChecker;
     }
     loginDetailsChecker.promise.then(function () {
-        $scope.currentTab = 'followers';
+        $scope.currentTab = 'bookmarks';
         $scope.searchingUser = '';
         $scope.idOfCurrentUser = parseInt($stateParams.userId || 0, 10);
         $scope.idOfCurrentlyLoggedInUser = parseInt(userInfo.getCurrentlyLoggedInUser().id || 0, 10);
