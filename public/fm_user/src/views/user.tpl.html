@@ -169,33 +169,39 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="network" ng-show="currentTab=='bookmarks'">
-                        <div class="col-lg-3 col-sm-4 col-xs-6 user-photos" ng-repeat="bookmarkedShop in user.bookmarks">
+                    <div class="row" ng-show="currentTab=='bookmarks'">
+                        <div class="col-lg-6 col-sm-12 col-xs-12 user-photos bookmarked-shops" ng-repeat="bookmarkedShop in user.bookmarks">
                             <img class="thumbnail img-responsive" src="{{bookmarkedShop.shopImage}}"/>
                             <div class="bookmark-thumbnail">
                                 <div class="bookmark-shop-title">
-                                    <h4>{{bookmarkedShop.name}}</h4>
-                                    <div>{{bookmarkedShop.address}}</div>
+                                    <div class="bookmark-border-completer"></div>
+                                    <div class="title-and-address">
+                                        <h4>{{bookmarkedShop.name}}</h4>
+                                        <div>{{bookmarkedShop.address}}</div>
+                                    </div>
+                                    <i class="glyphicon glyphicon-bookmark"></i>
+                                    <label class="label label-success">{{bookmarkedShop.rating}}</label>
                                 </div>
-                                <i class="glyphicon glyphicon-bookmark"></i>
-                                <label class="label label-success">{{bookmarkedShop.rating}}</label>
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="network" ng-show="currentTab=='ratings'">
-                        <div class="col-lg-3 col-sm-4 col-xs-6 user-photos" ng-repeat="ratedShop in user.ratings">
+                    <div class="row" ng-show="currentTab=='ratings'">
+                        <div class="col-lg-6 col-sm-12 col-xs-12 user-photos rated-shops" ng-repeat="ratedShop in user.ratings">
                             <img class="thumbnail img-responsive" src="{{ratedShop.shopImage}}"/>
                             <div class="bookmark-thumbnail">
                                 <div class="bookmark-shop-title">
-                                    <h4>{{ratedShop.name}}</h4>
-                                    <div>{{ratedShop.address}}</div>
+                                    <div class="bookmark-border-completer"></div>
+                                    <div class="title-and-address">
+                                        <h4>{{ratedShop.name}}</h4>
+                                        <div>{{ratedShop.address}}</div>
+                                    </div>
+                                    <i ng-if="ratedShop.isBookmarked" class="glyphicon glyphicon-bookmark"></i>
+                                    <label class="label label-success">{{ratedShop.rating}}</label>
                                 </div>
-                                <i ng-if="ratedShop.isBookmarked" class="glyphicon glyphicon-bookmark"></i>
-                                <label class="label label-success">{{ratedShop.rating}}</label>
                             </div>
                         </div>
                     </div>
-                    <div class="row follower-wrapper" id="network" ng-show="currentTab=='followers'">
+                    <div class="row follower-wrapper" ng-show="currentTab=='followers'">
                         <div class="col-md-6 col-sm-6 col-xsm-6 col-lg-6 well">
                             <div class="widget-head"><h4>I follow</h4><hr /></div>
                             <div ng-repeat="f in user.following" ng-click="goToUser(f.id)" class="follower profile-userpic">
@@ -1137,14 +1143,16 @@
         padding: 2px;
     }
 
+    .bookmarked-shops img, .rated-shops img {
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+        float: left;
+    }
+
     .bookmark-thumbnail {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        border: 1px solid #ddd;
-        border-top: none;
         font-size: 5px;
-        height: 82px;
-        margin-top: -8px;
+        height: 70px;
         padding: 5px;
         position: relative;
     }
@@ -1152,15 +1160,13 @@
     .bookmark-thumbnail i {
         color: lightblue;
         font-size: 15px;
-        display: inline;
-        position: absolute;
+        float: right;
     }
 
     .bookmark-thumbnail label {
         font-size: 10px;
         display: inline;
-        position: absolute;
-        right: 8px;
+        float: right;
     }
 
     .bookmark-shop-title {
@@ -1168,12 +1174,31 @@
         width: 75%;
         overflow: hidden;
         text-overflow: ellipsis;
+        border: 1px solid #ddd;
+        border-left: none;
+        max-height: 100%;
+    }
+
+    .bookmark-border-completer {
+        height: 60px;
+        left: 54px;
+        margin-top: -1px;
+        position: absolute;
+        width: 16px;
+        border: 1px solid #ddd;
+        border-right: none;
+        border-left: none;
+    }
+
+    .bookmark-shop-title .title-and-address{
+        display: inline-block;
     }
 
     .bookmark-shop-title h4 {
         font-weight: bold;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin: 3px 0;
     }
 
     .bookmark-shop-title div {
