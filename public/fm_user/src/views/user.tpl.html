@@ -179,7 +179,6 @@
                                         <h4>{{bookmarkedShop.name}}</h4>
                                         <div>{{bookmarkedShop.address}}</div>
                                     </div>
-                                    <i class="glyphicon glyphicon-bookmark"></i>
                                     <label class="label label-success">{{bookmarkedShop.rating}}</label>
                                 </div>
                             </div>
@@ -195,14 +194,13 @@
                                         <h4>{{ratedShop.name}}</h4>
                                         <div>{{ratedShop.address}}</div>
                                     </div>
-                                    <i ng-if="ratedShop.isBookmarked" class="glyphicon glyphicon-bookmark"></i>
                                     <label class="label label-success">{{ratedShop.rating}}</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row follower-wrapper" ng-show="currentTab=='followers'">
-                        <div class="col-md-6 col-sm-6 col-xsm-6 col-lg-6 well">
+                        <div class="col-md-6 col-sm-6 col-xsm-6 col-lg-6">
                             <div class="widget-head"><h4>I follow</h4><hr /></div>
                             <div ng-repeat="f in user.following" ng-click="goToUser(f.id)" class="follower profile-userpic">
                                 <img class="img-responsive thumbnail" src="{{f.userImage}}"/>
@@ -212,7 +210,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xsm-6 col-lg-6 well">
+                        <div class="col-md-6 col-sm-6 col-xsm-6 col-lg-6">
                             <div class="widget-head"><h4>Following me</h4><hr /></div>
                             <div ng-repeat="f in user.followers" ng-click="goToUser(f.id)" class="follower profile-userpic">
                                 <img class="img-responsive thumbnail" src="{{f.userImage}}"/>
@@ -1164,7 +1162,7 @@
     }
 
     .bookmark-thumbnail label {
-        font-size: 10px;
+        font-size: 15px;
         display: inline;
         float: right;
     }
