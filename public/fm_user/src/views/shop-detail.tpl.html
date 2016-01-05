@@ -1,48 +1,23 @@
-<header>
-    <div class="main-nav">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <h1><img class="img-responsive" src="fm_user/images/logo.png" alt="logo" width="300" height="100"></h1>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="scroll login"><a href="">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/#main-nav-->
-</header>
-<!--/#home-->
-<section id="detail">
-    <div id="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default store-panel">
-                        <div class="store-box">
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">   
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url(fm_user/images/bg.jpg)">
+            <div class="shop-detail">
+                <div class="store-box">
                             <span class="storetitle">{{shopDetails.name}}</span>
                             <span class="storeplace">{{shopDetails.address}}</span>
                             <div class="rating">
                                 <span class="rating-box">{{shopDetails.rating}}</span>
                                 <span class="vote">{{shopDetails.votes}} votes</span>
                             </div>
-                        </div>
-                        <div class="share-box">
-                            <div class="userfollow16">
-                                <div class="followcomment">
-                                    <strong>Shop Type : </strong> {{shopDetails.type}}
-                                </div>
-                            </div>
+                 </div>
+                  <div class="share-box">
                             <ul>
+                                <li>
+                                    <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                        <a href="#" class="btn-sharemore"><i class="fa fa-bookmark"></i>BookMark</a>
+                                    </div>
+                                </li>
                                 <li>
                                     <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
                                         <a href="#" class="btn-sharemore"><i class="fa fa-comment"></i> Write Review</a>
@@ -52,12 +27,7 @@
                                     <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
                                         <a href="#" class="btn-sharemore"><i class="fa fa-home"></i> Follow</a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                        <a href="#" class="btn-sharemore"><i class="fa fa-bookmark-o"></i> </a>
-                                    </div>
-                                </li>
+                                </li>                                
                                 <li>
                                     <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
                                         <select id="example" ng-model="shopDetails.thisUsersRating">
@@ -70,20 +40,38 @@
                                         </select>
                                     </div>
                                 </li>
-                            </ul>
-                            <!-- <div class="userfollow16">
-                              <div class="followcomment">
-                                  <strong>Women:</strong>Lehengas, Sarees, Salwar Suits &amp; Anarkalis, Dresses &amp; Gowns
-                                  <br>
-                            </div>
-                           </div> -->
-                        </div>
+                            </ul>                           
                     </div>
-                </div>
             </div>
         </div>
-    </div>
-</section>
+      </div>
+     
+      <a id="tohash" href="#portfolio"><i class="fa fa-angle-down"></i></a>
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="fm_user/images/logo.png" alt="logo" width="300" height="500"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                             
+            <li class="scroll login"><a href="">Login</a></li>       
+          </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+
+  
 <section id="detail-tab">
     <div class="tabs tabs-style-bar">
         <nav>
@@ -265,6 +253,40 @@
 
 
 <style type="text/css">
+        #home-slider .shop-detail {
+          position: absolute;
+          top: 80%;
+          margin-top: -104px;
+          left: 10%;
+          text-align: left;
+          text-transform: uppercase;
+          z-index: 15;
+          font-size: 18px;
+          font-weight: 300;
+          color: #ffffff;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-radius: 10px;
+          width: 70%;
+          height: 20%;
+          color: #fff;
+          font-size: 60px;
+          font-weight: 700;
+          margin-bottom: 10px;
+          background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 .branch-box{
     margin-bottom: 15px;
     overflow: hidden;
@@ -625,8 +647,6 @@ font-weight: 600;
 padding: 8px 8px;
 text-transform: uppercase;
 border-radius: 4px;
-    border-bottom: 4px solid #5EB0F7;
-
 }
 
 .btn-sharemore i{
@@ -660,17 +680,16 @@ padding: 28px 18px 28px 18px;
 margin-top: 10px;
 }
 .store-box span.storetitle {
-color: #4d4d49;
 font-size: 24px;
 float: left;
-font-weight: bold;
+font-weight: 600;
 }
 .store-box span.storeplace {
-color: #898989;
-font-size: 14px;
+font-size: 16px;
 font-weight: 400;
 width: 100%;
 float: left;
+padding-top: 10px;
 }
 .rating {
 float: right;
@@ -714,7 +733,7 @@ float: left;
 
 .share-box ul {
 padding: 0;
-margin: 45px 0 0 0;
+margin: 10px 0 0 0;
 width: 100%;
 }
 
