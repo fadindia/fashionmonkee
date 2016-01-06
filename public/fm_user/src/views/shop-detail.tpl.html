@@ -1,4 +1,4 @@
-  <header id="home">
+<!--   <header id="home">
     <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">   
       <div class="carousel-inner">
         <div class="item active" style="background-image: url(fm_user/images/bg.jpg)">
@@ -48,7 +48,7 @@
      
       <a id="tohash" href="#portfolio"><i class="fa fa-angle-down"></i></a>
 
-    </div><!--/#home-slider-->
+    </div>
     <div class="main-nav">
       <div class="container">
         <div class="navbar-header">
@@ -68,153 +68,86 @@
           </ul>
         </div>
       </div>
-    </div><!--/#main-nav-->
-  </header><!--/#home-->
+    </div>
+  </header> -->
 
   
 <section id="detail-tab">
-    <div class="tabs tabs-style-bar">
-        <nav>
-            <ul>
-                <li><a href="#section-bar-1" class="icon icon-home"><span>Category</span></a></li>
-                <li><a href="#section-bar-2" class="icon icon-box"><span>Products</span></a></li>
-                <li><a href="#section-bar-3" class="icon icon-display"><span>Offers</span></a></li>
-                <li><a href="#section-bar-4" class="icon icon-upload"><span>Reviews</span></a></li>
-                <li><a href="#section-bar-5" class="icon icon-tools"><span>Location</span></a></li>
-                <li><a href="#section-bar-6" class="icon icon-tools"><span>Branches</span></a></li>
-            </ul>
-        </nav>
-        <div class="content-wrap">
-            <section id="section-bar-1">
-                <div class="row">
-                    <div class="category-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                        <a href="#" class="btn-categorymore">Mens</a>
-                        <a href="#" class="btn-categorymore">Womens</a>
-                        <a href="#" class="btn-categorymore">Kids</a>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="main">
-                        <ul id="og-grid-category" class="og-grid">
-                            <li id="ogGridCategory{{$index}}" ng-repeat="category in shopDetails.categories" ng-init="doOgGridInitialization($index, shopDetails.categories.length, 'og-grid-category')">
-                                <a data-largesrc="{{category.imageUrl}}" data-title="{{category.name}}" data-description="{{category.type}}">
-                                    <img src="fm_user/{{category.imageUrl}}"/>
-                                    <div class="img-desc">
-                                        <span>Title</span>
-                                        <span>Description</span>
+    <div class="container">        
+        <div class="row">
+          <div class="col-lg-2  col-md-2  col-sm-2">
+            hi
+          </div>
+          <div class="col-lg-5  col-md-5  col-sm-5">
+          </div>
+            <div class="col-lg-5  col-md-5  col-sm-5">
+                <!-- TWEET WRAPPER START -->
+                <div class="twt-wrapper">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Share Your Comments
+                        </div>
+                        <div class="panel-body">
+                            <textarea class="form-control" placeholder="Enter your comments..." rows="3"></textarea>
+                            <br />
+                            <div class="share-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                        <a href="#" class="btn-sharemore"><i class="fa fa-share"></i>Share</a>
                                     </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- /container -->
-            </section>
-            <section id="section-bar-2">
-                <div class="container">
-                    <div class="main">
-                        <ul id="og-grid-product" class="og-grid">
-                            <li id="ogGridProduct{{$index}}" ng-repeat="product in shopDetails.products" ng-init="doOgGridInitialization($index, shopDetails.products.length, 'og-grid-product')">
-                                <a data-largesrc="{{product.imageUrl}}" data-title="{{product.name}}" data-description="{{product.description}}">
-                                    <img src="fm_user/{{product.imageUrl}}"/>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- /container -->
-            </section>
-            <section id="section-bar-3">
-                <div class="container">
-                    <div class="main">
-                        <div id="og-grid-offer" class="col-md-12">
-                            <div class="col-md-4 offer-box" id="ogGridOffer{{$index}}" ng-repeat="offer in shopDetails.offers" ng-init="doOgGridInitialization($index, shopDetails.offers.length, 'og-grid-offer');setOfferDescription(offer, $index);">
-                                <span class="ribbon red">
-                                    <!-- fill the text if need -->
-                                </span>
-                                <a data-largesrc="{{offer.imageUrl}}" data-title="{{offer.name}}" data-description="{{offer.description}}">
-                                    <img src="fm_user/{{offer.imageUrl}}"/>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- /container -->
-            </section>
-            <section id="section-bar-4">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="widget-area no-padding blank">
-                                <div class="status-upload">
-                                    <form>
-                                        <textarea placeholder="What are you doing right now?" ></textarea>
-                                        <ul>
-                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
-                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
-                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
-                                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
-                                        </ul>
-                                        <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
-                                    </form>
-                                </div><!-- Status Upload  -->
-                            </div><!-- Widget Area -->
+                            <div class="clearfix"></div>
+                            <hr />
+                            <ul class="media-list">
+                                <li class="media">
+                                    <a href="#" class="pull-left">
+                                        <img src="fm_user/images/1.jpg" alt="" class="img-circle">
+                                    </a>
+                                    <div class="media-body">
+                                        <span class="text-muted pull-right">
+                                            <small class="text-muted">30 min ago</small>
+                                        </span>
+                                        <strong class="text-success">@ Rexona Kumi</strong>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <a href="#" class="pull-left">
+                                        <img src="fm_user/images/2.jpg" alt="" class="img-circle">
+                                    </a>
+                                    <div class="media-body">
+                                        <span class="text-muted pull-right">
+                                            <small class="text-muted">30 min ago</small>
+                                        </span>
+                                        <strong class="text-success">@ John Doe</strong>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Lorem ipsum dolor <a href="#"># ipsum dolor </a>adipiscing elit.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <a href="#" class="pull-left">
+                                        <img src="fm_user/images/3.jpg" alt="" class="img-circle">
+                                    </a>
+                                    <div class="media-body">
+                                        <span class="text-muted pull-right">
+                                            <small class="text-muted">30 min ago</small>
+                                        </span>
+                                        <strong class="text-success">@ Madonae Jonisyi</strong>
+                                        <p>
+                                            Lorem ipsum dolor <a href="#"># sit amet</a> sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>                            
                         </div>
                     </div>
                 </div>
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="page-header">Comments</h2>
-                            <div class="comment-list">
-                                <!-- First Comment -->
-                                <div class="row" ng-repeat="review in shopDetails.reviews">
-                                    <div class="col-md-2 col-sm-2 hidden-xs">
-                                        <figure class="thumbnail user-thumbnail">
-                                            <img class="img-responsive" src="fm_user/{{review.userImage}}">
-                                            <figcaption class="text-center">{{review.username}}</figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-10 col-sm-10">
-                                        <div class="panel panel-default arrow left">
-                                            <div class="panel-body">
-                                                <header class="text-left">
-                                                    <!-- <div class="comment-user"><i class="fa fa-user"></i>{{review.username}}</div> -->
-                                                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i><span class="time-stamp"> {{review.timestamp}}</span></time>
-                                                </header>
-                                                <div class="comment-post">
-                                                    {{review.description}}
-                                                    </br>
-                                                    <span ng-repeat="image in review.reviewImages track by $index">
-                                                        <img src="fm_user/{{image}}"/>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="section-bar-5">
-            </section>
-            <section id="section-bar-6">
-                <div class="container">
-                    <div class="main">
-                        <div id="og-grid-branch" class="col-md-12">
-                            <div class="col-md-3 branch-box" id="ogGridBranch{{$index}}" ng-repeat="branch in shopDetails.branches" ng-init="doOgGridInitialization($index, shopDetails.branches.length, 'og-grid-branch')">
-                                  <span class="highlight-tag"> place</span>
-                                <a data-largesrc="{{branch.imageUrl}}" data-title="{{branch.name}}" data-description="{{branch.address}}">
-                                    <img src="fm_user/{{branch.imageUrl}}"/>
-                                </a>
-                              
-                            </div>
-                        </siv>
-                    </div>
-                </div><!-- /container -->
-            </section>
-        </div><!-- /content -->
-    </div><!-- /tabs -->
+                 <!-- TWEET WRAPPER END -->
+            </div>
+        </div>
+    </div>
 </section>
 
 
@@ -280,9 +213,29 @@
 
 
 
+/*=======================================
+TWEET FEED STYLES
+==================================================*/
+.twt-wrapper .panel-body {
+    overflow:auto;
+}
+.twt-wrapper .media-list .media img {
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+}
+.twt-wrapper .media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:25px;
+}
 
-
-
+.twt-wrapper .form-control {
+  border-color: rgb(249, 240, 240) !important;
+}
+.twt-wrapper .panel-info>.panel-heading {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
 
 
 
