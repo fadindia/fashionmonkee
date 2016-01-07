@@ -1,4 +1,4 @@
-<!--   <header id="home">
+  <header id="home">
     <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">   
       <div class="carousel-inner">
         <div class="item active" style="background-image: url(fm_user/images/bg.jpg)">
@@ -69,19 +69,48 @@
         </div>
       </div>
     </div>
-  </header> -->
+  </header>
 
   
 <section id="detail-tab">
     <div class="container">        
         <div class="row">
-          <div class="col-lg-2  col-md-2  col-sm-2">
-            hi
+          <div class="col-lg-3  col-md-3  col-sm-3">
+              <div class="panel">
+                  <div class="panel-heading">
+                      Store Location
+                  </div>
+                  <div class="panel-body">
+                      
+                  </div>
+              </div>
+              <div class="panel">
+                  <div class="panel-heading">
+                      Opening Hours
+                  </div>
+                  <div class="panel-body">
+                      
+                  </div>
+              </div>
+              <div class="panel">
+                  <div class="panel-heading">
+                      Known For
+                  </div>
+                  <div class="panel-body">
+                      
+                  </div>
+              </div>
+              <div class="panel">
+                  <div class="panel-heading">
+                      Highlights
+                  </div>
+                  <div class="panel-body">
+                      
+                  </div>
+              </div>
+
           </div>
           <div class="col-lg-5  col-md-5  col-sm-5">
-          </div>
-            <div class="col-lg-5  col-md-5  col-sm-5">
-                <!-- TWEET WRAPPER START -->
                 <div class="twt-wrapper">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -144,8 +173,9 @@
                         </div>
                     </div>
                 </div>
-                 <!-- TWEET WRAPPER END -->
-            </div>
+         
+          </div>
+           
         </div>
     </div>
 </section>
@@ -155,7 +185,7 @@
     <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="container text-center">
             <div class="footer-logo">
-                <a href="index.html"><img class="img-responsive" src="fm_user/images/logo.png" alt=""></a>
+                <a href="index.html"><img class="img-responsive" src="fm_user/images/logo.png" alt="" width="300" height="500"></a>
             </div>
             <div class="social-icons">
                 <ul>
@@ -209,7 +239,13 @@
           background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
         }
 
-
+        #detail-tab .panel-heading {
+          border-bottom: 1px solid #028fcc !important;
+        }
+        #detail-tab .panel {
+             border: 1px solid #028fcc !important;
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+          }
 
 
 
@@ -230,209 +266,21 @@ TWEET FEED STYLES
 }
 
 .twt-wrapper .form-control {
-  border-color: rgb(249, 240, 240) !important;
+  border-color: #028fcc !important;
 }
 .twt-wrapper .panel-info>.panel-heading {
   background-color: #ffffff !important;
   border-color: #ffffff !important;
 }
 
-
-
-
-.branch-box{
-    margin-bottom: 15px;
-    overflow: hidden;
+#detail-tab .row {
+    margin-right: -70px !important;
+    margin-left: -70px !important;
 }
-.branch-box  img{
-    width: 100%;
-    height: 100%;
-}
-.highlight-tag{
-        float: left;
-    background: #0C5EB3;
-        width: 174px;
-    -webkit-transform: rotateZ(-45deg);
-    top: 37px;
-    position: absolute;
-    left: -38px;
-    height: 30px;
-    color: white;
-    box-shadow: -1px -1px 10px #DDD;
-}
-.offer-box img{
-    width: 100%;
-    height: 100%;
-}
-.ribbon {
-  float: left;
-  left: 40px;
-  top: -4px;
-    position: absolute;
-}
-/* End demo css */
-
-.ribbon {
-  display: block;
-  width: 30px;
-  position: relative;
-  color: #fff;
-  padding: 20px 0 10px;
-  text-align: center;
-  font-family: arial, sans-serif;
-  font-weight: bold;
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-}
-
-.ribbon:before {
-  display: block;
-  width: 30px;
-  height: 0;
-  position: absolute;
-  top: 4px;
-  content: "";
-  border-top: 1px dotted rgba(0, 0, 0, 0.2);
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
-}
-
-.ribbon:after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: "";
-  position: relative;
-  bottom: -25px;
-  z-index: 100;
-  border-width: 0 15px 15px 15px;
-  border-style: solid;
-}
-
-/* 
-    Ribbon colors 
-*/
-.ribbon.red {
-  background-color: #cb0000;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#fe0000), to(#cb0000));
-  background-image: -moz-linear-gradient(top, #fe0000, #cb0000);
-  background-image: -ms-linear-gradient(top, #fe0000, #cb0000);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fe0000), color-stop(100%, #cb0000));
-  background-image: -webkit-linear-gradient(top, #fe0000, #cb0000);
-  background-image: -o-linear-gradient(top, #fe0000, #cb0000);
-  background-image: linear-gradient(top, #fe0000, #cb0000);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe0000', endColorstr='#cb0000', GradientType=0);
-}
-.ribbon.red:after {
-  border-color: #cb0000 #cb0000 transparent #cb0000;
-}
-.comment-date .time-stamp {
-    top: -3px;
-position: relative;
-  font-style: italic;
-}
-.comment-date i {
-  color: #028fcc;
-  font-size: 20px;
-  margin-right: 10px;
-}
-#og-grid-offer img {
-  height: 250px;
-  width: 300px;
-border-radius: 6px;
-}
-.user-thumbnail {
-  border-radius: 78px;
-   /* border-color: #028fcc;*/
-        padding: 12px;
-}
-.user-thumbnail img {
-  width: 120px;
-  height: 120px;
-  border-radius: 61px;
-}
-.comment-list .row {
-margin-bottom: 0px;
-}
-.comment-list .panel .panel-heading {
-padding: 4px 15px;
-position: absolute;
-border:none;
-/*Panel-heading border radius*/
-border-top-right-radius:0px;
-top: 1px;
-}
-.comment-list .panel .panel-heading.right {
-border-right-width: 0px;
-/*Panel-heading border radius*/
-border-top-left-radius:0px;
-right: 16px;
-}
-.comment-list .panel .panel-heading .panel-body {
-padding-top: 6px;
-}
-.comment-list figcaption {
-/*For wrap text is thumbnail*/
-word-wrap: break-word;
-font-weight: bold;
-    color: #169FA7;
-}
-/* Portrait tablets and medium desktops */
-@media (min-width: 768px) {
-.comment-list .arrow:after, .comment-list .arrow:before {
-content: "";
-position: absolute;
-width: 0;
-height: 0;
-border-style: solid;
-border-color: transparent;
-}
-.comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
-border-left: 0;
-}
-/*****Left Arrow*****/
-/*Outline effect style*/
-.comment-list .panel.arrow.left:before {
-left: 0px;
-top: 30px;
-/*Use boarder color of panel*/
-border-right-color: inherit;
-border-width: 16px;
-}
-/*Background color effect*/
-.comment-list .panel.arrow.left:after {
-left: 1px;
-top: 31px;
-/*Change for different outline color*/
-border-right-color: #FFFFFF;
-border-width: 15px;
-}
-/*****Right Arrow*****/
-/*Outline effect style*/
-.comment-list .panel.arrow.right:before {
-right: -16px;
-top: 30px;
-/*Use boarder color of panel*/
-border-left-color: inherit;
-border-width: 16px;
-}
-/*Background color effect*/
-.comment-list .panel.arrow.right:after {
-right: -14px;
-top: 31px;
-/*Change for different outline color*/
-border-left-color: #FFFFFF;
-border-width: 15px;
-}
-}
-.comment-list .comment-post {
-margin-top: 6px;
-text-align: left;
-}
-
 
 
 section#detail-tab{
-margin-top: -90px;
+margin-top: -5px;
 }
 
 .widget-area.blank {
@@ -672,12 +520,7 @@ width: 45px;
 span.vote {
 padding-top: 2px;
 }
-/*
-.followbx16 .follow-share-box {
-margin-top: 0;
-margin-bottom: 10px;
-position: relative;
-}*/
+
 .share-box {
 width: 100%;
 float: left;
@@ -702,45 +545,8 @@ color: #898989;
 }
 .btn-categorymore {
      border: 1px solid #028fcc;
-    }
-.og-grid li > a{
-    overflow: hidden;
-transition:top 0.5s;
 }
-.og-grid li > a img{
-    overflow: hidden;
-    top:0;
-    transition:top 0.5s;
-}
-.og-grid li > a .img-desc{
-    display: block;
-    position: absolute;
-    height: 45px;
-    background: black;
-    bottom: -40px;
-    width: 100%;
-    transition:bottom 0.5s;
-    color: white;
-    font-weight: bold;
-    font-style: italic;
 
-}
-.og-grid li > a:hover img{
-    top:-45px;
-   
-}
-.og-grid li > a:hover .img-desc{
-    bottom: 0px;
-    padding-left: 5px;
-}
-.img-desc span:first-child {
-  display: block;
-  text-align: left;
-}
-.img-desc span:last-child {
-     display: block;
-  text-align: left;
-}
 
 </style>
 
@@ -752,613 +558,5 @@ transition:top 0.5s;
        });
    });
 
-   /**
-    * cbpFWTabs.js v1.0.0
-    * http://www.codrops.com
-    *
-    * Licensed under the MIT license.
-    * http://www.opensource.org/licenses/mit-license.php
-    *
-    * Copyright 2014, Codrops
-    * http://www.codrops.com
-    */
-   ;
-   (function(window) {
-
-       'use strict';
-
-       function extend(a, b) {
-           for (var key in b) {
-               if (b.hasOwnProperty(key)) {
-                   a[key] = b[key];
-               }
-           }
-           return a;
-       }
-
-       function CBPFWTabs(el, options) {
-           this.el = el;
-           this.options = extend({}, this.options);
-           extend(this.options, options);
-           this._init();
-       }
-
-       CBPFWTabs.prototype.options = {
-           start: 0
-       };
-
-       CBPFWTabs.prototype._init = function() {
-           // tabs elems
-           this.tabs = [].slice.call(this.el.querySelectorAll('nav > ul > li'));
-           // content items
-           this.items = [].slice.call(this.el.querySelectorAll('.content-wrap > section'));
-           // current index
-           this.current = -1;
-           // show current content item
-           this._show();
-           // init events
-           this._initEvents();
-       };
-
-       CBPFWTabs.prototype._initEvents = function() {
-           var self = this;
-           this.tabs.forEach(function(tab, idx) {
-               tab.addEventListener('click', function(ev) {
-                   ev.preventDefault();
-                   self._show(idx);
-               });
-           });
-       };
-
-       CBPFWTabs.prototype._show = function(idx) {
-           if (this.current >= 0) {
-               this.tabs[this.current].className = this.items[this.current].className = '';
-           }
-           // change current
-           this.current = idx != undefined ? idx : this.options.start >= 0 && this.options.start < this.items.length ? this.options.start : 0;
-           this.tabs[this.current].className = 'tab-current';
-           this.items[this.current].className = 'content-current';
-       };
-
-       // add to global namespace
-       window.CBPFWTabs = CBPFWTabs;
-
-   })(window);
-
-
-   /*
-    * debouncedresize: special jQuery event that happens once after a window resize
-    *
-    * latest version and complete README available on Github:
-    * https://github.com/louisremi/jquery-smartresize/blob/master/jquery.debouncedresize.js
-    *
-    * Copyright 2011 @louis_remi
-    * Licensed under the MIT license.
-    */
-   var $event = $.event,
-       $special,
-       resizeTimeout;
-
-   $special = $event.special.debouncedresize = {
-       setup: function() {
-           $(this).on("resize", $special.handler);
-       },
-       teardown: function() {
-           $(this).off("resize", $special.handler);
-       },
-       handler: function(event, execAsap) {
-           // Save the context
-           var context = this,
-               args = arguments,
-               dispatch = function() {
-                   // set correct event type
-                   event.type = "debouncedresize";
-                   $event.dispatch.apply(context, args);
-               };
-
-           if (resizeTimeout) {
-               clearTimeout(resizeTimeout);
-           }
-
-           execAsap ?
-               dispatch() :
-               resizeTimeout = setTimeout(dispatch, $special.threshold);
-       },
-       threshold: 250
-   };
-
-   // ======================= imagesLoaded Plugin ===============================
-   // https://github.com/desandro/imagesloaded
-
-   // $('#my-container').imagesLoaded(myFunction)
-   // execute a callback when all images have loaded.
-   // needed because .load() doesn't work on cached images
-
-   // callback function gets image collection as argument
-   //  this is the container
-
-   // original: MIT license. Paul Irish. 2010.
-   // contributors: Oren Solomianik, David DeSandro, Yiannis Chatzikonstantinou
-
-   // blank image data-uri bypasses webkit log warning (thx doug jones)
-   var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
-
-   $.fn.imagesLoaded = function(callback) {
-       var $this = this,
-           deferred = $.isFunction($.Deferred) ? $.Deferred() : 0,
-           hasNotify = $.isFunction(deferred.notify),
-           $images = $this.find('img').add($this.filter('img')),
-           loaded = [],
-           proper = [],
-           broken = [];
-
-       // Register deferred callbacks
-       if ($.isPlainObject(callback)) {
-           $.each(callback, function(key, value) {
-               if (key === 'callback') {
-                   callback = value;
-               } else if (deferred) {
-                   deferred[key](value);
-               }
-           });
-       }
-
-       function doneLoading() {
-           var $proper = $(proper),
-               $broken = $(broken);
-
-           if (deferred) {
-               if (broken.length) {
-                   deferred.reject($images, $proper, $broken);
-               } else {
-                   deferred.resolve($images);
-               }
-           }
-
-           if ($.isFunction(callback)) {
-               callback.call($this, $images, $proper, $broken);
-           }
-       }
-
-       function imgLoaded(img, isBroken) {
-           // don't proceed if BLANK image, or image is already loaded
-           if (img.src === BLANK || $.inArray(img, loaded) !== -1) {
-               return;
-           }
-
-           // store element in loaded images array
-           loaded.push(img);
-
-           // keep track of broken and properly loaded images
-           if (isBroken) {
-               broken.push(img);
-           } else {
-               proper.push(img);
-           }
-
-           // cache image and its state for future calls
-           $.data(img, 'imagesLoaded', {
-               isBroken: isBroken,
-               src: img.src
-           });
-
-           // trigger deferred progress method if present
-           if (hasNotify) {
-               deferred.notifyWith($(img), [isBroken, $images, $(proper), $(broken)]);
-           }
-
-           // call doneLoading and clean listeners if all images are loaded
-           if ($images.length === loaded.length) {
-               setTimeout(doneLoading);
-               $images.unbind('.imagesLoaded');
-           }
-       }
-
-       // if no images, trigger immediately
-       if (!$images.length) {
-           doneLoading();
-       } else {
-           $images.bind('load.imagesLoaded error.imagesLoaded', function(event) {
-               // trigger imgLoaded
-               imgLoaded(event.target, event.type === 'error');
-           }).each(function(i, el) {
-               var src = el.src;
-
-               // find out if this image has been already checked for status
-               // if it was, and src has not changed, call imgLoaded on it
-               var cached = $.data(el, 'imagesLoaded');
-               if (cached && cached.src === src) {
-                   imgLoaded(el, cached.isBroken);
-                   return;
-               }
-
-               // if complete is true and browser supports natural sizes, try
-               // to check for image status manually
-               if (el.complete && el.naturalWidth !== undefined) {
-                   imgLoaded(el, el.naturalWidth === 0 || el.naturalHeight === 0);
-                   return;
-               }
-
-               // cached images don't fire load sometimes, so we reset src, but only when
-               // dealing with IE, or image is complete (loaded) and failed manual check
-               // webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
-               if (el.readyState || el.complete) {
-                   el.src = BLANK;
-                   el.src = src;
-               }
-           });
-       }
-
-       return deferred ? deferred.promise($this) : $this;
-   };
-
-   var OgGrid = (function() {
-
-       // list of items
-       var $grid = {},
-           // the items
-           $items = {};
-       // current expanded item's index
-       var current = -1,
-           // position (top) of the expanded item
-           // used to know if the preview will expand in a different row
-           previewPos = -1,
-           // extra amount of pixels to scroll the window
-           scrollExtra = 0,
-           // extra margin when expanded (between preview overlay and the next items)
-           marginExpanded = 10,
-           $window = $(window),
-           winsize,
-           $body = $('html, body'),
-           // transitionend events
-           transEndEventNames = {
-               'WebkitTransition': 'webkitTransitionEnd',
-               'MozTransition': 'transitionend',
-               'OTransition': 'oTransitionEnd',
-               'msTransition': 'MSTransitionEnd',
-               'transition': 'transitionend'
-           },
-           transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
-           // support for csstransitions
-           support = Modernizr.csstransitions,
-           // default settings
-           settings = {
-               minHeight: 500,
-               speed: 350,
-               easing: 'ease'
-           };
-
-       function init(elementId, config) {
-
-           // list of items
-           $grid[elementId] = $('#' + elementId);
-           // the items
-           $items[elementId] = $('#' + elementId + ' li');
-           console.log("in grid init1 : " + JSON.stringify($grid));
-           console.log("in grid init : " + JSON.stringify($items));
-
-           // the settings..
-           settings = $.extend(true, {}, settings, config);
-
-           // preload all images
-           $grid[elementId].imagesLoaded(function() {
-
-               // save item´s size and offset
-               saveItemInfo(elementId, true);
-               // get window´s size
-               getWinSize();
-               // initialize some events
-               initEvents(elementId);
-
-           });
-
-       }
-
-       // add more items to the grid.
-       // the new items need to appended to the grid.
-       // after that call OgGrid.addItems(elementId, theItems);
-       function addItems(elementId, $newitems) {
-           $items = $items[elementId].add($newitems);
-
-           $newitems.each(function() {
-               var $item = $(this);
-               $item.data({
-                   offsetTop: $item.offset().top,
-                   height: $item.height()
-               });
-           });
-
-           initItemsEvents($newitems);
-
-       }
-
-       // saves the item´s offset top and height (if saveheight is true)
-       function saveItemInfo(elementId, saveheight) {
-           $items[elementId].each(function() {
-               var $item = $(this);
-               $item.data('offsetTop', $item.offset().top);
-               if (saveheight) {
-                   $item.data('height', $item.height());
-               }
-           });
-       }
-
-       function initEvents(elementId) {
-
-           // when clicking an item, show the preview with the item´s info and large image.
-           // close the item if already expanded.
-           // also close if clicking on the item´s cross
-           initItemsEvents(elementId, $items);
-
-           // on window resize get the window´s size again
-           // reset some values..
-           $window.on('debouncedresize', function() {
-
-               scrollExtra = 0;
-               previewPos = -1;
-               // save item´s offset
-               saveItemInfo(elementId);
-               getWinSize();
-               var preview = $.data(this, 'preview');
-               if (typeof preview != 'undefined') {
-                   hidePreview();
-               }
-
-           });
-
-       }
-
-       function initItemsEvents(elementId, $items) {
-           $items[elementId].on('click', function() {
-               hidePreview();
-               return false;
-           }).children('a').on('click', function(e) {
-
-               var $item = $(this).parent();
-               // check if item already opened
-               current === $item.index() ? hidePreview() : showPreview($item);
-               return false;
-
-           });
-       }
-
-       function getWinSize() {
-           winsize = {
-               width: $window.width(),
-               height: $window.height()
-           };
-       }
-
-       function showPreview($item) {
-
-           var preview = $.data(this, 'preview'),
-               // item´s offset top
-               position = $item.data('offsetTop');
-
-           scrollExtra = 0;
-
-           // if a preview exists and previewPos is different (different row) from item´s top then close it
-           if (typeof preview != 'undefined') {
-
-               // not in the same row
-               if (previewPos !== position) {
-                   // if position > previewPos then we need to take te current preview´s height in consideration when scrolling the window
-                   if (position > previewPos) {
-                       scrollExtra = preview.height;
-                   }
-                   hidePreview();
-               }
-               // same row
-               else {
-                   preview.update($item);
-                   return false;
-               }
-
-           }
-
-           // update previewPos
-           previewPos = position;
-           // initialize new preview for the clicked item
-           preview = $.data(this, 'preview', new Preview($item));
-           // expand preview overlay
-           preview.open();
-
-       }
-
-       function hidePreview() {
-           current = -1;
-           var preview = $.data(this, 'preview');
-           preview.close();
-           $.removeData(this, 'preview');
-       }
-
-       // the preview obj / overlay
-       function Preview($item) {
-           this.$item = $item;
-           this.expandedIdx = this.$item.index();
-           this.create();
-           this.update();
-       }
-
-       Preview.prototype = {
-           create: function() {
-               // create Preview structure:
-               this.$title = $('<h3></h3>');
-               this.$description = $('<p></p>');
-               this.$href = $('<a href="#">Visit website</a>');
-               this.$details = $('<div class="og-details"></div>').append(this.$title, this.$description, this.$href);
-               this.$loading = $('<div class="og-loading"></div>');
-               this.$fullimage = $('<div class="og-fullimg"></div>').append(this.$loading);
-               this.$closePreview = $('<span class="og-close"></span>');
-               this.$previewInner = $('<div class="og-expander-inner"></div>').append(this.$closePreview, this.$fullimage, this.$details);
-               this.$previewEl = $('<div class="og-expander"></div>').append(this.$previewInner);
-               // append preview element to the item
-               this.$item.append(this.getEl());
-               // set the transitions for the preview and the item
-               if (support) {
-                   this.setTransition();
-               }
-           },
-           update: function($item) {
-
-               if ($item) {
-                   this.$item = $item;
-               }
-
-               // if already expanded remove class "og-expanded" from current item and add it to new item
-               if (current !== -1) {
-                   var $currentItem = $items.eq(current);
-                   $currentItem.removeClass('og-expanded');
-                   this.$item.addClass('og-expanded');
-                   // position the preview correctly
-                   this.positionPreview();
-               }
-
-               // update current value
-               current = this.$item.index();
-
-               // update preview´s content
-               var $itemEl = this.$item.children('a'),
-                   eldata = {
-                       href: $itemEl.attr('href'),
-                       largesrc: $itemEl.data('largesrc'),
-                       title: $itemEl.data('title'),
-                       description: $itemEl.data('description')
-                   };
-
-               this.$title.html(eldata.title);
-               this.$description.html(eldata.description);
-               this.$href.attr('href', eldata.href);
-
-               var self = this;
-
-               // remove the current image in the preview
-               if (typeof self.$largeImg != 'undefined') {
-                   self.$largeImg.remove();
-               }
-
-               // preload large image and add it to the preview
-               // for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
-               if (self.$fullimage.is(':visible')) {
-                   this.$loading.show();
-                   $('<img/>').load(function() {
-                       var $img = $(this);
-                       if ($img.attr('src') === self.$item.children('a').data('largesrc')) {
-                           self.$loading.hide();
-                           self.$fullimage.find('img').remove();
-                           self.$largeImg = $img.fadeIn(350);
-                           self.$fullimage.append(self.$largeImg);
-                       }
-                   }).attr('src', eldata.largesrc);
-               }
-
-           },
-           open: function() {
-
-               setTimeout($.proxy(function() {
-                   // set the height for the preview and the item
-                   this.setHeights();
-                   // scroll to position the preview in the right place
-                   this.positionPreview();
-               }, this), 25);
-
-           },
-           close: function() {
-
-               var self = this,
-                   onEndFn = function() {
-                       if (support) {
-                           $(this).off(transEndEventName);
-                       }
-                       self.$item.removeClass('og-expanded');
-                       self.$previewEl.remove();
-                   };
-
-               setTimeout($.proxy(function() {
-
-                   if (typeof this.$largeImg !== 'undefined') {
-                       this.$largeImg.fadeOut('fast');
-                   }
-                   this.$previewEl.css('height', 0);
-                   // the current expanded item (might be different from this.$item)
-                   var $expandedItem = $items.eq(this.expandedIdx);
-                   $expandedItem.css('height', $expandedItem.data('height')).on(transEndEventName, onEndFn);
-
-                   if (!support) {
-                       onEndFn.call();
-                   }
-
-               }, this), 25);
-
-               return false;
-
-           },
-           calcHeight: function() {
-
-               var heightPreview = winsize.height - this.$item.data('height') - marginExpanded,
-                   itemHeight = winsize.height;
-
-               if (heightPreview < settings.minHeight) {
-                   heightPreview = settings.minHeight;
-                   itemHeight = settings.minHeight + this.$item.data('height') + marginExpanded;
-               }
-
-               this.height = heightPreview;
-               this.itemHeight = itemHeight;
-
-           },
-           setHeights: function() {
-
-               var self = this,
-                   onEndFn = function() {
-                       if (support) {
-                           self.$item.off(transEndEventName);
-                       }
-                       self.$item.addClass('og-expanded');
-                   };
-
-               this.calcHeight();
-               this.$previewEl.css('height', this.height);
-               this.$item.css('height', this.itemHeight).on(transEndEventName, onEndFn);
-
-               if (!support) {
-                   onEndFn.call();
-               }
-
-           },
-           positionPreview: function() {
-
-               // scroll page
-               // case 1 : preview height + item height fits in window´s height
-               // case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
-               // case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
-               var position = this.$item.data('offsetTop'),
-                   previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-                   scrollVal = this.height + this.$item.data('height') + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - (winsize.height - this.height) : previewOffsetT;
-
-               $body.animate({
-                   scrollTop: scrollVal
-               }, settings.speed);
-
-           },
-           setTransition: function() {
-               this.$previewEl.css('transition', 'height ' + settings.speed + 'ms ' + settings.easing);
-               this.$item.css('transition', 'height ' + settings.speed + 'ms ' + settings.easing);
-           },
-           getEl: function() {
-               return this.$previewEl;
-           }
-       }
-
-       return {
-           init: init,
-           addItems: addItems
-       };
-   })();
-
-   (function() {
-       [].slice.call(document.querySelectorAll('.tabs')).forEach(function(el) {
-           new CBPFWTabs(el);
-       });
-   })();
+   
 </script>
