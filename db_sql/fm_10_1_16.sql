@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2016 at 10:46 AM
+-- Generation Time: Jan 10, 2016 at 02:44 PM
 -- Server version: 5.5.46-0ubuntu0.14.04.2
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -175,6 +175,7 @@ CREATE TABLE IF NOT EXISTS `brands` (
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` bigint(10) NOT NULL AUTO_INCREMENT,
   `name` tinytext,
+  `type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -189,6 +190,7 @@ CREATE TABLE IF NOT EXISTS `catelog` (
   `name` varchar(100) DEFAULT NULL,
   `description` varchar(100) DEFAULT NULL,
   `location_id` bigint(100) DEFAULT NULL,
+  `sub_category_id` int(11) NOT NULL,
   `media_url` varchar(100) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -200,15 +202,15 @@ CREATE TABLE IF NOT EXISTS `catelog` (
 -- Dumping data for table `catelog`
 --
 
-INSERT INTO `catelog` (`id`, `name`, `description`, `location_id`, `media_url`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, NULL, NULL, '2016-01-04 11:19:40', '2016-01-04 11:19:40'),
-(2, NULL, NULL, NULL, NULL, '2016-01-04 11:22:25', '2016-01-04 11:22:25'),
-(3, 'catalog1', 'desc cat', 9, NULL, '2016-01-04 11:22:44', '2016-01-04 11:22:44'),
-(4, 'catalog1', 'desc cat', 9, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/x0fJH8nrPkmTxIFIHB1D30AYq0pv7aJTMbB3e493a', '2016-01-04 11:25:10', '2016-01-04 11:25:10'),
-(5, 'catalog1', 'desc cat', 9, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/N6MlMHbczx.jpg', '2016-01-04 11:28:22', '2016-01-04 11:28:22'),
-(6, 'catalog1', 'desc cat', 9, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/AreKl225FV.jpg', '2016-01-04 11:29:53', '2016-01-04 11:29:53'),
-(7, 'catalog1', 'desc cat', 9, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/oiWhXnNy3cu5JeLWqU4dzGt3qGdFggfwp4D97NJDC', '2016-01-04 11:38:22', '2016-01-04 11:38:22'),
-(8, 'catalog1', 'desc cat', 9, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/CTSnXGhzdjcKdEdB3IK4GRPoOeGkVA7PrQoHwbnqP', '2016-01-04 11:40:39', '2016-01-04 11:40:39');
+INSERT INTO `catelog` (`id`, `name`, `description`, `location_id`, `sub_category_id`, `media_url`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, NULL, 0, NULL, '2016-01-04 11:19:40', '2016-01-04 11:19:40'),
+(2, NULL, NULL, NULL, 0, NULL, '2016-01-04 11:22:25', '2016-01-04 11:22:25'),
+(3, 'catalog1', 'desc cat', 9, 0, NULL, '2016-01-04 11:22:44', '2016-01-04 11:22:44'),
+(4, 'catalog1', 'desc cat', 9, 0, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/x0fJH8nrPkmTxIFIHB1D30AYq0pv7aJTMbB3e493a', '2016-01-04 11:25:10', '2016-01-04 11:25:10'),
+(5, 'catalog1', 'desc cat', 9, 0, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/N6MlMHbczx.jpg', '2016-01-04 11:28:22', '2016-01-04 11:28:22'),
+(6, 'catalog1', 'desc cat', 9, 0, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/AreKl225FV.jpg', '2016-01-04 11:29:53', '2016-01-04 11:29:53'),
+(7, 'catalog1', 'desc cat', 9, 0, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/oiWhXnNy3cu5JeLWqU4dzGt3qGdFggfwp4D97NJDC', '2016-01-04 11:38:22', '2016-01-04 11:38:22'),
+(8, 'catalog1', 'desc cat', 9, 0, '/var/www/fashionmonkee/public/fm_user/images/fm/catalog/18/CTSnXGhzdjcKdEdB3IK4GRPoOeGkVA7PrQoHwbnqP', '2016-01-04 11:40:39', '2016-01-04 11:40:39');
 
 -- --------------------------------------------------------
 
@@ -316,12 +318,14 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `id` bigint(10) NOT NULL AUTO_INCREMENT,
   `name` tinytext,
   `description` text,
-  `from` datetime DEFAULT NULL,
-  `to` datetime DEFAULT NULL,
+  `valid_from` datetime DEFAULT NULL,
+  `valid_to` datetime DEFAULT NULL,
   `promocode` tinytext,
   `sub_category_id` bigint(10) DEFAULT NULL,
   `locaton_id` bigint(10) DEFAULT NULL,
   `status` tinyint(10) DEFAULT NULL,
+  `type` varchar(100) NOT NULL,
+  `value` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
