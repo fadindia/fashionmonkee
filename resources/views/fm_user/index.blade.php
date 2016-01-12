@@ -28,6 +28,7 @@
   <link rel="stylesheet" type="text/css" href="fm_user/css/tabstyles.css" />
   <link rel="stylesheet" type="text/css" href="fm_user/css/grid.css" />
   <link rel="stylesheet" type="text/css" href="fm_user/css/link.css" />
+  <link rel="stylesheet" type="text/css" href="fm_user/css/opening-hours.css" />
 
   <script src="fm_user/js/modernizr.custom.js"></script>
 </head><!--/head-->
@@ -45,6 +46,7 @@
   <script type="text/javascript" src="fm_user/js/jquery.countTo.js"></script>
   <script type="text/javascript" src="fm_user/js/lightbox.min.js"></script>
   <script type="text/javascript" src="fm_user/js/rating.js"></script>
+  <script type="text/javascript" src="fm_user/js/opening-hours.js"></script>
   
 
   <script type="text/javascript" src="fm_user/js/main.js"></script>

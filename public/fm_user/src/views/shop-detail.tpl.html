@@ -78,7 +78,7 @@
           <div class="col-lg-3  col-md-3  col-sm-3">
               <div class="panel">
                   <div class="panel-heading">
-                      Store Location
+                      <b> Store Location </b>
                   </div>
                   <div class="panel-body">
                       
@@ -86,26 +86,49 @@
               </div>
               <div class="panel">
                   <div class="panel-heading">
-                      Opening Hours
+                      <b> Opening Hours </b>
                   </div>
                   <div class="panel-body">
-                      
+                      <div id="opening-hours"></div>
                   </div>
               </div>
               <div class="panel">
                   <div class="panel-heading">
-                      Known For
+                     <b> Known For </b>
                   </div>
                   <div class="panel-body">
-                      
+                      Women Fashion,Wedding Collection
                   </div>
               </div>
               <div class="panel">
                   <div class="panel-heading">
-                      Highlights
+                       <b> Highlights </b>
                   </div>
                   <div class="panel-body">
-                      
+                    <div class="row">
+                      <div class="col-md-12">
+                      <span class="glyphicon glyphicon-ok"></span>
+                      <span>Air Conditioned</span>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                      <span class="glyphicon glyphicon-ok"></span>
+                      <span>Car parking</span>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                      <span class="glyphicon glyphicon-ok"></span>
+                      <span>Exchange Available</span>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                      <span class="glyphicon glyphicon-ok"></span>
+                      <span>Dressing Room</span>
+                    </div>
+                    </div>
                   </div>
               </div>
 
@@ -520,7 +543,28 @@
     </div>
 </footer>
 
+<script>
 
+   var openingHours = new OpeningHours("#opening-hours", {
+        title: "",
+        closedMsg: "Closed",
+        days: [
+        {name: "Mo", hours: "10:00 - 10:00"},
+        {name: "Tu", hours: "10:00 - 10:00"},
+        {name: "We", hours: "10:00 - 10:00"},
+        {name: "Th", hours: "10:00 - 10:00"},
+        {name: "Fr", hours: "10:00 - 10:00"},
+        {name: "Sa", hours: "10:00 - 10:00"},
+        {name: "Su", hours: null}
+        ],
+        cellWidth: "35px",
+        cellHeight: "30px",
+        selectedDay: null,
+        firstDaySunday: false,
+        cssStyle: ""
+        });
+
+</script>
 
 <style type="text/css">
 /* WIDGET BOX STYLES */
