@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use App\Shops;
 use App\Address;
 use App\Catalog;
+use App\Shopcategory;
 use Response;
 use DB;
 
@@ -114,6 +115,17 @@ class ShopController extends Controller
             return Response::json('ERROR');
 
         }
+    }
+
+    public function addCategories(Request $request){
+        log::info('add catee');
+        $data = $request->all();
+        log::info($data);
+
+    }
+
+    public function addBrands(Request $request){
+        
     }
 
 
