@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 use DB;
 
 class Shopcategory extends Model
@@ -15,17 +16,23 @@ class Shopcategory extends Model
      ];
 
      public static function saveShopcategory($data){
-     	$catData['location_id'] = $data['location_id']
-     	try{
-     		foreach ($data['sub_cat_id'] as $value) {
-     			$catData['sub_category_id'] = $value;
-     			$ShopCategoryId = Shopcategory::create($catData);
-     		}
-     		return 'Successfully'
-     	}
-     	catch{
-     		return 'Error while saving shop category';
-     	}
-     }
-
+        log::info("=========================");
+        log::info($data);
+     	$catData['location_id'] = $data['location_id'];
+        log::info($data['sub_categories_id']);
+        foreach ($data['sub_categories_id'] as $value) {
+            $existCheck = Shopcategory::where('sub_category_id','=',$value)->where('location_id','=',$data['location_id'])->first();
+            log::info($existCheck);
+            try{
+                if(empty($existCheck)){
+                    $catData['sub_category_id'] = $value;
+                    $ShopCategoryId = Shopcategory::create($catData);
+                }
+            }
+            catch(\Exception $e){
+               return 'Error while saving shop category';
+            }
+        }
+        return 'The category list has been updated Successfully';
+    }
 }

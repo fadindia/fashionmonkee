@@ -36,6 +36,9 @@ class ShopController extends Controller
 
     public function addShop(Request $request){
         log::info('hiuhihih');
+        log::info($request);
+        log::info($request->name);
+        log::info($request->get("name"));
         $shopData['name'] = $request->get("name");
         $shopId = Shops::saveShop($shopData)->id;
         log::info($shopId);
@@ -119,8 +122,12 @@ class ShopController extends Controller
 
     public function addCategories(Request $request){
         log::info('add catee');
+        log::info($request);
+        log::info($request->get('location_id'));
         $data = $request->all();
         log::info($data);
+        $result = Shopcategory::saveShopcategory($data);
+        return Response::json($result);
 
     }
 
